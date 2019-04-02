@@ -1,0 +1,65 @@
+@charset "utf-8";
+
+/* 
+ * member CSS Document
+ */
+ 
+
+/* 회원 */
+.join_area h2{font-size:30px; color:#222; font-weight:500; text-align:center; letter-spacing:-1px;}
+.join_area h2 i{display:inline-block;}
+.join_area h2 i:before,
+.join_area h2 i:after{content:''; display:block; height:1px; margin:0 -10px; background:#aeaeae;}
+.join_area h2 i:before{display:none; margin-bottom:3px;}
+.join_area h2 i:after{margin-top:7px;}
+.join_area > p{margin-top:20px; text-align:center; font-size:16px; color:#494949; font-weight:300; letter-spacing:-1px;}
+.join_area h3{margin:30px 0 10px; font-size:16px; color:#222; letter-spacing:-1px;}
+.join_area textarea{width:100%; height:250px; box-sizing:border-box; padding:15px; border:1px solid #dbdbdb; resize:none;}
+.join_area .check{padding-top:15px; text-align:right;}
+.join_area .box{padding-bottom:30px; border-bottom:1px dashed #d0d0d0;}
+.join_area .box:last-child{border-bottom-width:0px;}
+.join_area .box.join{position:relative; max-width:500px; box-sizing:border-box; padding-right:110px; margin:0 auto;}
+.join_area .box.join .button.login{position:absolute; top:0px; right:0px; height:137px; margin:0px; background:#365ec3; border:1px solid #365ec3;}
+.join_area .box.find{max-width:500px; box-sizing:border-box; margin:0 auto;}
+.join_area .box.find h3 + table{margin-top:10px;}
+.join_area .box.find p{margin-top:10px; letter-spacing:-0.5px; font-size:13px;}
+.join_area .box.find .tac{margin-top:10px;}
+.join_area .btn_area{padding-top:30px; text-align:center;}
+.join_area .bbsView{margin-top:30px;}
+
+.area_namecheck h2{font-size:30px; color:#222; font-weight:500; text-align:center; letter-spacing:-1px;}
+.area_namecheck h2 i{display:inline-block;}
+.area_namecheck h2 i:before,
+.area_namecheck h2 i:after{content:''; display:block; height:1px; margin:0 -10px; background:#aeaeae;}
+.area_namecheck h2 i:before{display:none; margin-bottom:3px;}
+.area_namecheck h2 i:after{margin-top:7px;}
+.area_namecheck > p{margin-top:20px; text-align:center; font-size:16px; color:#494949; font-weight:300; letter-spacing:-1px;}
+.area_namecheck h3{margin:30px 0 10px; padding:0px; font-size:16px; color:#222; letter-spacing:-1px;}
+.area_namecheck h3:before{display:none;}
+
+/* 본인인증 */
+.area_namecheck .inr{max-width:500px; box-sizing:border-box; margin:0 auto;}
+.area_namecheck .box{padding:15px; border:1px solid #d8d8d8;}
+.area_namecheck .box p{margin-bottom:5px; letter-spacing:-1px; word-break:keep-all;}
+.area_namecheck .box p.red{color:#e92054;}
+
+@media all and (max-width:768px){
+	.join_area .bbsView{table-layout:fixed;}
+	.join_area .bbsView td[data-member-form] em{display:block; margin-top:3px; line-height:1.2em;}
+	.join_area .bbsView td[data-member-form="email"] input{width:100%;}
+	.join_area .bbsView td[data-member-form="id"]{position:relative;}	
+	.join_area .bbsView td[data-member-form="id"] input{width:100%;}
+	.join_area .bbsView td[data-member-form="id"] .button.white{position:absolute; top:7px; right:10px;}	
+	.join_area .bbsView col[data-member-form="th"]{width:120px !important;}	
+	.join_area .bbsView col[data-member-form="td"]{width:auto !important;}	
+}
+
+@media all and (max-width:480px){
+	.join_area > p{word-break:keep-all;}
+	.join_area .bbsView col[data-member-form="th"]{width:100px !important;}
+}
+
+@media all and (max-width:370px){
+	.join_area .box.join{padding-right:0px;}
+	.join_area .box.join .button.login{display:block; position:static; width:120px; height:35px; line-height:33px; margin:10px auto 0;}
+}

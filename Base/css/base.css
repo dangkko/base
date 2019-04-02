@@ -1,0 +1,45 @@
+@charset "utf-8";
+@import url('https://dangkko.github.io/dangkko.github.com/NotoKR/css/noto-sans-kr.css');
+@import url('https://fonts.googleapis.com/css?family=Play:400,700');
+
+/* 
+ * base CSS Document
+ */
+
+/* reset */
+body,p,div,span,h1,h2,h3,h4,h5,h6,ul,ol,li,dl,dt,dd,table,th,td,form,fieldset,legend,input,textarea,button,select{margin:0; padding:0;}
+body,input,textarea,button,select{font-family:play, Noto Sans KR , '맑은 고딕', '돋움', Dotum, '굴림', Gulim, Sans-serif; color:#444;}
+body{font-size:15px;}
+h1,h2,h3,h4,h5,h6,input,textarea,button,select,table{font-size:1em;}
+img, fieldset, button{border:0;}
+textarea{overflow:auto;}
+input[type=submit],
+input[type=button],
+button{cursor:pointer;}
+img{vertical-align:top;}
+address, em{font-style:normal;}
+table{border-spacing:0; border-collapse:collapse;}
+table,th,td{border:none;}
+caption{overflow:hidden; line-height:0; text-indent:-2000em;}
+legend, .hidden{padding:0; margin:0; overflow:hidden !important; text-indent:100%; white-space:nowrap; font-size:0;}
+i{font-style:normal;}
+input[type="text"],
+input[type="password"],
+input[type="submit"]{-webkit-border-radius:1px; -webkit-appearance:none;}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {display:block;}
+figure{padding:0px; margin:0px;}
+
+/* 링크 기본값 */
+a:link{text-decoration:none; color:#444;}
+a:visited{text-decoration:none; color:#444;}
+a:hover{text-decoration:none; color:#444;}
+a:active{text-decoration:none;}
+a:focus{text-decoration:none;}
+
+/* 리스트 스타일 제거 */
+ul,ol,li{list-style:none;}
+
+/* mobile */
+body{-webkit-text-size-adjust:none; -moz-text-size-adjust:none; -ms-text-size-adjust:none;}

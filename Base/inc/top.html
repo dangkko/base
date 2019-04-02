@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">		
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1">
+		<meta name="format-detection" content="telephone=no">
+		<title><?=$site[og_title]?></title>
+		<link rel="stylesheet" type="text/css" href="/css/base.css"/>
+		<link rel="stylesheet" type="text/css" href="/css/common.css"/>
+		<link rel="stylesheet" type="text/css" href="/js/jquery-ui.css"/>
+		<link rel="stylesheet" type="text/css" href="/css/layout.css"/>
+		<link rel="stylesheet" type="text/css" href="/css/board.css"/>
+
+		<? if($_SERVER[REQUEST_URI] == "/" ){ ?>
+		<? //if(strpos($_SERVER[REQUEST_URI], "index.html") !== false){ ?>
+			<!-- 메인일때 -->
+			<link rel="stylesheet" type="text/css" href="/css/main.css"/>
+		<? } else { ?>
+			<!-- 아닐경우 -->
+			<link rel="stylesheet" type="text/css" href="/css/content.css"/>
+		<? } ?>
+
+		<script type="text/javascript" src="/js/jquery-1.12.2.min.js"></script>
+		<script type="text/javascript" src="/js/jquery.bxslider.js"></script>
+		<script type="text/javascript" src="/js/jquery-ui.js"></script>
+		<script type="text/javascript" src="/js/base.js"></script>
+		<script type="text/javascript" src="/js/module.js"></script>
+		<script type="text/javascript" src="/js/custom.js"></script>
+		
+		<link rel="shortcut icon" href="/images/favicon.ico"/>
+		<meta property="og:image" content="/images/ogimage.jpg">
+		<link rel="canonical" href="<?=$site[url]?>" />
+		<link rel="alternate" href="<?=$site[url]?>" />
+		<meta property="og:url" content="<?=$site[url]?>" />
+		<meta property="og:title" content="<?=$site[og_title]?>" />
+		<meta name="description"  content="<?=$site[description]?>" />
+		<meta property="og:description" content="<?=$site[og_description]?>" />
+		<meta property="og:site_name" content="<?=$site[og_site_name]?>" />
+		<meta property="naver-site-verification" content="<?=$site[naver_tag]?>" />
+		<meta property="og:type" content="website" />
+
+	</head>
+	<body>
+		<div id="wrap">
