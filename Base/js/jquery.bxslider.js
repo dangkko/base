@@ -340,7 +340,7 @@
       // check for any updates to the controls (like hideControlOnEnd updates)
       if (slider.settings.controls) { updateDirectionControls(); }
       // if touchEnabled is true, setup the touch events
-      if (navigator.maxTouchPoints> 0) {initTouch (); }
+	  if (slider.settings.touchEnabled && !slider.settings.ticker) { initTouch(); }     
       // if keyboardEnabled is true, setup the keyboard events
       if (slider.settings.keyboardEnabled && !slider.settings.ticker) {
         $(document).keydown(keyPress);
@@ -1132,10 +1132,12 @@
         slider.touch.start.x = touchPoints[0].pageX;
         slider.touch.start.y = touchPoints[0].pageY;
 
+		/* khh
         if (slider.viewport.get(0).setPointerCapture) {
           slider.pointerId = orig.pointerId;
           slider.viewport.get(0).setPointerCapture(slider.pointerId);
         }
+		*/
         // store original event data for click fixation
         slider.originalClickTarget = orig.originalTarget || orig.target;
         slider.originalClickButton = orig.button;
