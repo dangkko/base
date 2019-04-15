@@ -1122,6 +1122,8 @@
         slider.touch.originalPos = el.position();
         var orig = e.originalEvent,
         touchPoints = (typeof orig.changedTouches !== 'undefined') ? orig.changedTouches : [orig];
+		var chromePointerEvents = typeof PointerEvent === 'function'; if (chromePointerEvents) { if (orig.pointerId === undefined) { return; } }
+
         var chromePointerEvents = typeof PointerEvent === 'function'; 
         if (chromePointerEvents) { 
             if (orig.pointerId === undefined) { 
@@ -1132,12 +1134,12 @@
         slider.touch.start.x = touchPoints[0].pageX;
         slider.touch.start.y = touchPoints[0].pageY;
 
-		/* khh
-        if (slider.viewport.get(0).setPointerCapture) {
+		if (slider.viewport.get(0).setPointerCapture) {
+          var chromePointerEvents = typeof PointerEvent === 'function'; if (chromePointerEvents) { if (orig.pointerId === undefined) { return; } }
+          touchPoints = (typeof orig.changedTouches !== 'undefined') ? orig.changedTouches : [orig];
           slider.pointerId = orig.pointerId;
           slider.viewport.get(0).setPointerCapture(slider.pointerId);
         }
-		*/
         // store original event data for click fixation
         slider.originalClickTarget = orig.originalTarget || orig.target;
         slider.originalClickButton = orig.button;

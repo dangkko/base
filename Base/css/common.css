@@ -94,10 +94,9 @@ label.button.white:before{display:none;}
 #content table.table tbody tr td:first-child,
 #content table.table tbody tr th:first-child{border-left-width:0px;}
 #content table.table thead + tbody tr td{text-align:center;}
-#content table.table .taL{text-align:left !important;}
-#content table.table .taR{text-align:right !important;}
+#content table.table .tal{text-align:left !important;}
+#content table.table .tar{text-align:right !important;}
 #content table.table .list{margin-top:0px;}
-#content table.table + p{margin-top:10px; color:#d02251;}
 
 /* tab all - cols */
 .tabCol ul{display:table; width:100%; table-layout:fixed;}
