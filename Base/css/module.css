@@ -237,6 +237,9 @@ input[data-form-type="datepicker"]{width:105px; text-align:center;}
 	.area_calendar.type02 .list{display:none;}
 }
 
+@media all and (max-width:1240px){
+	.productView .img ul li > a{width:90px; height:65px; margin:0px;}
+}
 @media all and (max-width:1024px){
 	.box_double.shop div.map{width:512px;}
 	.box_double.shop div.search{width:calc(100% - 512px); padding-right:30px; padding-left:30px;}
@@ -254,6 +257,11 @@ input[data-form-type="datepicker"]{width:105px; text-align:center;}
 	.productList > li:nth-child(3n+1){margin-left:0px;}
 	.productWrite.area_calendar.type02 .calendar{float:none; width:100%;}
 	.productWrite .bbsView{float:none; width:100%; margin-top:30px;}
+
+	.productView .img,
+	.productView .title{float:none; width:100%;}
+	.productView .title{margin-top:30px;}
+	.productView .title .btn{text-align:center;}
 }
 
 @media all and (max-width:900px){
@@ -300,11 +308,15 @@ input[data-form-type="datepicker"]{width:105px; text-align:center;}
 	.productList > li:nth-child(2n){float:right;}
 	.productList > li:nth-child(4n+1){margin-left:0;}
 	.productList > li:nth-child(3n+1){margin-left:0;}
+
+	.productView .img ul{position:static; margin-top:10px; padding-bottom:10px; border-bottom:1px solid #e8e8e8; text-align:center;}
+	.productView .img ul li > a{width:70px; height:50px;}
 }
 
 @media all and (max-width:460px){
 	.productList > li .img{height:210px;}
 	.productList > li i[class^="type"]{top:177px;}
+	.productView .img ul li > a{width:60px;}
 }
 	
 @media all and (max-width:360px){
