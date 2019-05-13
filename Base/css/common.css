@@ -77,7 +77,7 @@ table .button{height:33px; line-height:31px;}
 .button:hover,
 .button:focus{color:#222 !important; box-shadow:0px 10px 15px rgba(0,0,0,0.15);}
 input.button:hover,
-input.button:focus{opacity:0.8; color:#fff !important; box-shadow:3px 3px 0 rgba(0,0,0,0.15);}
+input.button:focus{opacity:0.8; color:#fff !important;}
 label.button.white:hover,
 label.button.white:focus{color:#222 !important;}
 label.button.white:before{display:none;}
