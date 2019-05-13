@@ -57,16 +57,19 @@ table th{font-weight:400;}
 .btn_area{padding:30px 0;text-align:center;}
 .btn_area.right{text-align:right;}
 .btn_area.left{text-align:left;}
-.button{display:inline-block; overflow:hidden; position:relative; min-width:100px; height:33px; line-height:31px; box-sizing:border-box; padding:0 15px; margin:2px 0px; background:#41464e; border:1px solid #25282d; color:#fff !important; text-align:center; vertical-align:top; transition:all 0.4s ease-out 0.1s;}
+.button{display:inline-block; overflow:hidden; position:relative; min-width:100px; height:45px; line-height:43px; box-sizing:border-box; padding:0 15px; margin:2px 0px; background:#41464e; border:1px solid #25282d; color:#fff !important; text-align:center; vertical-align:top; transition:all 0.4s ease-out 0.1s;}
 .button span{position:relative; z-index:2;}
 .button.red{background:#c40251; border:1px solid #c40251;}
 .button.blue{background:#2377d0; border:1px solid #1760ad;}
 .button.black{background:#2d2b2b; border:1px solid #1f1f1f;}
 .button.gray{background:#92999e; border:1px solid #92999e;}
 .button.white{background:#fff; border:1px solid #cdcdcd; color:#444 !important;}
-.button.lg{min-width:150px; height:40px; line-height:38px; font-size:16px; letter-spacing:-1px;}
+.button.lg{min-width:150px; height:50px; line-height:48px; font-size:16px; letter-spacing:-1px;}
 .button.sm{min-width:60px; height:23px; line-height:21px; padding:0 10px; font-size:12px;}
 .btn_area .button{height:45px; line-height:43px;}
+.btn_area .button.sm{height:23px; line-height:21px;}
+.btn_area .button.lg{height:50px; line-height:48px;}
+table .button{height:33px; line-height:31px;}
 /* button hover */
 .button:before{content:''; display:block; position:absolute; top:0px; right:0px; bottom:0px; left:0px; z-index:1; width:120%; height:110%; background:#fff; transform:translateX(-120%) skew(-15deg); transition:transform 0.7s cubic-bezier(0, 0, 0.21, 0.87) 0s;}
 .button:hover:before,

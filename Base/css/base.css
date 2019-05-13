@@ -1,6 +1,6 @@
 @charset "utf-8";
 @import url('https://dangkko.github.io/dangkko.github.com/NotoKR/css/noto-sans-kr.css');
-@import url('https://fonts.googleapis.com/css?family=Play:400,700');
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,600,700');
 
 /* 
  * base CSS Document
@@ -8,7 +8,7 @@
 
 /* reset */
 body,p,div,span,h1,h2,h3,h4,h5,h6,ul,ol,li,dl,dt,dd,table,th,td,form,fieldset,legend,input,textarea,button,select{margin:0; padding:0;}
-body,input,textarea,button,select{font-family:play, Noto Sans KR , '맑은 고딕', '돋움', Dotum, '굴림', Gulim, Sans-serif; color:#444;}
+body,input,textarea,button,select{font-family:Montserrat, Noto Sans KR , '맑은 고딕', '돋움', Dotum, '굴림', Gulim, Sans-serif; color:#444;}
 body{font-size:15px;}
 h1,h2,h3,h4,h5,h6,input,textarea,button,select,table{font-size:1em;}
 img, fieldset, button{border:0;}
