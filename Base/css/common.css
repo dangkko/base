@@ -14,6 +14,7 @@ input[type=password],
 input[type=tel],
 input[type=date],
 input[type=email],
+input[type=number],
 textarea{height:33px; padding:7px 8px; margin:2px 0px; border:1px solid #ddd; background:#fff; vertical-align:middle;}
 select{height:33px; padding:0 8px; margin:2px 0px; border:1px solid #ddd; background:#fff; vertical-align:middle;}
 select::-ms-expand {background-color:transparent; border:0;}
@@ -138,6 +139,10 @@ label.button.white:before{display:none;}
 .layerPop img{max-width:100%;}
 .layerPop .btn{padding:3px 10px; background:#292b42; text-align:right;}
 .layerPop .btn button{display:inline-block; margin-left:15px; background:none; color:#fff; font-size:12px;}
+
+/* loading */
+.area_loding{position:fixed; top:0px; left:0px; z-index:90; width:100%; height:100%; background:rgba(255,255,255,0.7);}
+.area_loding .img{position:absolute; top:50%; left:50%; z-index:91; width:150px; height:150px; transform:translate(-50%, -50%);}
 
 @media all and (max-width:1024px){
 	.area_sitemap .gnb > li{width:32%; margin-left:2%; margin-bottom:30px;}
