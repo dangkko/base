@@ -170,7 +170,8 @@ input[data-form-type="datepicker"]{width:105px; text-align:center;}
 .productList > li .img{overflow:hidden; width:100%; height:260px; background:#fff url(../images/board/no_image.gif) no-repeat 50% 50%; text-align:center; transition:opacity 0.5s ease-out 0s;}
 .productList > li .img img{height:100%; margin-left:-100%; margin-right:-100%; transform:scale(1,1); transition:all 0.5s ease-out 0s;}
 .productList > li .img i{display:block; height:100%; background-repeat:no-repeat; background-position:50% 50%; background-size:cover; transform:scale(1,1); transition:all 0.5s ease-out 0s;}
-.productList > li div > em{opacity:1; min-height:27px; line-height:27px; margin-top:15px; padding-bottom:10px; font-size:15px; letter-spacing:-1px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;}
+.productList > li div > em{opacity:1; min-height:50px; margin-top:15px; padding-top:20px; padding-bottom:10px; font-size:18px; letter-spacing:-1px;}
+.productList > li .img + em{min-height:27px; line-height:27px; padding-top:0px; font-size:15px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;}
 .productList > li div:hover,
 .productList > li div:focus{background:#f0f6f8;}
 .productList > li div:hover img,
@@ -229,6 +230,22 @@ input[data-form-type="datepicker"]{width:105px; text-align:center;}
 .reserve_state{margin-left:30px; font-size:16px; font-weight:300;}
 .reserve_state i{color:#5971d1; font-weight:500;}
 
+.reserve_list{margin-top:30px; margin-left:-20px;}
+.reserve_list:after{content:''; display:block; clear:both;}
+.reserve_list > li{float:left; width:calc(25% - 20px); margin-left:20px; margin-top:30px;}
+.reserve_list > li > a{display:block; position:relative; height:200px; box-sizing:border-box; padding:30px; border:1px solid #eaecf1; transition:all 0.5s ease 0s;}
+.reserve_list > li > a:hover{background:#41464e; border-color:#41464e; box-shadow:5px 10px 20px rgba(0,0,0,0.10);}
+.reserve_list > li > a:hover *{color:#fff;}
+.reserve_list > li > a > i{display:block; position:absolute; top:-1px; left:-1px; min-width:70px; height:50px;}
+.reserve_list > li > a > i > span{display:block; height:100%; line-height:50px; background:#f5f5f5; text-align:center;}
+.reserve_list > li > a > i > span.txt_blue{background:#5971d1; color:#fff;}
+.reserve_list > li > a > i > span.txt_gray{background:#989898; color:#fff;}
+.reserve_list > li > a > i > span.txt_red{background:#d1597f; color:#fff;}
+.reserve_list > li > a > em{display:block; padding-top:50px; font-size:18px; letter-spacing:-1px;}
+.reserve_list > li > a > span{display:block; margin-top:10px;}
+.reserve_list > li > a > span i{display:inline-block; padding-right:5px; margin-right:5px;}
+.reserve_list > li > a > span.write{position:absolute; right:30px; bottom:20px; color:#999; font-size:13px;}
+
 @media all and (min-width:769px){
 	.area_calendar.type02 .calendar table td{height:100px;}
 	.area_calendar.type02 .calendar{float:none; width:100%;}
@@ -262,6 +279,9 @@ input[data-form-type="datepicker"]{width:105px; text-align:center;}
 	.productView .title{float:none; width:100%;}
 	.productView .title{margin-top:30px;}
 	.productView .title .btn{text-align:center;}
+
+	.reserve_list > li > a{height:250px; padding-left:20px; padding-right:20px;}
+	.reserve_list > li > a > span i{display:block;}
 }
 
 @media all and (max-width:900px){
@@ -272,6 +292,8 @@ input[data-form-type="datepicker"]{width:105px; text-align:center;}
 	.box_double.shop div.map{width:412px}
 	.box_double.shop div.map .jeju{padding:20px 4px;}
 	.box_double.shop div.search{width:calc(100% - 412px);}
+
+	.reserve_list > li{width:calc(100% / 3 - 20px);}
 }
 
 @media all and (max-width:768px){
@@ -311,6 +333,8 @@ input[data-form-type="datepicker"]{width:105px; text-align:center;}
 
 	.productView .img ul{position:static; margin-top:10px; padding-bottom:10px; border-bottom:1px solid #e8e8e8; text-align:center;}
 	.productView .img ul li > a{width:70px; height:50px;}
+
+	.reserve_list > li{width:calc(50% - 20px);}
 }
 
 @media all and (max-width:460px){
@@ -330,4 +354,9 @@ input[data-form-type="datepicker"]{width:105px; text-align:center;}
 
 	.reserve_date{font-size:16px;}
 	.reserve_date span{font-size:15px;}
+
+	.reserve_list{margin-left:0px;}
+	.reserve_list > li{width:100%; margin-left:0px;}
+	.reserve_list > li > a{height:200px;}
+	.reserve_list > li > a > span i{display:inline-block;}
 }
