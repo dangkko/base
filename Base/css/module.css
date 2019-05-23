@@ -141,6 +141,7 @@ input[data-form-type="datepicker"]{width:105px; text-align:center;}
 .area_calendar .calendar .today{background:#f2f5ff;}
 .area_calendar .calendar .today > *:after{content:'T'; display:inline-block; position:absolute; top:10px; right:5px; width:15px; height:15px; line-height:15px; border-radius:50%; background:#365ec3; color:#fff; font-size:10px;}
 .area_calendar .calendar .on{background:#fff2f2 !important;}
+.area_calendar .calendar .on.today{background:#f2f5ff !important;}
 .area_calendar .calendar .none{background:#f3f3f3;}
 .area_calendar .calendar .none > *{overflow:hidden; cursor:default; color:#b7b7b7;}
 .area_calendar .calendar .none > *:before{content:''; display:block; position:absolute; top:0; right:0; width:200%; height:1px; background:#e0e0e0; transform:rotate(-37deg); transform-origin:100% 0;}
