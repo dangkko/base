@@ -92,7 +92,7 @@ label.button.white:before{display:none;}
 #content table.table thead + tbody th{background:transparent; border-right-color:#e0e0e0;}
 #content table.table th,
 #content table.table td{padding:10px; letter-spacing:-0.5px; line-height:1.4em; word-break:keep-all;}
-#content table.table th{text-align:center; text-align:center; font-weight:500;}
+#content table.table th{text-align:center; font-weight:500;}
 #content table.table tbody td{border:1px solid #e0e0e0; text-align:left;}
 #content table.table tbody tr td:last-child{border-right-width:0px;}
 #content table.table tbody tr td:first-child,
