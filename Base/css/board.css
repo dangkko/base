@@ -125,6 +125,7 @@ ul.bbsList li .notice:before{content:'공'; display:block; color:#fff; text-inde
 .bbsView.page td{padding:15px 15px 15px 25px;}
 .bbsView.page tr:first-child th,
 .bbsView.page tr:first-child td{border-top:1px solid #eaecf1; border-bottom:1px dotted #eaecf1;}
+.bbsView div.conts table{margin-left:auto !important; margin-right:auto !important;}
 
 *[class^="bbs"] ~ .btn_area{padding-top:50px;}
 
@@ -351,6 +352,7 @@ ul.bbsList li .notice:before{content:'공'; display:block; color:#fff; text-inde
 	.pdfList li{width:48%;}
 	.pdfList li:nth-child(2n){float:right;}
 	.pdfList li > div > .img ~ *{margin-left:160px;}
+	.bbsView div.conts table{width:100% !important;}
 }
 
 @media all and (max-width:900px){
