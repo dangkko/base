@@ -94,7 +94,7 @@
 
 /* data picker */
 input[data-form-type="datepicker"]{width:105px; text-align:center;}
-.ui-datepicker-trigger{display:inline-block; width:20px; height:20px; background:url(../images/module/img_calendar.png) no-repeat 50% 0; font-size:0px; vertical-align:middle;}
+.ui-datepicker-trigger{display:inline-block; width:20px; height:20px; background:url(../images/module/img_calendar.svg) no-repeat 50% 0; font-size:0px; vertical-align:middle;}
 .ui-datepicker{width:auto !important;}
 .ui-widget.ui-widget-content{z-index:50 !important; background:#fff;}
 .ui-datepicker .ui-datepicker-header{padding:0px; background:#fff; border:0px; border-bottom:1px dashed #cfcece;}
@@ -115,7 +115,7 @@ input[data-form-type="datepicker"]{width:105px; text-align:center;}
 .area_calendar .control{position:relative; margin-bottom:20px;}
 .area_calendar .control > div{display:inline-block; border:1px solid #f4f4f4;}
 .area_calendar .control > div > *{display:inline-block; vertical-align:middle;}
-.area_calendar .control > div > p{height:48px; line-height:48px; padding:0 20px 0 48px; background:url(../images/module/img_calendar.png) no-repeat 20px 50%; border-right:1px solid #f4f4f4; border-left:1px solid #f4f4f4; font-size:20px;}
+.area_calendar .control > div > p{height:48px; line-height:48px; padding:0 20px 0 48px; background:url(../images/module/img_calendar.svg) no-repeat 20px 50%; border-right:1px solid #f4f4f4; border-left:1px solid #f4f4f4; font-size:20px;}
 .area_calendar .control > div a[class^="btn_"]{opacity:0.5; position:relative; height:48px; line-height:48px; box-sizing:border-box; padding:0 20px; font-size:0; transition:all 0.3s ease 0s;}
 .area_calendar .control > div a[class^="btn_"]:before{content:''; display:block; position:absolute; top:50%; left:50%; width:11px; height:17px; background:url(../images/module/img_calendar01.png) no-repeat 50% 0; background-size:100%; transform:translate(-50%, -50%);}
 .area_calendar .control > div a[class^="btn_"]:hover{opacity:1;}
