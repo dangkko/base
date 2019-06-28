@@ -47,21 +47,33 @@ $(function(){
 //datapicker
 $(function() {
 	if($('*[data-form-type="datepicker"]').length > 0){
-		$('*[data-form-type="datepicker"]').datepicker({
-			showOn: "button",
-			buttonText: "달력보기",
-			showAnim:"slideDown",
-			dateFormat:"yy-mm-dd",
-			changeMonth: true,
-		    changeYear: true,
-		    monthNames: ["1월", "2월", "3월", "4월", "5월", "6월", "7월", "8월", "9월", "10월", "11월", "12월"],
-			monthNamesShort: ["1월", "2월", "3월", "4월", "5월", "6월", "7월", "8월", "9월", "10월", "11월", "12월"],
-		    dayNamesMin: ['일', '월', '화', '수', '목', '금', '토'],
-		    prevText: "이전달",
-		    nextText: "다음달",
-		    showMonthAfterYear: true,
-		    //yearSuffix: "년",
-		});
+
+		var option = {
+		showOn: "button",
+		buttonText: "달력보기",
+		showAnim:"slideDown",
+		dateFormat:"yy.mm.dd",
+		changeMonth: true,
+		changeYear: true,
+		monthNames: ["1월", "2월", "3월", "4월", "5월", "6월", "7월", "8월", "9월", "10월", "11월", "12월"],
+		monthNamesShort: ["1월", "2월", "3월", "4월", "5월", "6월", "7월", "8월", "9월", "10월", "11월", "12월"],
+		dayNamesMin: ['일', '월', '화', '수', '목', '금', '토'],
+		prevText: "이전달",
+		nextText: "다음달",
+		showMonthAfterYear: true,
+		}
+
+		if( $('*[data-form-type="datepicker"]').filter('[data-min-date]') ){
+			var minDate = new Date($('*[data-form-type="datepicker"]').filter('[data-min-date]').data("min-date"));
+			option['minDate'] = minDate;
+		}
+
+		if( $('*[data-form-type="datepicker"]').filter('[data-max-date]') ){
+			var maxDate = new Date($('*[data-form-type="datepicker"]').filter('[data-max-date]').data("max-date"));
+			option['maxDate'] = maxDate;
+		}
+
+		$('*[data-form-type="datepicker"]').datepicker(option);
 	}
 });
 
