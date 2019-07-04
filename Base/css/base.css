@@ -25,7 +25,9 @@ legend, .hidden{padding:0; margin:0; overflow:hidden !important; text-indent:100
 i{font-style:normal;}
 input[type="text"],
 input[type="password"],
-input[type="submit"]{-webkit-border-radius:1px; -webkit-appearance:none;}
+input[type="submit"],
+input[type="button"],
+input[type="number"]{-webkit-border-radius:1px; -webkit-appearance:none;}
 
 /* HTML5 display-role reset for older browsers */
 article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {display:block;}
