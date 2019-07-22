@@ -86,7 +86,7 @@ $(window).load(function(){
 
 //top
 $(function(){
-	$(".btn_top").on('click', function(event) {
+	$(".btn_top, .hasLink").on('click', function(event) {
 		if (this.hash !== "") {
 			event.preventDefault();
 			var hash = this.hash;
@@ -115,3 +115,4 @@ $(function(){
 		$(this).addClass('col0'+snbSize);
 	});
 });
+

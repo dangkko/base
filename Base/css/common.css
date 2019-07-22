@@ -16,8 +16,16 @@ input[type=date],
 input[type=email],
 input[type=number],
 textarea{height:33px; padding:7px 8px; margin:2px 0px; border:1px solid #ddd; background:#fff; vertical-align:middle;}
+textarea{resize:none;}
 select{height:33px; padding:0 8px; margin:2px 0px; border:1px solid #ddd; background:#fff; vertical-align:middle;}
 select::-ms-expand {background-color:transparent; border:0;}
+input[type="text"],
+input[type="password"],
+input[type="submit"],
+input[type="button"],
+input[type="number"],
+select{-webkit-border-radius:1px; -webkit-appearance:none;}
+select{background:url(../images/board/select_arrow.svg) no-repeat calc(100% - 20px) 50%; background-size:10px 7px;}
 input[type=file]{background:#eee; font-size:1.08em;}
 input[readonly],
 input[disabled]{background:#eee;}
@@ -26,8 +34,6 @@ input[type=radio]{width:13px; height:13px; margin:2px 3px 1px 0;}
 input[type=checkbox] + label,
 input[type=radio] + label{margin-right:20px;}
 table{width:100%;}
-table td{font-weight:300;}
-table th{font-weight:400;}
 
 .input50{width:50px !important;}
 .input70{width:70px !important;}
