@@ -247,6 +247,30 @@ input[data-form-type="datepicker"]{width:105px; text-align:center;}
 .reserve_list > li > a > span i{display:inline-block; padding-right:5px; margin-right:5px;}
 .reserve_list > li > a > span.write{position:absolute; right:30px; bottom:20px; color:#999; font-size:13px;}
 
+.area_searchApply{max-width:470px; margin:0 auto;}
+.area_searchApply .title{display:block; margin-bottom:10px; font-size:30px; color:#222; font-weight:200; letter-spacing:-1px;}
+.area_searchApply ul{border-top:1px solid #505c78;}
+.area_searchApply ul li{position:relative; min-height:100px; box-sizing:border-box; padding-top:35px;}
+.area_searchApply ul li:before{content:''; opacity:0.6; display:block; position:absolute; top:50%; right:0px; width:16px; height:18px; margin-top:-9px; transition:all 0.5s ease 0s;}
+.area_searchApply ul li label{position:absolute; top:50%; left:0px; color:#666; font-weight:300; transform:translateY(-50%); transition:all 0.3s ease-in-out;}
+.area_searchApply ul li input{width:100%; height:60px; padding-left:0px; border:0px; border-bottom:1px solid #e2e2e2;}
+.area_searchApply ul li input:hover,
+.area_searchApply ul li input:focus{outline:none;}
+.area_searchApply ul li[data-room-result="tel"] input{float:left; width:calc(100% / 3 - 10px); margin:0 0 0 15px;}
+.area_searchApply ul li[data-room-result="tel"] input:nth-of-type(1){margin-left:0;}
+.area_searchApply ul li[data-room-result="tel"]:after{content:''; display:block; clear:both;}
+.area_searchApply ul li[data-room-result="tel"]:before{background:url(../images/module/icon_data.svg) no-repeat 50% 50%;}
+.area_searchApply ul li[data-room-result="user"]:before{background:url(../images/module/icon_user.svg) no-repeat 50% 50%;}
+.area_searchApply ul li[data-room-result="user"] input{padding-right:25px;}
+.area_searchApply ul li.active label,
+.area_searchApply ul li.in label{top:20px; color:#1760ad; transform:translateY(0);}
+.area_searchApply ul li.active input,
+.area_searchApply ul li.in input{border-color:#1760ad;}
+.area_searchApply ul li.active:before,
+.area_searchApply ul li.in:before{opacity:1;}
+.area_searchApply .btn_submit{display:block; width:100%; height:60px; margin-top:40px; background:#fff; border:1px solid #41464e; color:#41464e; font-weight:600; transition:all 0.5s cubic-bezier(0, 0, 0.21, 0.87) 0s;}
+.area_searchApply .btn_submit:hover{background:#41464e; color:#fff; box-shadow:5px 15px 20px rgba(0,0,0,0.15);}
+
 @media all and (min-width:769px){
 	.area_calendar.type02 .calendar table td{height:100px;}
 	.area_calendar.type02 .calendar{float:none; width:100%;}

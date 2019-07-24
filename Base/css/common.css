@@ -25,7 +25,7 @@ input[type="submit"],
 input[type="button"],
 input[type="number"],
 select{-webkit-border-radius:1px; -webkit-appearance:none;}
-select{background:url(../images/board/select_arrow.svg) no-repeat calc(100% - 20px) 50%; background-size:10px 7px;}
+select{padding-right:30px; background:url(../images/board/select_arrow.svg) no-repeat calc(100% - 10px) 50%; background-size:10px 7px;}
 input[type=file]{background:#eee; font-size:1.08em;}
 input[readonly],
 input[disabled]{background:#eee;}
