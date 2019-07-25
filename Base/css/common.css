@@ -26,6 +26,7 @@ input[type="button"],
 input[type="number"],
 select{-webkit-border-radius:1px; -webkit-appearance:none;}
 select{padding-right:30px; background:url(../images/board/select_arrow.svg) no-repeat calc(100% - 10px) 50%; background-size:10px 7px;}
+body[class*="ie"] select{padding-right:10px;}
 input[type=file]{background:#eee; font-size:1.08em;}
 input[readonly],
 input[disabled]{background:#eee;}
