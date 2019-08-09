@@ -309,6 +309,8 @@ ul.bbsList li .notice:before{content:'공'; display:block; color:#fff; text-inde
 .designRadio.white input[type="radio"] + label:before{background:url(../images/board/sp_radio_w.png) no-repeat 0 -16px;}
 .designRadio input[type="radio"]:checked + label:before{background-position:0px 0px;}
 .designRadio input[type="radio"]:disabled + label:before{background-position:0px -32px;}
+.designRadio.agree{display:block; margin-top:15px; text-align:center;}
+.designRadio.agree input[type="radio"] + label{margin:2px 30px;}
 
 /* design checkbox */
 .designCheck{display:inline-block; margin:2px 0px;}
@@ -481,6 +483,8 @@ ul.bbsList li .notice:before{content:'공'; display:block; color:#fff; text-inde
 	.bbsView td.tel > input[type="text"],
 	.bbsView td.tel > select{display:block; width:100% !important; margin:2px 0px;}
 	.bbsView td.tel > span{display:none;}
+	
+	.designRadio.agree input[type="radio"] + label{margin:2px 10px;}
 }
 
 @media all and (max-width:380px){
