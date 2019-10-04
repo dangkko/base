@@ -361,6 +361,8 @@ ul.bbsList li .notice:before{content:'공'; display:block; color:#fff; text-inde
 	.pdfList li:nth-child(2n){float:right;}
 	.pdfList li > div > .img ~ *{margin-left:160px;}
 	.bbsView div.conts table{width:100% !important;}
+	.bbsView div.conts table td,
+	.bbsView div.conts table th{width:auto !important;}
 }
 
 @media all and (max-width:900px){
