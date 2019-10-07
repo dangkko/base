@@ -1,17 +1,32 @@
 /* 
  * base js Document
- * DaeguWeb kimhynho 
+ * KOWEB
 */ 
 
+$(window).load(function(){
+	btnDesign();
+	tableScroll();
+	tableHover();
+	designFile();
+	designValue();
+	bbsDesignLi();
+	faqBtn();
+	hasBtn();
+	tabCol();
+	layerPop();
+});
+
 //button
-$(function(){
+function btnDesign(){
+	if(!($('.button').length > 0)) return;
 	$('a.button').wrapInner('<span></span>');
 	$('label.button').wrapInner('<span></span>');
 	$('button.button').wrapInner('<span></span>');
-});
+}
 
 //table tr
-$(function(){
+function tableHover(){
+	if(!($('.bbsList').length > 0)) return;
 	$('.bbsList td').on('mouseover',function(){
 		$('.bbsList tr').removeClass('active');
 		$(this).parent('tr').addClass('active');
@@ -20,15 +35,18 @@ $(function(){
 	$('.bbsList').on('mouseleave',function(){
 		$('.bbsList tr').removeClass('active');
 	});
-});
+}
 
 //table scroll
-$(function(){
+function tableScroll(){
+	if(!($('.table.scroll').length > 0)) return;
 	$('.table.scroll').wrap('<div class="scrollTable"></div>');
-});
+	$('.scrollTable').before('<p class="mob_info">좌우로 스크롤 하시면 확인이 가능합니다.</p>');
+}
 
 //faq
-$(function(){
+function faqBtn(){
+	if(!($('.faqList').length > 0)) return;
 	$('.faqList').each(function(){
 		var faqLink = $('.faqList dt a');
 		$('.faqList dt a').on('click',function(){
@@ -40,10 +58,11 @@ $(function(){
 		
 		faqLink.eq(0).click();
 	});
-});
+}
 
 //li bbs
-$(function(){
+function bbsDesignLi(){
+	if(!($('.bbsList').length > 0)) return;
 	$('ul.bbsList li').each(function(){
 		var bbsLink = $(this).find('.subject');
 		bbsLink.hover(function(){
@@ -54,10 +73,11 @@ $(function(){
 	$('ul.bbsList').mouseleave(function(){
 		$('ul.bbsList li .more').removeClass('active');
 	});
-});
+}
 
 //input file design
-$(window).load(function(){
+function designFile(){
+	if(!($('.designFile').length > 0)) return;
 	var uploadFile = $('.designFile input[type="file"]');
 	uploadFile.on('change', function(){
 		if(window.FileReader){
@@ -82,10 +102,27 @@ $(window).load(function(){
 	};
 	widthMatch.addListener(widthHandler);
 	widthHandler(widthMatch);
-});
+}
+
+function designValue(){
+	if(!($('.designValue').length > 0)) return;
+	$(".designValue input").bind("change paste keyup", function() {
+		if($(this).val().length == 0){
+			$(this).parent().removeClass('active');
+		}else{
+			$(this).parent().addClass('active');
+		}				  
+	});
+	$('.designValue select, .designValue input').bind('focusin', function() {
+		$(this).parent().addClass('in');						  
+	});
+	$('.designValue select, .designValue input').bind('focusout change', function() {
+		$(this).parent().removeClass('in');						  
+	});
+}
 
 //top
-$(function(){
+function hasBtn(){
 	$(".btn_top, .hasLink").on('click', function(event) {
 		if (this.hash !== "") {
 			event.preventDefault();
@@ -97,7 +134,7 @@ $(function(){
 			});
 		} 
 	});
-});
+}
 
 //sitemap
 $(window).load(function(){
@@ -109,10 +146,37 @@ $(window).load(function(){
 });
 
 //snb tab 갯수로 사이즈 all 작업할경우
-$(function(){
+function tabCol(){
+	if(!($('.tabCol').length > 0)) return;
 	$('.tabCol ul').each(function(){
 		var snbSize = $('li',this).length;
 		$(this).addClass('col0'+snbSize);
 	});
-});
+}
 
+//layer popup
+function layerPop(){
+	if(!($('[data-pop-layer]').length > 0)) return;
+	$('[data-pop-layer] .popBox').append('<button type="button" class="btn_close"><span>레이어닫기</span></button>');
+	$('[data-pop-layer] .btn_close').on('click',function(){
+		 $('[data-pop-layer] .popBox').parent('div').removeClass('active').fadeOut();
+		 //$('body').removeClass('active');
+		 return false;
+	});
+	$(document).mouseup(function(e){
+		var container = $('[data-pop-layer] .popBox').parent('div'); 
+		if(container.has(e.target).length == 0){
+			container.removeClass('active').fadeOut();
+			//$('body').removeClass('active');
+		}
+	});
+}
+function showPopup(el){
+	var $el = $(el);
+	$el.fadeIn();
+	//$('body').addClass('active');
+	setTimeout(function(){
+		$el.addClass('active');
+	}, 100);
+	return false;
+}
