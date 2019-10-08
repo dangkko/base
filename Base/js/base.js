@@ -158,7 +158,7 @@ function tabCol(){
 function layerPop(){
 	if(!($('[data-pop-layer]').length > 0)) return;
 	$('[data-pop-layer] .popBox').append('<button type="button" class="btn_close"><span>레이어닫기</span></button>');
-	$('[data-pop-layer] .btn_close').on('click',function(){
+	$('[data-pop-layer] .btn_close ,[data-pop-layer] .close').on('click',function(){
 		 $('[data-pop-layer] .popBox').parent('div').removeClass('active').fadeOut();
 		 //$('body').removeClass('active');
 		 return false;
