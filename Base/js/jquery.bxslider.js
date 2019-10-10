@@ -1092,6 +1092,7 @@
           slider.viewport.removeClass('click-disabled');
         }
       });
+	  if (slider.pointerId === undefined){ return; }
     };
 
     /**
@@ -1276,6 +1277,7 @@
         }
       }
       slider.viewport.off('touchend MSPointerUp pointerup', onTouchEnd);
+	  if (slider.pointerId === undefined) {return; }
 
       if (slider.viewport.get(0).releasePointerCapture) {
         slider.viewport.get(0).releasePointerCapture(slider.pointerId);
