@@ -89,7 +89,7 @@ function designFile(){
 		} else {
 			var filename = $(this).val().split('/').pop().split('\\').pop();
 		}
-		$(this).siblings('input[type="text"]').val(filename);
+		$(this).siblings('input[type="text"]').eq(0).val(filename);
 	});
 		
 	var widthMatch = matchMedia("all and (max-width: 768px)");
