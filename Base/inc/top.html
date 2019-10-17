@@ -12,13 +12,18 @@
 		<link rel="stylesheet" type="text/css" href="/css/layout.css"/>
 		<link rel="stylesheet" type="text/css" href="/css/board.css"/>
 
-		<? if($_SERVER[REQUEST_URI] == "/" ){ ?>
-		<? //if(strpos($_SERVER[REQUEST_URI], "index.html") !== false){ ?>
-			<!-- 메인일때 -->
-			<link rel="stylesheet" type="text/css" href="/css/main.css"/>
+		<? $checked_uri_position = explode("?", $_SERVER[REQUEST_URI]); ?>
+		<? if($checked_uri_position[0] == "/" || $checked_uri_position[0] == "/index.html"){
+		    $popup = mysql_fetch_array(mysql_query("SELECT * FROM koweb_program_config WHERE id='popup'"));
+		    if($popup['state'] == "Y"){
+		        include_once $_SERVER['DOCUMENT_ROOT']."/popup/_popup.php";
+		    }
+		?>
+		    <!-- 메인일때 -->
+		    <link rel="stylesheet" type="text/css" href="/css/main.css"/>
 		<? } else { ?>
-			<!-- 아닐경우 -->
-			<link rel="stylesheet" type="text/css" href="/css/content.css"/>
+		    <!-- 아닐경우 -->
+		    <link rel="stylesheet" type="text/css" href="/css/content.css"/>
 		<? } ?>
 
 		<script type="text/javascript" src="/js/jquery-1.12.2.min.js"></script>
