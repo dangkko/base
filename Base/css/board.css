@@ -335,27 +335,27 @@ ul.bbsList li .notice:before{content:'공'; display:block; color:#fff; text-inde
 .designRadio.noText input[type="radio"] + label:before{top:-1px;}
 
 
-@media all and (min-width:1025px){
+@media screen and (min-width:1025px){
 	.pdfList li{width:32%; margin-left:2%;}
 	.pdfList li:nth-child(3n+1){margin-left:0px;}
 }
 
-@media all and (min-width:481px){
+@media screen and (min-width:481px){
 	.bbsView.dl{display:table; table-layout:fixed; width:100%;}
 	.bbsView dl{display:table-row;}
 	.bbsView dl dt,
 	.bbsView dl dd{display:table-cell;}
 }
 
-@media all and (max-width:1199px){
+@media screen and (max-width:1199px){
 	.bbsView dl.colspan dd{width:calc(100% - 20%);}	
 }
 
-@media all and (max-width:1129px){
+@media screen and (max-width:1129px){
 	/* .bbsView dl.colspan dd{width:calc(100% - 20% - 1px);} */
 }
 
-@media all and (max-width:1024px){
+@media screen and (max-width:1024px){
 	.photoList > li .img{height:180px;}	
 	.pdfList li{width:48%;}
 	.pdfList li:nth-child(2n){float:right;}
@@ -365,13 +365,13 @@ ul.bbsList li .notice:before{content:'공'; display:block; color:#fff; text-inde
 	.bbsView div.conts table th{width:auto !important;}
 }
 
-@media all and (max-width:900px){
+@media screen and (max-width:900px){
 	.bbsView *[data-member-form="email"] > *{margin:2px 0px;}
 	.bbsView *[data-member-form="email"] > input[type="text"]:nth-of-type(1){display:block; width:100%;}
 	.bbsView *[data-member-form="phone"] > span{display:block;}
 }
 
-@media all and (max-width:768px){
+@media screen and (max-width:768px){
 	.bbsList col[data-table="number"]{width:70px !important;}
 	.bbsList col[data-table="write"]{width:90px !important;}
 	.bbsList col[data-table="date"]{width:100px !important;}
@@ -390,7 +390,7 @@ ul.bbsList li .notice:before{content:'공'; display:block; color:#fff; text-inde
 	.columnList li > a{margin:1.5em 0;}
 }
 
-@media all and (max-width:640px){
+@media screen and (max-width:640px){
 	.bbsList thead{display:none;}
 	.bbsList tr{display:block; position:relative; margin-top:10px; border-radius:3px; border:1px solid #eaecf1;}
 	.bbsList tr:first-child{margin-top:0px;}
@@ -456,7 +456,7 @@ ul.bbsList li .notice:before{content:'공'; display:block; color:#fff; text-inde
 	.secret_area input[type="password"]{display:block; margin:0 auto 10px;}
 }
 
-@media all and (max-width:480px){
+@media screen and (max-width:480px){
 	.bbsView dl{position:relative;}
 	.bbsView dl:after{content:''; display:block; clear:both;}
 	.bbsView dl:before{content:''; display:block; position:absolute; top:0px; left:0px; width:130px; height:100%; background:#f9fafb;}
@@ -481,29 +481,29 @@ ul.bbsList li .notice:before{content:'공'; display:block; color:#fff; text-inde
 	.columnList li > a{margin:2em 0;}
 }
 
-@media all and (max-width:420px){
+@media screen and (max-width:420px){
 	.bbsView td.tel > input[type="text"],
+	.bbsView *[data-member-form="phone"] > input[type="text"],
+	.bbsView *[data-member-form="phone"] > select,
 	.bbsView td.tel > select{display:block; width:100% !important; margin:2px 0px;}
 	.bbsView td.tel > span{display:none;}
 	
 	.designRadio.agree input[type="radio"] + label{margin:2px 10px;}
 }
 
-@media all and (max-width:380px){
+@media screen and (max-width:380px){
 	.search_bbs .search{position:relative;}
 	.search_bbs .search select{position:absolute; left:0px; top:0px; width:70px;}
 	.search_bbs .search .button{position:absolute; right:0px; top:0px;}
 	.search_bbs .search input[type="text"]{width:100%; padding-left:80px; padding-right:70px;}
 }
 
-@media all and (max-width:360px){
-	.bbsView *[data-member-form="phone"] > select{display:block; width:100% !important;}	
-	.bbsView *[data-member-form="phone"] > input[type="text"]{width:44% !important; margin-top:3px;}
+@media screen and (max-width:360px){	
 	.bbsView th[data-view="date"] + td,
 	.bbsView th[data-view="count"] + td{font-size:14px;}
 }
 
-@media all and (max-width:340px){
+@media screen and (max-width:340px){
 	ul.bbsList li .date{left:0px;}
 	ul.bbsList li .subject{padding-left:100px; padding-right:0px;}
 	ul.bbsList li .more{display:none;}

@@ -271,7 +271,7 @@ input[data-form-type="datepicker"]{width:105px; text-align:center;}
 .area_searchApply .btn_submit{display:block; width:100%; height:60px; margin-top:40px; background:#fff; border:1px solid #41464e; color:#41464e; font-weight:600; transition:all 0.5s cubic-bezier(0, 0, 0.21, 0.87) 0s;}
 .area_searchApply .btn_submit:hover{background:#41464e; color:#fff; box-shadow:5px 15px 20px rgba(0,0,0,0.15);}
 
-@media all and (min-width:769px){
+@media screen and (min-width:769px){
 	.area_calendar.type02 .calendar table td{height:100px;}
 	.area_calendar.type02 .calendar{float:none; width:100%;}
 	.area_calendar.type02 .calendar *[data-calenda="in"]{display:block; border:0px; width:auto; height:auto; padding-left:10px; margin:7px 0px; font-size:13px; line-height:1.2em; overflow:visible; text-indent:0; white-space:normal; text-align:left;}
@@ -279,10 +279,10 @@ input[data-form-type="datepicker"]{width:105px; text-align:center;}
 	.area_calendar.type02 .list{display:none;}
 }
 
-@media all and (max-width:1240px){
+@media screen and (max-width:1240px){
 	.productView .img ul li > a{width:90px; height:65px; margin:0px;}
 }
-@media all and (max-width:1024px){
+@media screen and (max-width:1024px){
 	.box_double.shop div.map{width:512px;}
 	.box_double.shop div.search{width:calc(100% - 512px); padding-right:30px; padding-left:30px;}
 	.box_double.shop div.search em{font-size:20px;}	
@@ -309,11 +309,11 @@ input[data-form-type="datepicker"]{width:105px; text-align:center;}
 	.reserve_list > li > a > span i{display:block;}
 }
 
-@media all and (max-width:900px){
+@media screen and (max-width:900px){
 	.box_double.shop div.search:before{right:-130px; bottom:-60px;}
 }
 
-@media all and (max-width:850px){
+@media screen and (max-width:850px){
 	.box_double.shop div.map{width:412px}
 	.box_double.shop div.map .jeju{padding:20px 4px;}
 	.box_double.shop div.search{width:calc(100% - 412px);}
@@ -321,19 +321,19 @@ input[data-form-type="datepicker"]{width:105px; text-align:center;}
 	.reserve_list > li{width:calc(100% / 3 - 20px);}
 }
 
-@media all and (max-width:768px){
+@media screen and (max-width:768px){
 	.area_calendar.type02 .calendar,
 	.area_calendar.type02 .list{float:none; width:100%;}	
 	.area_calendar.type02 .list{height:auto !important;}
 }
 
-@media all and (max-width:730px){
+@media screen and (max-width:730px){
 	.box_double.shop > div{float:none; width:auto !important;}
 	.box_double.shop div.search{min-height:inherit; padding:30px;}
 	.box_double.shop div.search:before{right:-50px; bottom:-70px; width:344px; height:248px; background-size:100%;}
 }
 
-@media all and (max-width:640px){
+@media screen and (max-width:640px){
 	col[data-shop]{display:none !important;}
 	td[data-shop="area"]{position:absolute; top:0px; left:0px; width:70px !important; text-align:left !important;}	
 	td[data-shop="name"]{padding-left:100px !important; border-bottom:1px dashed #e4e4e4 !important; text-align:left !important;}
@@ -362,13 +362,13 @@ input[data-form-type="datepicker"]{width:105px; text-align:center;}
 	.reserve_list > li{width:calc(50% - 20px);}
 }
 
-@media all and (max-width:460px){
+@media screen and (max-width:460px){
 	.productList > li .img{height:210px;}
 	.productList > li i[class^="type"]{top:177px;}
 	.productView .img ul li > a{width:60px;}
 }
 	
-@media all and (max-width:360px){
+@media screen and (max-width:360px){
 	.box_double.shop div.map .jeju:before{transform:rotate(-10deg);}
 	
 	.area_calendar .control .btn_today{min-width:70px;}

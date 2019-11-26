@@ -62,23 +62,23 @@
 .area_namecheck .box p{margin-bottom:5px; letter-spacing:-1px; word-break:keep-all;}
 .area_namecheck .box p.red{color:#e92054;}
 
-@media all and (max-width:768px){
+@media screen and (max-width:768px){
 	.join_area .bbsView{table-layout:fixed;}
 	.join_area .bbsView td[data-member-form] em{display:block; margin-top:3px; line-height:1.2em;}
 	.join_area .bbsView td[data-member-form="email"] input{width:100%;}
 	.join_area .bbsView td[data-member-form="id"]{position:relative;}	
-	.join_area .bbsView td[data-member-form="id"] input{width:100%;}
-	.join_area .bbsView td[data-member-form="id"] .button.white{position:absolute; top:7px; right:10px;}	
+	.join_area .bbsView td[data-member-form="id"] input{width:100%; padding-right:110px;}
+	.join_area .bbsView td[data-member-form="id"] .button.white{position:absolute; top:15px; right:10px;}	
 	.join_area .bbsView col[data-member-form="th"]{width:120px !important;}	
 	.join_area .bbsView col[data-member-form="td"]{width:auto !important;}	
 }
 
-@media all and (max-width:480px){
+@media screen and (max-width:480px){
 	.join_area > p{word-break:keep-all;}
 	.join_area .bbsView col[data-member-form="th"]{width:100px !important;}
 }
 
-@media all and (max-width:370px){
+@media screen and (max-width:370px){
 	.join_area .box.join{padding-right:0px;}
 	.join_area .box.join .button.login{display:block; position:static; width:120px; height:35px; line-height:33px; margin:10px auto 0;}
 }
