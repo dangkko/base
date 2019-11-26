@@ -442,7 +442,7 @@ ul.bbsList li .notice:before{content:'공'; display:block; color:#fff; text-inde
 	.bbsView *[data-member-form="phone"] > select{display:inline-block; width:30% !important;}
 	.bbsView td.tel > span{display:inline-block;}
 	.bbsView td.mail > input[type="text"]{margin:2px 0px;}
-	.bbsView td.mail > select{width:100%;}
+	.bbsView td.mail > select{width:100% !important;}
 	.bbsView .designFile input[type="file"]{padding-right:110px;}
 	.bbsView .designFile .button{position:absolute; top:0px; right:0px;}
 	.designFile.mob input[type="file"]{padding-right:0px;}
