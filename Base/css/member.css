@@ -81,4 +81,6 @@
 @media screen and (max-width:370px){
 	.join_area .box.join{padding-right:0px;}
 	.join_area .box.join .button.login{display:block; position:static; width:120px; height:35px; line-height:33px; margin:10px auto 0;}
+	.join_area .bbsView td[data-member-form="id"] input{padding-right:8px;}
+	.join_area .bbsView td[data-member-form="id"] .button.white{position:relative; top:auto; right:auto;}
 }
