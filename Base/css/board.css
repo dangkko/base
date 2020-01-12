@@ -305,8 +305,8 @@ ul.bbsList li .notice:before{content:'공'; display:block; color:#fff; text-inde
 .designRadio{display:inline-block; margin:2px 0px;}
 .designRadio input[type="radio"]{position:absolute; opacity:0;}
 .designRadio input[type="radio"] + label{position:relative; min-height:16px; padding-left:20px; padding-bottom:2px; margin-right:10px; cursor:pointer; line-height:1em;}
-.designRadio input[type="radio"] + label:before{content:''; display:block; position:absolute; top:0px; left:0px; width:16px; height:16px; background:url(../images/board/sp_radio.png) no-repeat 0 -16px;}
-.designRadio.white input[type="radio"] + label:before{background:url(../images/board/sp_radio_w.png) no-repeat 0 -16px;}
+.designRadio input[type="radio"] + label:before{content:''; display:block; position:absolute; top:0px; left:0px; width:16px; height:16px; background:url(../images/board/sp_radio.png) no-repeat 0 -16px; background-size:16px 48px;}
+.designRadio.white input[type="radio"] + label:before{background:url(../images/board/sp_radio_w.png) no-repeat 0 -16px; background-size:16px 48px;}
 .designRadio input[type="radio"]:checked + label:before{background-position:0px 0px;}
 .designRadio input[type="radio"]:disabled + label:before{background-position:0px -32px;}
 .designRadio.agree{display:block; margin-top:15px; text-align:center;}
@@ -316,8 +316,8 @@ ul.bbsList li .notice:before{content:'공'; display:block; color:#fff; text-inde
 .designCheck{display:inline-block; margin:2px 0px;}
 .designCheck input[type="checkbox"]{position:absolute; opacity:0;}
 .designCheck input[type="checkbox"] + label{position:relative; min-height:16px; padding-left:20px; padding-bottom:2px; margin-right:10px; cursor:pointer; line-height:1em;}
-.designCheck input[type="checkbox"] + label:before{content:''; display:block; position:absolute; top:0px; left:0px; width:16px; height:16px; background:url(../images/board/sp_check.png) no-repeat 0 -16px;}
-.designCheck.white input[type="checkbox"] + label:before{background:url(../images/board/sp_check_w.png) no-repeat 0 -16px;}
+.designCheck input[type="checkbox"] + label:before{content:''; display:block; position:absolute; top:0px; left:0px; width:16px; height:16px; background:url(../images/board/sp_check.png) no-repeat 0 -16px; background-size:16px 48px;}
+.designCheck.white input[type="checkbox"] + label:before{background:url(../images/board/sp_check_w.png) no-repeat 0 -16px; background-size:16px 48px;}
 .designCheck input[type="checkbox"]:checked + label:before{background-position:0px 0px;}
 .designCheck input[type="checkbox"]:disabled + label:before{background-position:0px -32px;}
 
@@ -363,6 +363,11 @@ ul.bbsList li .notice:before{content:'공'; display:block; color:#fff; text-inde
 	.bbsView div.conts table{width:100% !important;}
 	.bbsView div.conts table td,
 	.bbsView div.conts table th{width:auto !important;}
+
+	.designCheck input[type="checkbox"] + label:before{background-image:url(../images/board/sp_check@x2.png);}
+	.designCheck.white input[type="checkbox"] + label:before{background-image:url(../images/board/sp_check_w@x2.png);}
+	.designRadio input[type="radio"] + label:before{background-image:url(../images/board/sp_radio@x2.png);}
+	.designCheck.white input[type="checkbox"] + label:before{background-image:url(../images/board/sp_radio_w@x2.png);}
 }
 
 @media screen and (max-width:900px){
