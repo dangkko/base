@@ -18,6 +18,8 @@
 		    $popup = @mysql_fetch_array(@mysql_query("SELECT * FROM koweb_program_config WHERE id='popup'"));
 		    if($popup['state'] == "Y"){
 		        include_once $_SERVER['DOCUMENT_ROOT']."/popup/_popup.php";
+				include $_SERVER['DOCUMENT_ROOT']."/popup/layer_popup.php";
+
 		    }
 		?>
 		    <!-- 메인일때 -->
