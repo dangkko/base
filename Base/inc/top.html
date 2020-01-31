@@ -15,16 +15,13 @@
 		<? $checked_uri_position = explode("?", $_SERVER[REQUEST_URI]); ?>
 		<? $checked_uri_position[0] = end(explode("/",$checked_uri_position[0]));?>
 		<? if($checked_uri_position[0] == "" || $checked_uri_position[0] == "index.html"){
-		    $popup = @mysql_fetch_array(@mysql_query("SELECT * FROM koweb_program_config WHERE id='popup'"));
-		    if($popup['state'] == "Y"){
-		        include_once $_SERVER['DOCUMENT_ROOT']."/popup/_popup.php";
-				include $_SERVER['DOCUMENT_ROOT']."/popup/layer_popup.php";
-
-		    }
+			$m_main_ = true;		 
 		?>
 		    <!-- 메인일때 -->
 		    <link rel="stylesheet" type="text/css" href="/css/main.css"/>
-		<? } else { ?>
+		<? } else { 		
+			$m_main_ = false;
+		?>
 		    <!-- 아닐경우 -->
 		    <link rel="stylesheet" type="text/css" href="/css/content.css"/>
 		<? } ?>
@@ -56,4 +53,13 @@
 
 	</head>
 	<body>
+	<?
+		if($m_main_){
+			$popup = @mysql_fetch_array(@mysql_query("SELECT * FROM koweb_program_config WHERE id='popup'"));
+			if($popup['state'] == "Y"){
+				include $_SERVER['DOCUMENT_ROOT']."/popup/_popup.php";
+				include $_SERVER['DOCUMENT_ROOT']."/popup/layer_popup.php";
+			}
+		}
+	?>
 		<div id="wrap">
