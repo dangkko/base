@@ -39,8 +39,8 @@ function tableHover(){
 
 //table scroll
 function tableScroll(){
-	if(!($('.table.scroll').length > 0)) return;
-	$('.table.scroll').wrap('<div class="scrollTable"></div>');
+	if(!($('table.scroll').length > 0)) return;
+	$('table.scroll').wrap('<div class="scrollTable"></div>');
 	$('.scrollTable').before('<p class="mob_info">좌우로 스크롤 하시면 확인이 가능합니다.</p>');
 }
 
