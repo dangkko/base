@@ -98,10 +98,14 @@ ul.bbsList li .notice:before{content:'공'; display:block; color:#fff; text-inde
 .bbsTitle .reply{display:inline-block; position:relative; padding:2px 7px; margin-right:5px; margin-bottom:3px; background:#41464e; border-radius:3px; font-size:13px; color:#fff; vertical-align:middle;}
 .bbsView{border-top:1px solid #505c78; border-collapse:inherit; table-layout:fixed;}
 .bbsTitle ~ .bbsView{border-top-width:0px;}
-.bbsView th,
-.bbsView td{padding:15px 10px; border-bottom:1px solid #eaecf1;}
-.bbsView th{background:#f9fafb; text-align:left; font-weight:500; letter-spacing:-1px;}
-.bbsView td{color:#666; word-break:break-all;}
+.bbsView > tbody > tr > th,
+.bbsView > tbody > tr > td,
+.bbsView > thead > tr > th{padding:15px 10px; border-bottom:1px solid #eaecf1;}
+.bbsView > tbody > tr > th{background:#f9fafb; text-align:left; font-weight:500; letter-spacing:-1px;}
+.bbsView > tbody > tr > td{color:#666; word-break:break-all;}
+.bbsView .conts table,
+.bbsView .conts td,
+.bbsView .conts th{border:1px solid black}
 .bbsView th[data-view="file"]{border-top:1px solid #eaecf1;}
 .bbsView th[data-view="file"] + td{padding-left:25px; border-top:1px solid #eaecf1;}
 .bbsView th[data-view="file"],
@@ -302,7 +306,7 @@ ul.bbsList li .notice:before{content:'공'; display:block; color:#fff; text-inde
 .secret_area .button:before{height:43px;}
 
 /* design radio */
-.designRadio{display:inline-block; margin:2px 0px;}
+.designRadio{display:inline-block; margin:2px 0px; vertical-align:middle;}
 .designRadio input[type="radio"]{position:absolute; opacity:0;}
 .designRadio input[type="radio"] + label{position:relative; min-height:16px; padding-left:20px; padding-bottom:2px; margin-right:10px; cursor:pointer; line-height:1em;}
 .designRadio input[type="radio"] + label:before{content:''; display:block; position:absolute; top:0px; left:0px; width:16px; height:16px; background:url(../images/board/sp_radio.png) no-repeat 0 -16px; background-size:16px 48px;}
@@ -313,7 +317,7 @@ ul.bbsList li .notice:before{content:'공'; display:block; color:#fff; text-inde
 .designRadio.agree input[type="radio"] + label{margin:2px 30px;}
 
 /* design checkbox */
-.designCheck{display:inline-block; margin:2px 0px;}
+.designCheck{display:inline-block; margin:2px 0px; vertical-align:middle;}
 .designCheck input[type="checkbox"]{position:absolute; opacity:0;}
 .designCheck input[type="checkbox"] + label{position:relative; min-height:16px; padding-left:20px; padding-bottom:2px; margin-right:10px; cursor:pointer; line-height:1em;}
 .designCheck input[type="checkbox"] + label:before{content:''; display:block; position:absolute; top:0px; left:0px; width:16px; height:16px; background:url(../images/board/sp_check.png) no-repeat 0 -16px; background-size:16px 48px;}
@@ -393,6 +397,8 @@ ul.bbsList li .notice:before{content:'공'; display:block; color:#fff; text-inde
 	
 	.columnList{margin-top:-1.5em; column-width:200px; column-gap:3em; column-count:2;}
 	.columnList li > a{margin:1.5em 0;}
+
+	.designFile.mob input[type="file"]{font-size:12px;}
 }
 
 @media screen and (max-width:640px){
@@ -482,7 +488,7 @@ ul.bbsList li .notice:before{content:'공'; display:block; color:#fff; text-inde
 	
 	.comment_area .comment_password input[type="password"]{display:block; width:200px; margin:0 auto 5px;}
 	
-	.blogList li p{overflow:hidden; height:65px;}
+	.blogList li p{overflow:hidden; height:65px; font-size:14px;}
 	
 	.columnList{margin-top:-2em;}
 	.columnList li > a{margin:2em 0;}
@@ -503,6 +509,15 @@ ul.bbsList li .notice:before{content:'공'; display:block; color:#fff; text-inde
 	.search_bbs .search select{position:absolute; left:0px; top:0px; width:70px;}
 	.search_bbs .search .button{position:absolute; right:0px; top:0px;}
 	.search_bbs .search input[type="text"]{width:100%; padding-left:80px; padding-right:70px;}
+
+	.bbsView col{display:none;}
+	.bbsView > tbody > tr > th,
+	.bbsView > tbody > tr > td{display:block; width:100%; box-sizing:border-box; padding:10px;}
+	.bbsView th[data-view="count"] + td{width:100% !important;}
+	.bbsView th[data-view="file"] + td{border-top-width:0px; padding-left:20px;}
+	.bbsView.page th,
+	.bbsView.page td{padding:10px;}
+	.bbsView.page tr:first-child td{border-top-width:0px; border-bottom:1px solid #eaecf1;}
 }
 
 @media screen and (max-width:360px){	
@@ -515,8 +530,5 @@ ul.bbsList li .notice:before{content:'공'; display:block; color:#fff; text-inde
 	ul.bbsList li .subject{padding-left:100px; padding-right:0px;}
 	ul.bbsList li .more{display:none;}
 	
-	.photoList > li{float:none !important; width:100%;}
-		
-	.bbsView th[data-view="count"] + td{width:40px !important;}
-	.bbsView col[data-write="th"]{width:100px !important;}
+	.photoList > li{float:none !important; width:100%;}	
 }

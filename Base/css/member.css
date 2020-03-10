@@ -42,6 +42,7 @@
 .join_area .box.find .bbsView th{background:transparent;}
 .join_area .btn_area{padding-top:30px; text-align:center;}
 .join_area .bbsView{margin-top:30px;}
+.join_area .join_box_scroll{overflow-y:auto; height:350px; box-sizing:border-box; padding:20px; border:1px solid #dbdbdb;}
 
 .login_social{position:relative; margin-top:30px; text-align:center;}
 .login_social:before{content:'or'; display:block; position:relative; z-index:5; width:100px; margin:0 auto 25px; background:#fff; font-size:20px; font-weight:600; color:rgba(65,70,78,0.4); text-align:center;}
@@ -94,6 +95,8 @@
 	.login_social a:before{top:0px;}
 	.login_social a{min-height:30px; line-height:30px; padding-left:38px; margin:5px 15px;}
 	.login_social a:before{width:30px; height:30px;}
+
+	.join_area .join_box_scroll{padding:15px 10px;}
 }
 
 @media screen and (max-width:370px){

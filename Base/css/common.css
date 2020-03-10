@@ -24,7 +24,9 @@ input[type="password"],
 input[type="submit"],
 input[type="button"],
 input[type="number"],
-select{-webkit-border-radius:1px; -webkit-appearance:none;}
+input[type="file"],
+select,
+textarea{-webkit-border-radius:1px; -webkit-appearance:none;}
 select{padding-right:30px; background:url(../images/board/select_arrow.svg) no-repeat calc(100% - 10px) 50%; background-size:10px 7px;}
 body[class*="ie"] select{padding-right:10px;}
 input[type=file]{background:#eee; font-size:1.08em;}
@@ -45,12 +47,12 @@ table{width:100%;}
 .inputFull{width:100% !important;}
 
 /* text color */
-.txt_blue{color:#5971d1;}
-.txt_red{color:#d1597f;}
-.txt_green{color:#74b777;}
-.txt_gray{color:#989898;}
-.txt_black{color:#000;}
-.txt_orange{color:#e69035;}
+.txt_point01{color:#5971d1;}
+.txt_point02{color:#d1597f;}
+.txt_point03{color:#74b777;}
+.txt_point04{color:#989898;}
+.txt_point05{color:#000;}
+.txt_point06{color:#e69035;}
 
 /* 필수입력 */
 .marking{display:inline-block; position:relative; width:10px; height:14px; margin-bottom:-2px; vertical-align:middle; text-indent:100%; overflow:hidden; white-space:nowrap;} 
@@ -65,8 +67,14 @@ table{width:100%;}
 .tal{text-align:left !important;}
 .tar{text-align:right !important;}
 
+/* margin */
+.mt0{margin-top:0px !important;}
+.mt10{margin-top:10px !important;}
+.mt20{margin-top:20px !important;}
+.mt30{margin-top:30px !important;}
+
 /* button */
-.btn_area{padding:30px 0;text-align:center;}
+.btn_area{padding:30px 0; text-align:center;}
 .btn_area.right{text-align:right;}
 .btn_area.left{text-align:left;}
 .button{display:inline-block; overflow:hidden; position:relative; min-width:100px; height:45px; line-height:43px; box-sizing:border-box; padding:0 15px; margin:2px 0px; background:#41464e; border:1px solid #25282d; color:#fff !important; text-align:center; vertical-align:top; transition:all 0.4s ease-out 0.1s; -webkit-backface-visibility:hidden; -moz-backface-visibility:hidden; -webkit-transform:translate3d(0, 0, 0); -moz-transform:translate3d(0, 0, 0);}
