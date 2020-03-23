@@ -443,7 +443,8 @@ ul.bbsList li .notice:before{content:'공'; display:block; color:#fff; text-inde
 	.bbsView input[type="file"],
 	.bbsView input[type="password"]{width:100% !important;}
 	.bbsView input[data-form-type="datepicker"],
-	input.datepicker{width:105px !important;}
+	input.datepicker,
+	.bbsView input[type="text"].datepicker{width:105px !important;}
 	.bbsView td.tel > input[type="text"],
 	.bbsView td.tel > select,
 	.bbsView *[data-member-form="phone"] > input[type="text"],
