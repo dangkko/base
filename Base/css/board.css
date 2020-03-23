@@ -333,6 +333,8 @@ ul.bbsList li .notice:before{content:'공'; display:block; color:#fff; text-inde
 .designCheck.noText input[type="checkbox"] + label:before,
 .designRadio.noText input[type="radio"] + label:before{top:-1px;}
 
+/* datapicker */
+.datepicker{font-size:14px;}
 
 @media screen and (min-width:1025px){
 	.pdfList li{width:32%; margin-left:2%;}
