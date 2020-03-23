@@ -124,7 +124,7 @@ ul.bbsList li .notice:before{content:'공'; display:block; color:#fff; text-inde
 .bbsView.page tr:first-child th,
 .bbsView.page tr:first-child td{border-top:1px solid #eaecf1; border-bottom:1px dotted #eaecf1;}
 .bbsView div.conts table{margin-left:auto !important; margin-right:auto !important;}
-.bbsView .button{height:33px; line-height:31px;}
+.bbsView .button{height:33px; line-height:31px; font-size:0.9rem;}
 
 *[class^="bbs"] ~ .btn_area{padding-top:50px;}
 
@@ -388,8 +388,15 @@ ul.bbsList li .notice:before{content:'공'; display:block; color:#fff; text-inde
 	.bbsView th[data-view="file"],
 	.bbsView th[data-view="date"],
 	.bbsView th[data-view="count"]{padding-left:10px;}	
+	.bbsView .address,
+	.bbsView .id{position:relative;}
+	.bbsView .address input#zip,
+	.bbsView .id input#id{width:100%; padding-right:110px;}
+	.bbsView .address .button,
+	.bbsView .id .button{position:absolute; top:15px; right:10px;}
 	.bbsView.page th,
 	.bbsView.page td{padding:15px 10px;}	
+	.bbsView .button{min-width:90px; font-size:0.8rem;}
 	
 	.search_bbs .btn.reserve{float:none; clear:left;}
 	
@@ -498,7 +505,8 @@ ul.bbsList li .notice:before{content:'공'; display:block; color:#fff; text-inde
 	.bbsView *[data-member-form="phone"] > select,
 	.bbsView td.tel > select{display:block; width:100% !important; margin:2px 0px;}
 	.bbsView td.tel > span{display:none;}
-	
+	.bbsView .address .button,
+	.bbsView .id .button{top:10px;}	
 	.designRadio.agree input[type="radio"] + label{margin:2px 10px;}
 }
 
