@@ -30,8 +30,8 @@
 ul.bbsList{border-top:2px solid #505c78;}
 ul.bbsList li{position:relative; padding:35px 15px; border-bottom:1px solid #eaecf1;}
 ul.bbsList li > *{display:block;}
-ul.bbsList li .date{position:absolute; left:15px; top:50%; width:80px; height:52px; margin-top:-25px; font-size:18px; color:#999; text-align:center; font-weight:400;}
-ul.bbsList li .date i{display:block; font-size:30px; color:#444; line-height:1em;}
+ul.bbsList li .date{position:absolute; left:15px; top:50%; width:80px; font-size:18px; color:#999; text-align:center; font-weight:400; transform:translateY(-50%);}
+ul.bbsList li .date i{display:block; font-size:1.6rem; color:#444; line-height:1em;}
 ul.bbsList li .date:before{content:''; display:block; position:absolute; right:-15px; top:50%; width:1px; height:30px; margin-top:-15px; background:#e5e5e5;}
 ul.bbsList li .subject{padding-left:125px; padding-right:100px; font-size:16px; letter-spacing:-1px; font-weight:300;}
 ul.bbsList li .subject:hover,
@@ -59,7 +59,7 @@ ul.bbsList li .notice:before{content:'공'; display:block; color:#fff; text-inde
 .photoList > li a{display:block; transition:all 0.3s ease 0s;}
 .photoList > li a > *{display:block;}
 .photoList > li a > *:not(.img){padding-left:15px; padding-right:15px; background:#fff;}
-.photoList > li .img{overflow:hidden; position:relative; width:100%; padding-top:50%; background:#fff url(../images/board/no_image.gif) no-repeat 50% 50%; text-align:center; transition:opacity 0.5s ease-out 0s;}
+.photoList > li .img{overflow:hidden; position:relative; width:100%; padding-top:55%; background:#fff url(../images/board/no_image.gif) no-repeat 50% 50%; text-align:center; transition:opacity 0.5s ease-out 0s;}
 .photoList > li .img img{position:absolute; top:50%; left:0; width:100%; transform:translateY(-50%); transition:all 0.5s ease-out 0s;}
 .photoList > li .img i{display:block; position:absolute; top:0px; left:50%; width:100%; height:100%; background-repeat:no-repeat; background-position:50% 50%; background-size:cover; transform:translateX(-50%); transition:all 0.5s ease-out 0s;}
 .photoList > li a > em{opacity:1; min-height:27px; line-height:27px; padding-top:20px; padding-bottom:10px; border:1px solid #eaecf1; border-width:0px 1px; font-size:15px; letter-spacing:-1px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;}
@@ -68,6 +68,7 @@ ul.bbsList li .notice:before{content:'공'; display:block; color:#fff; text-inde
 .photoList > li .write{position:relative; min-height:25px; padding-top:5px; padding-bottom:15px; border:1px solid #eaecf1; border-top-width:0px; color:#999;}
 .photoList > li .write em{display:block;}
 .photoList > li .write i{display:none; line-height:25px; padding-left:85px; text-align:right;}
+.photoList .none_data{float:none; width:100%; box-sizing:border-box; padding-top:40px; border-top:1px solid #eaecf1; border-bottom-width:0px; text-align:center;}
 
 /* blog style */
 .blogList{border-top:2px solid #505c78;}
@@ -86,7 +87,7 @@ ul.bbsList li .notice:before{content:'공'; display:block; color:#fff; text-inde
 .blogList li .img ~ i{margin-left:175px;}
 
 /* bbsView */
-.bbsTitle{padding:10px !important; margin:0px !important; border-top:2px solid #505c78; border-bottom:1px dotted #8c92a3; font-size:18px !important; font-weight:300 !important; color:#222 !important;}
+.bbsTitle{padding:15px 10px !important; margin:0px !important; border-top:2px solid #505c78; border-bottom:1px dotted #8c92a3; font-size:18px !important; font-weight:300 !important; color:#222 !important;}
 .bbsTitle:before{display:none !important;}
 .bbsTitle em{display:inline-block; margin-right:5px; color:#148f77;}
 .bbsTitle .reply{display:inline-block; position:relative; padding:2px 7px; margin-right:5px; margin-bottom:3px; background:#41464e; border-radius:3px; font-size:13px; color:#fff; vertical-align:middle;}
@@ -125,6 +126,9 @@ ul.bbsList li .notice:before{content:'공'; display:block; color:#fff; text-inde
 .bbsView.page tr:first-child td{border-top:1px solid #eaecf1; border-bottom:1px dotted #eaecf1;}
 .bbsView div.conts table{margin-left:auto !important; margin-right:auto !important;}
 .bbsView .button{height:33px; line-height:31px; font-size:0.9rem;}
+.bbsView .tip{font-size:0.8rem; word-break:keep-all;}
+.bbsView .spam > span{display:inline-block; height:33px; line-height:33px; box-sizing:border-box; padding:0 10px; margin-right:10px; background:#222; color:#fff; letter-spacing:3px; font-size:0.9rem;}
+.bbsView .spam > *{vertical-align:middle;}
 
 *[class^="bbs"] ~ .btn_area{padding-top:50px;}
 
@@ -255,7 +259,6 @@ ul.bbsList li .notice:before{content:'공'; display:block; color:#fff; text-inde
 .faqList table td{background-color:#fff;}
 
 /* pdf */
-.pdfList{padding:20px 0; border-top:2px solid #505c78;}
 .pdfList:after{content:''; display:block; clear:both;}
 .pdfList li{float:left;}
 .pdfList li .img{display:block; position:absolute; left:25px; top:-20px; width:138px; height:192px; overflow:hidden; box-shadow:1px 1px 2px rgba(0,0,0,0.1); border:1px solid #e0e0e0;}
@@ -274,6 +277,7 @@ ul.bbsList li .notice:before{content:'공'; display:block; color:#fff; text-inde
 .pdfList li > div:hover,
 .pdfList li > div:focus{border:1px solid #505c78; box-shadow:0 3px 10px rgba(0,0,0,0.10), 0 20px 20px rgba(0,0,0,0.05);}
 .pdfList li .date{margin:10px 0 20px; font-size:12px; color:#777;}
+.pdfList li.none_data{float:none; width:100%; box-sizing:border-box; padding-top:40px; border-top:1px solid #eaecf1; border-bottom-width:0px; text-align:center;}
 
 /* column 게시판 */
 .columnList{min-height:700px; margin-top:-3.5em; -webkit-columns:300px 3; -moz-columns:300px 3; columns:300px 3; column-gap:10em;}
@@ -285,6 +289,7 @@ ul.bbsList li .notice:before{content:'공'; display:block; color:#fff; text-inde
 .columnList li p{display:block; height:2.8em; line-height:1.4em; margin-top:20px; display:-webkit-box; overflow:hidden; -webkit-line-clamp:2; -webkit-box-orient:vertical; text-overflow:ellipsis; word-break:break-all;}
 .columnList li .write{display:block; margin-top:10px; color:#999;}
 .columnList li .write em{display:inline-block; margin-right:10px;}
+.columnList li .write i{display:none;}
 
 /* video iframe */
 .iframe_video{position:relative; padding-bottom:55%;}
@@ -421,8 +426,9 @@ ul.bbsList li .notice:before{content:'공'; display:block; color:#fff; text-inde
 	.bbsList .reply + a{padding-top:5px !important;}
 	
 	ul.bbsList li{padding:30px 15px;}
-	ul.bbsList li .date{height:54px; margin-top:-26px; font-size:16px;}
-	ul.bbsList li .subject{padding-left:115px; padding-right:55px; font-size:16px;}
+	ul.bbsList li .subject{padding-left:115px; padding-right:55px; font-size:0.9rem;}
+	ul.bbsList li .date{font-size:1rem;}
+	ul.bbsList li .date i{font-size:1.2rem;}
 	
 	.photoList > li{width:49%;}
 	.photoList > li:nth-child(2n){float:right;}
@@ -490,6 +496,9 @@ ul.bbsList li .notice:before{content:'공'; display:block; color:#fff; text-inde
 	.bbsView dl:last-child dd{border-bottom:1px solid #eaecf1;}
 	.bbsView dl:not(.col02){position:relative;}
 	.bbsView dl:not(.col02) dt{position:absolute; left:0px; top:0px; height:100%;}
+
+	ul.bbsList li .date:before{right:-5px;}
+	ul.bbsList li .subject{padding-left:100px;}
 	
 	.comment_area .comment_password input[type="password"]{display:block; width:200px; margin:0 auto 5px;}
 	
@@ -535,7 +544,7 @@ ul.bbsList li .notice:before{content:'공'; display:block; color:#fff; text-inde
 
 @media screen and (max-width:340px){
 	ul.bbsList li .date{left:0px;}
-	ul.bbsList li .subject{padding-left:100px; padding-right:0px;}
+	ul.bbsList li .subject{padding-left:90px; padding-right:0px;}
 	ul.bbsList li .more{display:none;}
 	
 	.photoList > li{float:none !important; width:100%;}	
