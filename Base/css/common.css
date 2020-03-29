@@ -77,7 +77,7 @@ table{width:100%;}
 .btn_area{padding:30px 0; text-align:center;}
 .btn_area.right{text-align:right;}
 .btn_area.left{text-align:left;}
-.button{display:inline-block; overflow:hidden; position:relative; min-width:100px; height:45px; line-height:43px; box-sizing:border-box; padding:0 15px; margin:2px 0px; background:#41464e; border:1px solid #25282d; color:#fff !important; text-align:center; vertical-align:top; transition:all 0.4s ease-out 0.1s; -webkit-backface-visibility:hidden; -moz-backface-visibility:hidden; -webkit-transform:translate3d(0, 0, 0); -moz-transform:translate3d(0, 0, 0);}
+.button{display:inline-block; overflow:hidden; position:relative; min-width:100px; height:45px; line-height:43px; box-sizing:border-box; padding:0 15px; margin:2px 0px; background:#41464e; border:1px solid #25282d; color:#fff !important; text-align:center; vertical-align:middle; transition:all 0.4s ease-out 0.1s; -webkit-backface-visibility:hidden; -moz-backface-visibility:hidden; -webkit-transform:translate3d(0, 0, 0); -moz-transform:translate3d(0, 0, 0);}
 .button span{position:relative; z-index:2;}
 .button.red{background:#c40251; border:1px solid #c40251;}
 .button.blue{background:#2377d0; border:1px solid #1760ad;}
