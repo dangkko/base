@@ -9,8 +9,8 @@
 /* reset */
 body,p,div,span,h1,h2,h3,h4,h5,h6,ul,ol,li,dl,dt,dd,table,th,td,form,fieldset,legend,input,textarea,button,select{margin:0; padding:0;}
 body,input,textarea,button,select{font-family:Montserrat, Noto Sans KR , '맑은 고딕', '돋움', Dotum, '굴림', Gulim, Sans-serif; color:#444;}
-body{font-size:15px;}
-h1,h2,h3,h4,h5,h6,input,textarea,button,select,table{font-size:1em;}
+html,body{font-size:15px; line-height:1.5;}
+h1,h2,h3,h4,h5,h6,input,textarea,button,select,table{font-size:1rem;}
 img, fieldset, button{border:0;}
 textarea{overflow:auto;}
 input[type=submit],

@@ -508,7 +508,7 @@ ul.bbsList li .notice:before{content:'공'; display:block; color:#fff; text-inde
 	.columnList li > a{margin:2em 0;}
 }
 
-@media screen and (max-width:420px){
+@media screen and (max-width:460px){
 	.bbsView td.tel > input[type="text"],
 	.bbsView *[data-member-form="phone"] > input[type="text"],
 	.bbsView *[data-member-form="phone"] > select,
