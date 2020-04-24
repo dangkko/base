@@ -497,6 +497,15 @@ ul.bbsList li .notice:before{content:'공'; display:block; color:#fff; text-inde
 	.bbsView dl:not(.col02){position:relative;}
 	.bbsView dl:not(.col02) dt{position:absolute; left:0px; top:0px; height:100%;}
 
+	.bbsView col{display:none;}
+	.bbsView > tbody > tr > th,
+	.bbsView > tbody > tr > td{display:block; width:100%; box-sizing:border-box; padding:10px;}
+	.bbsView th[data-view="count"] + td{width:100% !important;}
+	.bbsView th[data-view="file"] + td{border-top-width:0px; padding-left:20px;}
+	.bbsView.page th,
+	.bbsView.page td{padding:10px;}
+	.bbsView.page tr:first-child td{border-top-width:0px; border-bottom:1px solid #eaecf1;}
+
 	ul.bbsList li .date:before{right:-5px;}
 	ul.bbsList li .subject{padding-left:100px;}
 	
@@ -524,15 +533,6 @@ ul.bbsList li .notice:before{content:'공'; display:block; color:#fff; text-inde
 	.search_bbs .search select{position:absolute; left:0px; top:0px; width:70px;}
 	.search_bbs .search .button{position:absolute; right:0px; top:0px;}
 	.search_bbs .search input[type="text"]{width:100%; padding-left:80px; padding-right:70px;}
-
-	.bbsView col{display:none;}
-	.bbsView > tbody > tr > th,
-	.bbsView > tbody > tr > td{display:block; width:100%; box-sizing:border-box; padding:10px;}
-	.bbsView th[data-view="count"] + td{width:100% !important;}
-	.bbsView th[data-view="file"] + td{border-top-width:0px; padding-left:20px;}
-	.bbsView.page th,
-	.bbsView.page td{padding:10px;}
-	.bbsView.page tr:first-child td{border-top-width:0px; border-bottom:1px solid #eaecf1;}
 
 	.photoList > li a > *:not(.img){padding-left:10px; padding-right:10px;}
 }
