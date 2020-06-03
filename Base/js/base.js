@@ -106,7 +106,7 @@ function designFile(){
 
 function designValue(){
 	if(!($('.designValue').length > 0)) return;
-	$(".designValue input").bind("change paste keyup", function() {
+	$(".designValue input, .designValue select").bind("change paste keyup", function() {
 		if($(this).val().length == 0){
 			$(this).parent().removeClass('active');
 		}else{
