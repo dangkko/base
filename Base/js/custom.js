@@ -2,7 +2,8 @@
  * custom js Document
 */ 
 
-$(window).load(function(){
+$(function(){
+	//ie check
 	var agent = navigator.userAgent.toLowerCase();
 	if (agent.indexOf("msie") > -1 || agent.indexOf("trident") > -1) {
 	  	$('body').addClass('ie');
@@ -11,7 +12,9 @@ $(window).load(function(){
 	} else {
 		//나머지브라우저 컨트롤
 	}
+});
 
+$(window).load(function(){
 	lnbSetControl();
 });
 
