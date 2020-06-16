@@ -179,7 +179,7 @@ body[class*="ie"] [data-pop-layer="layer"] .popBox h2{height:68px; box-sizing:bo
 	[data-pop-layer="layer"] .popBox .popConts{height:calc(100% - 67px); max-height:inherit;}
 	[data-pop-layer="layer"] .popBox .btn_close{right:0px; box-shadow:none;}
 
-	.layerPop{left:50% !important; transform:translateX(-50%);}
+	.layerPop{top:100px !important; left:50% !important; transform:translateX(-50%);}
 }
 
 @media screen and (max-width:600px){
