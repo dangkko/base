@@ -10,7 +10,8 @@
 body,p,div,span,h1,h2,h3,h4,h5,h6,ul,ol,li,dl,dt,dd,table,th,td,form,fieldset,legend,input,textarea,button,select{margin:0; padding:0;}
 body,input,textarea,button,select{font-family:Montserrat, Noto Sans KR , '맑은 고딕', '돋움', Dotum, '굴림', Gulim, Sans-serif; color:#444;}
 html,body{font-size:15px; line-height:1.5;}
-h1,h2,h3,h4,h5,h6{font-size:1rem;}
+h1,h2,h3,h4,h5,h6,table{font-size:1rem;}
+input,textarea,button,select{font-size:0.9375rem;}
 img, fieldset, button{border:0;}
 textarea{overflow:auto;}
 input[type=submit],
