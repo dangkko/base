@@ -374,7 +374,7 @@ ul.bbsList li .notice:before{content:'공'; display:block; color:#fff; text-inde
 	.designCheck input[type="checkbox"] + label:before{background-image:url(../images/board/sp_check@x2.png);}
 	.designCheck.white input[type="checkbox"] + label:before{background-image:url(../images/board/sp_check_w@x2.png);}
 	.designRadio input[type="radio"] + label:before{background-image:url(../images/board/sp_radio@x2.png);}
-	.designCheck.white input[type="checkbox"] + label:before{background-image:url(../images/board/sp_radio_w@x2.png);}
+	.designRadio.white input[type="radio"] + label:before{background-image:url(../images/board/sp_radio_w@x2.png);}
 }
 
 @media screen and (max-width:900px){
