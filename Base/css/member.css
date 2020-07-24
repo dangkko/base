@@ -94,6 +94,7 @@
 @media screen and (max-width:480px){
 	.join_area > p{word-break:keep-all;}
 	.join_area .bbsView col[data-member-form="th"]{width:100px !important;}
+	.join_area .bbsView td[data-member-form="id"] .button{top:10px;}
 	.join_area .join_box_scroll{padding:15px 10px;}
 	.login_social:before{margin-bottom:15px;}
 }
