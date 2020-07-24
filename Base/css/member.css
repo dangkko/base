@@ -15,7 +15,7 @@
 .join_area .check{padding-top:15px; text-align:right;}
 .join_area .box{padding-bottom:30px; border-bottom:1px dashed #d0d0d0;}
 .join_area .box:last-child{border-bottom-width:0px;}
-.join_area .box.join{max-width:500px; box-sizing:border-box; margin:0 auto; border-bottom-width:0px;}
+.join_area .box.join{max-width:600px; box-sizing:border-box; margin:0 auto; border-bottom-width:0px;}
 .join_area .box.join ul{border-top:1px solid #505c78;}
 .join_area .box.join ul li{position:relative; min-height:100px; box-sizing:border-box; padding-top:35px;}
 .join_area .box.join ul li:before{content:''; opacity:0.6; display:block; position:absolute; top:50%; right:0px; width:16px; height:18px; margin-top:-9px; transition:all 0.5s ease 0s;}
@@ -48,10 +48,11 @@
 .login_social{position:relative; margin-top:30px; text-align:center;}
 .login_social:before{content:'or'; display:block; position:relative; z-index:5; width:100px; margin:0 auto 25px; background:#fff; font-size:20px; font-weight:600; color:rgba(65,70,78,0.4); text-align:center;}
 .login_social:after{content:''; opacity:0.1; display:block; position:absolute; top:12px; left:50%; z-index:4; width:80%; height:1px; background:#41464e; transform:translateX(-50%);}
-.login_social a{display:inline-block; position:relative; padding-left:45px; margin:0 15px; text-align:left; font-size:15px;}
-.login_social a:before{content:''; display:block; position:absolute; left:0px; top:-7px; width:39px; height:39px; background-repeat:no-repeat; background-position:50% 0; background-size:100%;}
+.login_social a{display:inline-block; position:relative; padding:5px 0 5px 35px; margin:0 7px; text-align:left; font-size:14px;}
+.login_social a:before{content:''; display:block; position:absolute; left:0px; top:0px; width:30px; height:30px; background-repeat:no-repeat; background-position:50% 0; background-size:100%;}
 .login_social .btn_login_naver:before{background-image:url(../images/module/icon_naver.png);}
 .login_social .btn_login_kakao:before{background-image:url(../images/module/icon_kakao.png);}
+.login_social .btn_login_facebook:before{background-image:url(../images/module/icon_face.png);}
 
 .btn_area.social a{display:inline-block; position:relative; padding:0 10px 0 20px;}
 .btn_area.social a:before{content:''; display:block; position:absolute; top:10px; left:0px; width:5px; height:5px; background:#b0b2b4; border-radius:100%;}
@@ -71,6 +72,7 @@
 @media screen and (max-width:1024px){
 	.login_social .btn_login_naver:before{background-image:url(../images/module/icon_naver@x3.png);}
 	.login_social .btn_login_kakao:before{background-image:url(../images/module/icon_kakao@x3.png);}
+	.login_social .btn_login_facebook:before{background-image:url(../images/module/icon_face@x3.png);}
 }
 
 @media screen and (max-width:768px){
@@ -85,21 +87,20 @@
 	.join_area .bbsView td[data-member-form="addr"] > span .button{position:absolute; top:0; right:0px;}	
 	.join_area .bbsView col[data-member-form="th"]{width:120px !important;}	
 	.join_area .bbsView col[data-member-form="td"]{width:auto !important;}
+
+	.login_social a{margin:3px 7px; font-size:13px;}
 }
 
 @media screen and (max-width:480px){
 	.join_area > p{word-break:keep-all;}
 	.join_area .bbsView col[data-member-form="th"]{width:100px !important;}
-
-	.login_social a:before{top:0px;}
-	.login_social a{min-height:30px; line-height:30px; padding-left:38px; margin:5px 15px;}
-	.login_social a:before{width:30px; height:30px;}
-
 	.join_area .join_box_scroll{padding:15px 10px;}
+	.login_social:before{margin-bottom:15px;}
 }
 
 @media screen and (max-width:380px){
 	.join_area .bbsView td[data-member-form="id"] .button{top:10px;}
+	.btn_area.social a{font-size:14px;}
 }
 
 @media screen and (max-width:370px){
