@@ -193,6 +193,7 @@ body[class*="ie"] [data-pop-layer="layer"] .popBox h2{height:68px; box-sizing:bo
 	.area_sitemap .gnb > li > a{font-size:20px;}
 
 	.layerPop{width:90% !important; height:auto !important;}
+	[data-pop-layer="layer"] .popBox .popConts img,
 	.layerPop img{max-width:100%; width:100%;}
 	[data-pop-layer="layer"] .popBox h2{font-size:20px !important;}
 }
