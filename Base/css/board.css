@@ -62,10 +62,10 @@ ul.bbsList li .notice:before{content:'공'; display:block; color:#fff; text-inde
 .photoList > li .img{overflow:hidden; position:relative; width:100%; padding-top:55%; background:#fff url(../images/board/no_image.gif) no-repeat 50% 50%; text-align:center; transition:opacity 0.5s ease-out 0s;}
 .photoList > li .img img{position:absolute; top:50%; left:0; width:100%; transform:translateY(-50%); transition:all 0.5s ease-out 0s;}
 .photoList > li .img i{display:block; position:absolute; top:0px; left:50%; width:100%; height:100%; background-repeat:no-repeat; background-position:50% 50%; background-size:cover; transform:translateX(-50%); transition:all 0.5s ease-out 0s;}
-.photoList > li a > em{opacity:1; min-height:27px; line-height:27px; padding-top:20px; padding-bottom:10px; border:1px solid #eaecf1; border-width:0px 1px; font-size:15px; letter-spacing:-1px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;}
+.photoList > li a > em{opacity:1; min-height:27px; line-height:27px; padding-top:20px; padding-bottom:5px; border:1px solid #eaecf1; border-width:0px 1px; font-size:15px; letter-spacing:-1px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;}
 .photoList > li a:hover .img,
 .photoList > li a:focus .img{opacity:0.7;}
-.photoList > li .write{position:relative; min-height:25px; padding-top:5px; padding-bottom:15px; border:1px solid #eaecf1; border-top-width:0px; color:#999;}
+.photoList > li .write{position:relative; min-height:25px; padding-top:0; padding-bottom:15px; border:1px solid #eaecf1; border-top-width:0px; color:#999;}
 .photoList > li .write em{display:block;}
 .photoList > li .write i{display:none; line-height:25px; padding-left:85px; text-align:right;}
 .photoList .none_data{float:none; width:100%; box-sizing:border-box; padding-top:40px; border-top:1px solid #eaecf1; border-bottom-width:0px; text-align:center;}
