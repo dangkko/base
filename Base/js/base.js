@@ -106,17 +106,17 @@ function designFile(){
 
 function designValue(){
 	if(!($('.designValue').length > 0)) return;
-	$(".designValue input, .designValue select").bind("change paste keyup", function() {
+	$(".designValue input, .designValue select, .designValue textarea").bind("change paste keyup", function() {
 		if($(this).val().length == 0){
 			$(this).parent().removeClass('active');
 		}else{
 			$(this).parent().addClass('active');
 		}				  
 	});
-	$('.designValue select, .designValue input').bind('focusin', function() {
+	$('.designValue select, .designValue input, .designValue textarea').bind('focusin', function() {
 		$(this).parent().addClass('in');						  
 	});
-	$('.designValue select, .designValue input').bind('focusout change', function() {
+	$('.designValue select, .designValue input, .designValue textarea').bind('focusout change', function() {
 		$(this).parent().removeClass('in');						  
 	});
 }
