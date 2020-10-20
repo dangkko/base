@@ -26,6 +26,10 @@
 .bbsList .reply:before{top:0px; width:1px; height:10px;}
 .bbsList .reply:after{top:10px; width:10px; height:1px;}
 .bbsList + .pagination{border-top-width:0px;}
+html[lang="en"] .bbsList td[data-table="number"] .notice:before,
+html[lang="ja"] .bbsList td[data-table="number"] .notice:before,
+html[lang="zh"] .bbsList td[data-table="number"] .notice:before,
+html[lang="ru"] .bbsList td[data-table="number"] .notice:before{content:'N';}
 
 ul.bbsList{border-top:2px solid #505c78;}
 ul.bbsList li{position:relative; padding:35px 15px; border-bottom:1px solid #eaecf1;}
@@ -50,6 +54,10 @@ ul.bbsList li .more:hover:before,
 ul.bbsList li .more:focus:before{background-position:0 -14px; right:10px; left:auto; margin-left:0px;}
 ul.bbsList li .notice{display:inline-block; width:25px; height:25px; margin-right:10px; margin-top:-5px; background:#365ec3; border-radius:50%; text-align:center; vertical-align:middle; text-indent:100%; overflow:hidden; white-space:nowrap;}
 ul.bbsList li .notice:before{content:'공'; display:block; color:#fff; text-indent:0; line-height:23px;}
+html[lang="en"] ul.bbsList li .notice:before,
+html[lang="ja"] ul.bbsList li .notice:before,
+html[lang="zh"] ul.bbsList li .notice:before,
+html[lang="ru"] ul.bbsList li .notice:before{content:'N';}
 
 /* photoList */
 .photoList{padding-bottom:15px;}
