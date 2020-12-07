@@ -29,6 +29,7 @@
 html[lang="en"] .bbsList td[data-table="number"] .notice:before,
 html[lang="ja"] .bbsList td[data-table="number"] .notice:before,
 html[lang="zh"] .bbsList td[data-table="number"] .notice:before,
+html[lang="th"] .bbsList td[data-table="number"] .notice:before,
 html[lang="ru"] .bbsList td[data-table="number"] .notice:before{content:'N';}
 
 ul.bbsList{border-top:2px solid #505c78;}
@@ -57,6 +58,7 @@ ul.bbsList li .notice:before{content:'공'; display:block; color:#fff; text-inde
 html[lang="en"] ul.bbsList li .notice:before,
 html[lang="ja"] ul.bbsList li .notice:before,
 html[lang="zh"] ul.bbsList li .notice:before,
+html[lang="th"] ul.bbsList li .notice:before,
 html[lang="ru"] ul.bbsList li .notice:before{content:'N';}
 
 /* photoList */

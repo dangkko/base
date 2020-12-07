@@ -41,7 +41,12 @@ function tableHover(){
 function tableScroll(){
 	if(!($('table.scroll').length > 0)) return;
 	$('table.scroll').wrap('<div class="scrollTable"></div>');
-	$('.scrollTable').before('<p class="mob_info">좌우로 스크롤 하시면 확인이 가능합니다.</p>');
+	$('html[lang="ko"] .scrollTable').before('<p class="mob_info">좌우로 스크롤 하시면 확인이 가능합니다.</p>');
+	$('html[lang="en"] .scrollTable').before('<p class="mob_info">You can check it by scrolling left and right.</p>');
+	$('html[lang="ja"] .scrollTable').before('<p class="mob_info">左右にスクロールして確認できます。</p>');
+	$('html[lang="zh"] .scrollTable').before('<p class="mob_info">你可以左右滚动看。</p>');
+	$('html[lang="th"] .scrollTable').before('<p class="mob_info">You can check it by scrolling left and right.</p>');
+	$('html[lang="ru"] .scrollTable').before('<p class="mob_info">Их можно прокручивать влево.</p>');
 }
 
 //faq
