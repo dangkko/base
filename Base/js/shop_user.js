@@ -5,6 +5,7 @@ $(function(){
 	shopAccor();
 	cartAccor();
 	shopLogin();
+	mypageLink();
 });
 
 $(window).load(function(){
@@ -20,7 +21,11 @@ $(function(){
 		var categoryLink = categoryLi.children('a');
 		var categoryUl = categoryLi.children('ul');
 		categoryLink.on('mouseover click',function(){
-			$(this).addClass('active').next('ul').stop().slideDown();
+			if($(this).hasClass('active')){
+				$(this).removeClass('active').next('ul').stop().slideUp();
+			}else{
+				$(this).addClass('active').next('ul').stop().slideDown();
+			}
 			return false;
 		});
 
@@ -350,5 +355,13 @@ function shopLogin(){
 			$('.area_shopLogin').find('div[data-login-tab='+linkTabNum[1]+']').show();
 		});
 		tabLink.eq(0).click();
+	});
+}
+
+function mypageLink(){
+	if(!($('.area_shopMypage .link').length > 0)) return false;
+    $('.area_shopMypage .link').each(function(){
+		var linkSize = $('a',this).length;
+		$(this).addClass('col0'+linkSize);
 	});
 }

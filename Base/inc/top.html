@@ -34,9 +34,9 @@
 		<script type="text/javascript" src="/js/custom.js"></script>
 		
 		<link rel="shortcut icon" href="/images/favicon.ico"/>
-		<meta property="og:image" content="/images/ogimage.jpg">
 		<link rel="canonical" href="<?=$site[url]?>" />
 		<link rel="alternate" href="<?=$site[url]?>" />
+		<meta property="og:image" content="/images/ogimage.jpg">
 		<meta property="og:url" content="<?=$site[url]?>" />
 		<meta property="og:title" content="<?=$site[og_title]?>" />
 		<meta name="description"  content="<?=$site[description]?>" />
@@ -54,13 +54,5 @@
 
 	</head>
 	<body>
-	<?
-		if($m_main_){
-			$popup = @mysql_fetch_array(@mysql_query("SELECT * FROM koweb_program_config WHERE id='popup'"));
-			if($popup['state'] == "Y"){
-				include $_SERVER['DOCUMENT_ROOT']."/popup/_popup.php";
-				include $_SERVER['DOCUMENT_ROOT']."/popup/layer_popup.php";
-			}
-		}
-	?>
+
 		<div id="wrap">

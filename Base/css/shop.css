@@ -12,7 +12,7 @@
 .area_shopList *[data-category-location="list"] a[data-category-location="view"].active{border-color:#333;}
 .area_shopList *[data-category-location="list"] a[data-category-location="view"].active:before{transform:rotate(180deg);}
 .area_shopList *[data-category-location="list"] > li > ul{overflow-y:auto; display:none; position:absolute; top:23px; left:12px; z-index:70; width:100%; max-height:200px; box-sizing:border-box; padding:15px; background:#fff; border:1px solid #333;}
-.area_shopList *[data-category-location="list"] > li > ul a{opacity:0.6; padding:3px 0px; font-size:14px; color:#222; transition:all 0.3s ease 0s;}
+.area_shopList *[data-category-location="list"] > li > ul a{opacity:0.6; padding:3px 0px; font-size:12px; color:#222; transition:all 0.3s ease 0s;}
 .area_shopList *[data-category-location="list"] > li > ul a:hover{opacity:1;}
 .area_shopList *[data-category-location="list"] ~ *[data-category-location="tab"]{margin-bottom:30px;}
 
@@ -674,6 +674,7 @@ html[lang="th"] .area_printOrder table.table td{font-family:'Segoe UI', "Microso
 
 @media screen and (max-width:1024px){
 	.area_shopList *[data-category-location="list"]{display:block;}
+	.area_shopList *[data-category-location="list"] > li > ul{padding:10px;}
 	.area_shopList *[data-category-location="tab"]{margin-top:0px;}
 	.area_shopList *[data-category-location="tab"] .web{display:none;}
 	.area_shopList *[data-category-location="tab"] .mob{display:block;}
