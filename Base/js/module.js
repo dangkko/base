@@ -1,6 +1,5 @@
 /* 
  * module js Document
- * KOWEB
 */ 
 
 $(window).resize(function(){ 

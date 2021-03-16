@@ -1,6 +1,5 @@
 /* 
  * estate js Document
- * KOWEB
 */
 
 $(function(){

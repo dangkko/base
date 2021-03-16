@@ -1,6 +1,5 @@
 /* 
  * base js Document
- * KOWEB
 */ 
 
 $(window).load(function(){
@@ -111,6 +110,17 @@ function designFile(){
 
 function designValue(){
 	if(!($('.designValue').length > 0)) return;
+
+	//input value empty
+	$(".designValue input").each(function(index, item){
+		if (!($(this).val().trim() == '')) {
+			$(this).parent('li').addClass('active');
+        }else{
+        	$(this).parent('li').removeClass('active');
+        }
+	});
+
+	//input value
 	$(".designValue input, .designValue select, .designValue textarea").bind("change paste keyup", function() {
 		if($(this).val().length == 0){
 			$(this).parent().removeClass('active');
