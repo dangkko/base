@@ -1,0 +1,10 @@
+@charset "utf-8";
+@import url('unable/board.css');
+@import url('custom_board.css');
+
+/* custom selection */
+::selection{background:#cac69c; color:#fff; text-shadow:none;}
+::-moz-selection{background:#cac69c; color:#fff; text-shadow:none;}
+::-webkit-selection{background:#cac69c; color:#fff; text-shadow:none;}
+
+/* custom */

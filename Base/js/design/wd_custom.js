@@ -1,20 +1,11 @@
 /* 
  * custom js Document
+ * copyright 3KKANG
+ * 작업후 필히 변환하여 wd_custom.js에 붙여주세요 http://dean.edwards.name/packer/
 */ 
 
-$(function(){
-	//ie check
-	var agent = navigator.userAgent.toLowerCase();
-	if (agent.indexOf("msie") > -1 || agent.indexOf("trident") > -1) {
-	  	$('body').addClass('ie');
-	} else if ( agent.search( "edge/" ) > -1 ){
-		$('body').addClass('ie_edge');
-	} else {
-		//나머지브라우저 컨트롤
-	}
-});
 
-$(window).load(function(){
+$(window).on('load',function(){
 	lnbSetControl();
 });
 
@@ -48,3 +39,22 @@ function lnbSetControl(){
 		$('.lnb').hide();
 	}
 }
+
+//달력테스트 지울예정
+$(function() {
+	$( ".datepicker" ).datepicker({
+		dateFormat: 'yy-mm-dd',
+		showOn: "button",		
+		prevText: '이전 달',
+		nextText: '다음 달',
+		monthNames: ['1월','2월','3월','4월','5월','6월','7월','8월','9월','10월','11월','12월'],
+		monthNamesShort: ['1월','2월','3월','4월','5월','6월','7월','8월','9월','10월','11월','12월'],
+		dayNames: ['일','월','화','수','목','금','토'],
+		dayNamesShort: ['일','월','화','수','목','금','토'],
+		dayNamesMin: ['일','월','화','수','목','금','토'],
+		showMonthAfterYear: true,
+		changeMonth: true,
+		changeYear: true,
+		//yearSuffix: '년'
+	});
+});
