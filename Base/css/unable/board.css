@@ -66,7 +66,7 @@
 html[lang="ko"] .bbsTitle{word-break:keep-all;}
 
 /* bbsNotice */
-[data-ul-list].notice{position:relative; color:#fff;}
+[data-ul-list].notice{position:relative; color:#fff; font-size:0px;}
 [data-ul-list].notice:before{content:'공지'; display:block; position:absolute; top:50%; left:50%; padding:2px 5px; background:#1637a2; color:#fff; font-size:12px; font-weight:300; transform:translate(-50%, -50%);}
 html[lang="en"] [data-ul-list].notice:before,
 html[lang="ja"] [data-ul-list].notice:before,
@@ -378,6 +378,7 @@ table.table td [data-bbs-write="address"] > span input[type="text"]{width:100%; 
 [data-bbs-write="file"] .file .designCheck label:last-child{margin-right:0px;}
 [data-bbs-write="file"] .file .img{overflow:hidden; display:inline-block; position:relative; width:50px; margin-right:10px; padding-top:35px; vertical-align:middle;}
 [data-bbs-write="file"] .file .img img{position:absolute; top:0px; left:50%; height:100%; transform:translateX(-50%);}
+[data-bbs-write="file"] .file.edit ~ .file{flex:none; width:100%;}
 .ie [data-bbs-write="tel"] select,
 .ie [data-bbs-write="tel"] input[type="text"]{width:calc(100% / 3 - 5.1px);} 
 .ie [data-bbs-write="file"] .file > a{max-width:calc(100% - 130px); white-space:nowrap;}
@@ -744,6 +745,8 @@ input[type="text"].datepicker{width:110px; font-size:14px;}
 	[data-list="schedule"] .control > div a[class^="btn_"]:before{width:9px; height:14px; background-image:url(../../images/module/img_calendar01@x2.png);}
 	[data-list="schedule"].type02 .calendar table td > *{padding-right:5px; padding-left:5px;}
 	[data-list="schedule"].type02 .calendar *[data-calenda="in"]{font-size:12px;}
+
+	.secret_area .button{line-height:inherit; height:auto;}
 }
 
 @media screen and (max-width:900px){

@@ -88,6 +88,10 @@ function btnDesign(){
 	$('a.button').wrapInner('<span></span>');
 	$('label.button').wrapInner('<span></span>');
 	$('button.button').wrapInner('<span></span>');
+
+	$('a.button span').find('span').unwrap();
+	$('button.button span').find('span').unwrap();
+	$('label.button').find('span').unwrap();
 }
 
 //table hover
