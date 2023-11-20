@@ -1,20 +1,19 @@
 /* 
  * base js Document
- * 작업후 필히 변환하여 wd_base.js에 붙여주세요 http://dean.edwards.name/packer/
 */ 
 
 $(function(){
 	is_ie();
-	letSet();
 	tooltip();
 	hasBtn();
 });
 
 $(window).on('load',function(){
-	scrollBar();
+	letSet();
 	btnDesign();
 	tableScroll();
 	tableHover();
+	bbsDesignLi();
 	designFile();
 	designValue();
 	faqBtn();
@@ -46,6 +45,7 @@ function is_ie(){
 	var agent = navigator.userAgent.toLowerCase();
 	if (agent.indexOf("msie") > -1 || agent.indexOf("trident") > -1) {
 	  	$('body').addClass('ie');
+	  	$('body').append('<div id="update"><div>보고계신 사이트는 <b>마이크로소프트 엣지에 최적화 된</b> 사이트 입니다. Windows Internet Explorer에서 <b>업데이트</b>를 받으세요 <a href="https://www.microsoft.com/ko-kr/edge" target="_blank" title="새창">Microsoft Edge 업데이트하기</a><p>크롬, 네이버웨일, 오페라, 파이어폭스 기타 브라우저로도 확인이 가능합니다.</div></div>');
 	} else if ( agent.search( "edge/" ) > -1 ){
 		$('body').addClass('ie_edge');
 	} else {
@@ -65,33 +65,15 @@ function is_firefox(){
 	return /Firefox/.test(navigator.userAgent);
 }
 
-//scrollBar
-function scrollBar(){
-	if(!($('.scrollbar-inner, .scrollbar-dynamic').length > 0)) return;
-	var scrollInit = $('#container').data('width'); //값선언
-	jQuery('.scrollbar-inner, .scrollbar-dynamic').scrollbar();
-	var widthMatch = matchMedia('all and ('+ scrollInit +')');
-	var widthHandler = function(matchList) {
-		if (matchList.matches) {
-			jQuery('.scrollbar-inner, .scrollbar-dynamic').scrollbar('destroy');
-		} else {
-			jQuery('.scrollbar-inner, .scrollbar-dynamic').scrollbar();
-		}
-	};
-	widthMatch.addListener(widthHandler);
-	widthHandler(widthMatch);
-}
-
-//button
 function btnDesign(){
-	if(!($('.button').length > 0)) return;
+	//button
 	$('a.button').wrapInner('<span></span>');
-	$('label.button').wrapInner('<span></span>');
 	$('button.button').wrapInner('<span></span>');
-
+	$('label.button').wrapInner('<span></span>');
+	
 	$('a.button span').find('span').unwrap();
 	$('button.button span').find('span').unwrap();
-	$('label.button').find('span').unwrap();
+	$('label.button span').find('span').unwrap();
 }
 
 //table hover
@@ -121,47 +103,61 @@ function tableScroll(){
 
 //faq
 function faqBtn(){
-	if(!($('.bbsList.faq').length > 0)) return;
-	var faqLink = $('.bbsList.faq > li > a'),
-	faqConts = $('.bbsList.faq [data-ul-list="conts"]');
-	$('.bbsList.faq > li').each(function(){
-		$('.bbsList.faq > li > a').on('click',function(e){
-			var hrefInfo = $(this).attr('href'); 
-			if(!(hrefInfo == '#' || hrefInfo == '')){
-				return
-			}else{
-				e.preventDefault();
-				if($(this).parent().hasClass('active')){
-					$(this).parent().removeClass('active').children('div').stop().slideUp('',function(){
-	    				$(this).removeAttr('style');
-	    			});
-				}else{
-					faqLink.parent().removeClass('active');
-					faqConts.stop().slideUp('',function(){
-	    				$(this).removeAttr('style');
-	    			});
-					$(this).parent().addClass('active').children('div').stop().slideDown();
-				}
-			}
+	if(!($('.faqList').length > 0)) return;
+	$('.faqList').each(function(){
+		var faqLink = $('.faqList dt a');
+		$('.faqList dt a').on('click',function(){
+			faqLink.removeClass('on');
+			$('.faqList dd').slideUp('fast');
+			$(this).addClass('on').parent().next('dd').stop().slideDown('fast');
+			return false;
 		});
-	});
-	
-	var myTimer
-	, widSize = $(window).width();
-	$(window).resize(function(){
-		clearTimeout(myTimer);
-		myTimer = setTimeout(function(){
-			var mainWid = $(window).width();
-			if(widSize != mainWid){
-				faqLink.parent().removeClass('active');
-				faqConts.stop().slideUp('',function(){
-					$(this).removeAttr('style');
-				});
-			}
-		},350);
+		
+		faqLink.eq(0).click();
 	});
 }
 
+//li bbs
+function bbsDesignLi(){
+	if(!($('.bbsList').length > 0)) return;
+	$('ul.bbsList li').each(function(){
+		var bbsLink = $(this).find('.subject');
+		bbsLink.hover(function(){
+			$('ul.bbsList li .more').removeClass('active');
+			$(this).parent().find('.more').addClass('active');
+		});
+	})
+	$('ul.bbsList').mouseleave(function(){
+		$('ul.bbsList li .more').removeClass('active');
+	});
+}
+
+function designValue(){
+	if(!($('.designValue').length > 0)) return;
+	//input value empty
+	$(".designValue input").each(function(index, item){
+		if (!($(this).val().trim() == '')) {
+			$(this).parent('li').addClass('active');
+        }else{
+        	$(this).parent('li').removeClass('active');
+        }
+	});
+	$(".designValue input, .designValue select, .designValue textarea").bind("change paste keyup", function() {
+		if($(this).val().length == 0){
+			$(this).parent().removeClass('active');
+		}else{
+			$(this).parent().addClass('active');
+		}				  
+	});
+	$('.designValue select, .designValue input, .designValue textarea').bind('focusin', function() {
+		$(this).parent().addClass('in');						  
+	});
+	$('.designValue select, .designValue input, .designValue textarea').bind('focusout change', function() {
+		$(this).parent().removeClass('in');						  
+	});
+}
+
+//input file design
 function designFile(){
 	if(!($('.designFile').length > 0)) return;
 	if(is_mob()){
@@ -194,33 +190,9 @@ function designFile(){
 	}
 }
 
-function designValue(){
-	if(!($('.designValue').length > 0)) return;
-	//input value empty
-	$(".designValue input").each(function(index, item){
-		if (!($(this).val().trim() == '')) {
-			$(this).parent('li').addClass('active');
-        }else{
-        	$(this).parent('li').removeClass('active');
-        }
-	});
-	$(".designValue input, .designValue select, .designValue textarea").bind("change paste keyup", function() {
-		if($(this).val().length == 0){
-			$(this).parent().removeClass('active');
-		}else{
-			$(this).parent().addClass('active');
-		}				  
-	});
-	$('.designValue select, .designValue input, .designValue textarea').bind('focusin', function() {
-		$(this).parent().addClass('in');						  
-	});
-	$('.designValue select, .designValue input, .designValue textarea').bind('focusout change', function() {
-		$(this).parent().removeClass('in');						  
-	});
-}
-
+//top
 function hasBtn(){
-	$(".hasLink").on('click', function(event) {
+	$(".btn_top, .hasLink").on('click', function(event) {
 		if (this.hash !== "") {
 			event.preventDefault();
 			var hash = this.hash;
@@ -331,7 +303,6 @@ $(window).on('load',function(){
 	if($('.area_sitemap').length > 0){
 		var gnbSite = $('#header nav').html();
 		$('.area_sitemap').append(gnbSite);
-		$('.area_sitemap > ul > li > a').wrapInner('<span></span>');
 	}
 });
 

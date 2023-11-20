@@ -1,11 +1,16 @@
 /* 
  * module js Document
- * copyright 3KKANG
- * 작업후 필히 변환하여 wd_module.js에 붙여주세요 http://dean.edwards.name/packer/
 */ 
 
+$(window).resize(function(){ 
+	calendarH();
+});
+
 $(window).on('load',function(){
+	calendarH();
+	calendarSlider();
 	treeUI();
+	shopSlide();
 	productView();
 });
 
@@ -52,21 +57,42 @@ function treeUI(){
 	});
 }
 
-//productView
-function productView(){
-	if(!($('[data-bbs-view="imgView"]').length > 0)) return;
-	$('[data-bbs-view="imgView"] ul a').on('click mouseover',function(){
-		var proSrc = $(this).children('img').attr('src');
-		$('[data-bbs-view="imgView"] ul a').removeClass('active');
-		$('[data-bbs-view="imgView"] span').removeClass('spanNone');
-		$(this).addClass('active');
-		$('[data-bbs-view="imgView"] span').children('img').attr('src', proSrc);
-		
-		var proSrcNo = proSrc.split('/');
-		if(proSrcNo.indexOf('no_image.png') != -1){
-			$('[data-bbs-view="imgView"] span').addClass('spanNone');
-		}
+//calendar
+function calendarH(){	
+	var calendarHeight = $('.area_calendar .calendar').outerHeight();
+	$('.area_calendar .list').css('height',calendarHeight+'px');
+}
 
-		return false;
+function calendarSlider(){	
+	if(!($('.area_calendar').length > 0)) return;
+	$('.area_calendar .slide').bxSlider({
+		mode:'horizontal',
+		auto:false,
+		controls:true,
+		pager:false,
+		prevText:'이전',
+		nextText:'다음',
+	});
+}
+
+//shop View
+function shopSlide(){
+	if(!($('.shopPhoto').length > 0)) return;
+	$('.shopPhoto .list').bxSlider({
+		auto:true,
+		mode:'horizontal',
+		//adaptiveHeight:true,
+		controls:false,
+	});		
+}
+
+//product
+function productView(){
+	if(!($('.productView').length > 0)) return;
+	$('.productView .img ul a').hover(function(){
+		var proSrc = $(this).children('img').attr('src');
+		$('.productView .img ul a').removeClass('active');
+		$(this).addClass('active');
+		$('.productView .img span').children('img').attr('src', proSrc);
 	});
 }

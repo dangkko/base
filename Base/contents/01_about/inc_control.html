@@ -1,0 +1,24 @@
+<?
+$basename = basename($_SERVER['PHP_SELF']);
+$file_ = explode(".", $basename);	
+$common_ = substr($file_[0], 0, 5); //파일명 sub01까지 짜를때 3차가 있는경우 부모를 on할때 사용
+?>
+
+<script>
+	let pageName="about" //page name선언
+
+	$('.gnb > li > a').removeClass('on');
+	$('[data-gnbName="'+ pageName +'"]').addClass('on');
+	$('[data-gnbName="'+ pageName +'_<?=$file_[0]?>"]').addClass('on');
+	$('[data-gnbName="'+ pageName +'_<?=$common_?>"]').addClass('on');
+	$('[data-gnbName="'+ pageName +'_<?=$common_?>"]').parent('li').addClass('active');
+
+	if("<?=$board_id?>"){
+	//게시판일경우
+		$('[data-gnbName="<?=$board_id?>"]').addClass('on');
+		$('[data-gnbName="<?=$board_id?>"]').parent('li').addClass('active');
+	}
+
+	//서브비쥬얼 컨트롤
+	$('.area_sub_visual').attr('data-sublayout', pageName);
+</script>

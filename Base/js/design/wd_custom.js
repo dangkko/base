@@ -1,7 +1,5 @@
 /* 
  * custom js Document
- * copyright 3KKANG
- * 작업후 필히 변환하여 wd_custom.js에 붙여주세요 http://dean.edwards.name/packer/
 */ 
 
 
@@ -15,7 +13,7 @@ function lnbSetControl(){
 	//gnb 1depth on check
 	if($('#header nav .gnb > li').children('a').hasClass('on')){
 		//1depth on true 2depth save
-		var gnbHtml = $('#header nav .gnb > li > a.on').next('ul').html();
+		var gnbHtml = $('#header nav .gnb > li > a.on').next('.box').html();
 		//lnb add Html
 		$('.lnb').append(gnbHtml);
 		//nav.lnb ul add html
@@ -25,7 +23,7 @@ function lnbSetControl(){
 		//lnb link #container add
 		$('.lnb ul > li').each(function(){
 			var lnbLink = $(this).find('a').attr('href');
-			$(this).find('a').attr('href',lnbLink + '#container');
+			$(this).find('a').attr('href',lnbLink + '#content');
 		});	
 
 		//gnb menu on text
@@ -40,21 +38,3 @@ function lnbSetControl(){
 	}
 }
 
-//달력테스트 지울예정
-$(function() {
-	$( ".datepicker" ).datepicker({
-		dateFormat: 'yy-mm-dd',
-		showOn: "button",		
-		prevText: '이전 달',
-		nextText: '다음 달',
-		monthNames: ['1월','2월','3월','4월','5월','6월','7월','8월','9월','10월','11월','12월'],
-		monthNamesShort: ['1월','2월','3월','4월','5월','6월','7월','8월','9월','10월','11월','12월'],
-		dayNames: ['일','월','화','수','목','금','토'],
-		dayNamesShort: ['일','월','화','수','목','금','토'],
-		dayNamesMin: ['일','월','화','수','목','금','토'],
-		showMonthAfterYear: true,
-		changeMonth: true,
-		changeYear: true,
-		//yearSuffix: '년'
-	});
-});

@@ -1,0 +1,23 @@
+			<? if(!($m_main_)){?>
+				</main>
+			</div>
+			<? } ?>
+				
+			<footer id="footer">
+				<a href="javascript:;" onclick="javascript:showPopup(personal);">개인정보처리방침</a>		
+				<a href="javascript:;" onclick="javascript:showPopup(consent);">개인정보수집 및 이용동의</a>		
+				<a href="javascript:;" onclick="javascript:showPopup(refuse_email);">이메일 무단수집거부</a
+			</footer>
+			
+			<!-- 개인정보처리방침내용 -->
+			<? include $_SERVER['DOCUMENT_ROOT'] . "/inc/inc_personal.html"; ?>		
+			
+			<!-- 개인정보수집 및 이용동의 -->
+			<? include $_SERVER['DOCUMENT_ROOT'] . "/inc/inc_consent.html"; ?>
+			
+			<!-- 이메일 무단수집거부 -->
+			<? include $_SERVER['DOCUMENT_ROOT'] . "/inc/inc_refuse_email.html"; ?>
+
+		</div>
+	</body>
+</html>

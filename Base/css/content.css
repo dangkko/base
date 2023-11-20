@@ -2,4 +2,15 @@
 
 /* 
  * content CSS Document
+ *
  */
+
+/* form active */
+.cus_design{max-width:400rem;}
+.cus_design > ul > li{display:block; position:relative; margin:3rem 0px;}
+.cus_design input[type="text"]{width:100%; height:45rem;}
+.cus_design select{width:100%; height:45rem;}
+.cus_design label{position:absolute; left:10px; top:50%; width:90%; box-sizing:border-box; padding:0 5rem; background:#fff; transform:translateY(-50%);}
+.cus_design .in label{color:#1637a2;}
+.cus_design .active label{top:10%; width:auto; font-size:11rem;}
+.cus_design [data-form-design="select"] label{top:10%; width:auto; font-size:12rem; font-weight:500;}

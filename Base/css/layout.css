@@ -1,10 +1,52 @@
 @charset "utf-8";
 @import url('unable/board.css');
+@import url('unable/board_renew.css');
 @import url('custom_board.css');
 
-/* custom selection */
-::selection{background:#cac69c; color:#fff; text-shadow:none;}
-::-moz-selection{background:#cac69c; color:#fff; text-shadow:none;}
-::-webkit-selection{background:#cac69c; color:#fff; text-shadow:none;}
+/*
+ * layout.css.css
+ * 레이아웃 공통요소들 작업요소에 맞게 수정하시면됩니다.
+ *
+ * 1) root 설정
+ * 2) 폰트설정
+ * 3) 레이아웃설정
+ *
+ */
 
-/* custom */
+/* 1) root 설정  */
+:root{
+	--color-base:#222; /* 선언이 안되면 #333 기본컬러로 적용됨 */
+	--color-point:;
+	--color-white:#fff;
+	--color-black:#000;
+	--font-base:16rem;
+}
+
+/* 2) 폰트설정 */
+body{font-size:var(--font-base, 16rem);}
+@media (min-width:1921px){
+	html{font-size:0.052vw /* 1px */;}
+}
+@media (max-width:1500px){
+	html{font-size:0.067vw /* 1px */;}
+}
+@media (max-width:1300px){
+    html{font-size:0.077vw /* 1px */;}
+}
+@media (max-width:1024px){
+    html{font-size:0.098vw /* 1px */;}
+}
+@media (max-width:768px){
+    html{font-size:0.130vw /* 1px */;}
+}
+@media (max-width:620px){
+    html{font-size:0.161vw /* 1px */;}
+}
+@media (max-width:480px){
+    html{font-size:0.9px /* 1px */;}	
+}
+@media (max-width:360px){
+    html{font-size:0.278vw /* 1px */;}	
+}
+
+/* 3) 레이아웃설정 */

@@ -5,102 +5,123 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">		
 		<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
 		<meta name="format-detection" content="telephone=no">
-		<title>홈페이지타이틀</title>
-		<link rel="stylesheet" type="text/css" href="/css/unable/common.css?ver=1.1"/>
+		<title>홈페이지 타이틀</title>
+		<link rel="stylesheet" type="text/css" href="/css/unable/common.css?ver=20231120"/>
 		<link rel="stylesheet" type="text/css" href="/js/jquery-ui.css"/>
 		<link rel="stylesheet" type="text/css" href="/js/design/swiper-bundle.min.css"/> <!-- slide -->
-		<link rel="stylesheet" type="text/css" href="/css/layout.css?ver=1.1"/>
-		<link rel="stylesheet" type="text/css" href="/css/main.css?ver=1.1"/><!-- main에서만 사용 -->
+		<link rel="stylesheet" type="text/css" href="/js/jquery.scrollbar.css"/> <!-- scrollbar -->
+		<link rel="stylesheet" type="text/css" href="/css/layout.css?ver=20231120"/>
+		<link rel="stylesheet" type="text/css" href="/css/main.css?ver=20231120"/><!-- main에서만 사용 -->
 
-		<script type="text/javascript" src="/js/jquery-3.6.0.min.js"></script>
-		<script type="text/javascript" src="/js/jquery-ui.js"></script>
-		<script type="text/javascript" src="/js/design/swiper-bundle.min.js"></script> <!-- slide -->
-		<script type="text/javascript" src="/js/design/wd_base.js"></script>
-		<script type="text/javascript" src="/js/design/wd_module.js"></script>
-		<script type="text/javascript" src="/js/design/wd_custom.js"></script>
+		<script src="/js/jquery-3.6.0.min.js"></script>
+		<script src="/js/jquery-ui.js"></script>
+		<script src="/js/design/swiper-bundle.min.js"></script> <!-- slide -->
+		<script src="/js/jquery.scrollbar.js"></script> <!-- scrollbar -->
+		<script src="/js/design/wd_base.js"></script>
+		<script src="/js/design/wd_module.js"></script>
+		<script src="/js/design/wd_custom.js"></script>
 		
-		<!--[if lte IE 10]>
-			<script type="text/javascript">
-				 document.write('<div id="update">보고계신 사이트는 <b>마이크로소프트 엣지에 최적화 된</b> 사이트 입니다. Windows Internet Explorer를 <b>업데이트</b>를 받으세요 <a href="https://www.microsoft.com/ko-kr/edge" target="_blank" title="새창">Microsoft Edge 업데이트하기</a></div>');
-			</script>
-		<![endif]-->
-
-		<!--[if lte IE 10]>
-			<script type="text/javascript">
-				 document.write('<div id="update">보고계신 사이트는 <b>익스플로러11에 최적화 된</b> 사이트 입니다. Windows Internet Explorer를 <b>업데이트</b>를 받으세요 <a href="http://windows.microsoft.com/ko-KR/internet-explorer/downloads/ie" target="_blank" title="새창">Internet Explorer 업데이트하기</a></div>');
-			</script>
-		<![endif]-->
+		<link rel="shortcut icon" href="/images/favicon.ico"/>
+		<meta property="og:image" content="/images/ogimage.jpg">
+		
+		<link rel="canonical" href="<?=$site[url]?>" />
+		<link rel="alternate" href="<?=$site[url]?>" />
+		<meta property="og:url" content="<?=$site[url]?>" />
+		<meta property="og:title" content="<?=$site[og_title]?>" />
+		<meta name="description"  content="<?=$site[description]?>" />
+		<meta property="og:description" content="<?=$site[og_description]?>" />
+		<meta property="og:site_name" content="<?=$site[og_site_name]?>" />
+		<meta property="naver-site-verification" content="<?=$site[naver_tag]?>" />
+		<meta name="google-site-verification" content="<?=$site[google_tag]?>" />
+		<meta property="og:type" content="website" />
 	</head>
 	<body>
 		<div id="skip_menu">
 			<a href="#content">본문 바로가기</a>
 		</div>
+		
 		<div id="wrap">
 			<!-- header -->
 			<header id="header">
-				<div class="area_util">						
-				</div>
-
+				<h1><a href="/">로고명칭</a></h1>
 				<!-- gnb -->
 				<nav>
 					<ul class="gnb">
-						<li><a href="#">1메뉴</a>
-							<ul>
-								<li><a href="#">1-1메뉴</a></li>
-								<li><a href="#">1-2메뉴</a></li>
-							</ul>
+						<li><a href="/contents/01_about/sub01.html" data-gnbName="about"><span>1메뉴</span></a>
+							<div class="box">
+								<ul>
+									<li><a href="/contents/01_about/sub01.html" data-gnbName="about_sub01"><span>1-1메뉴</span></a></li>
+									<li><a href="/contents/01_about/sub02.html" data-gnbName="about_sub02"><span>1-2메뉴</span></a></li>
+								</ul>
+							</div>
+						</li>
+						<li><a href="/contents/02_content/sub01.html" data-gnbName="content"><span>2메뉴</a>
+							<div class="box">
+								<ul>
+									<li><a href="/contents/02_content/sub01.html" data-gnbName="content_sub01"><span>2-1메뉴</span></a></li>
+									<li><a href="/contents/02_content/sub02.html" data-gnbName="content_sub02"><span>2-2메뉴</span></a></li>
+									<li><a href="/contents/02_content/sub03.html" data-gnbName="content_sub03"><span>2-3메뉴</span></a></li>
+									<li><a href="/contents/02_content/sub04.html" data-gnbName="content_sub04"><span>2-4메뉴</span></a></li>
+								</ul>
+							</div>
 						</li>
 					</ul>
 				</nav>
 				<!-- //gnb -->
+				
+				<div class="area_util">		
+					로그인 및 상단바로가기				
+				</div>
 			</header>
 			<!-- //header -->
 
-			<!-- visual -->
-			<div class="area_visual">
+			<!-- visual or sub visual -->
+			<div>
+				메인 비쥬얼 및 서브비쥬얼
 			</div>
-			<!-- //visual -->
+			<!-- //visual or sub visual -->
+			
+			<!-- lnb -->
+			<div class="area_lnb" id="lnb">
+				<nav class="lnb">
+				</nav>
+			</div>
+			<!-- //lnb -->
+
+			<!-- snb -->
+			<div class="snb">
+				<ul>
+					<li><a href="#">1-1-1메뉴</a></li>
+					<li><a href="#">1-1-2메뉴</a></li>
+				</ul>
+			</div>
+			<!-- //snb -->
 
 			<div id="container">
-				<!-- lnb -->
-				<nav class="lnb">
-					<ul>
-						<li><a href="#">1-1메뉴</a></li>
-						<li><a href="#">1-2메뉴</a></li>
-					</ul>
-				</nav>
-				<!-- //lnb -->
-
-				<!-- snb -->
-				<div class="snb">
-					<ul>
-						<li><a href="#">1-1-1메뉴</a></li>
-						<li><a href="#">1-1-2메뉴</a></li>
-					</ul>
-				</div>
-				<!-- //snb -->
-
-				<!-- tab -->
-				<div class="area_tab">
-					<ul>
-						<li><a href="#">1-1-1-1탭</a></li>
-						<li><a href="#">1-1-1-2탭</a></li>
-					</ul>
-				</div>
-				<!-- //tab -->
-
+				<main id="content">
 				<!-- 본문 -->
-				<div id="content">
-					내용
-				</div>
-				<!-- //본문 -->
+				
+					<!-- tab -->
+					<div class="area_tab">
+						<ul>
+							<li><a href="#">1-1-1-1탭</a></li>
+							<li><a href="#">1-1-1-2탭</a></li>
+						</ul>
+					</div>
+					<!-- //tab -->
+					
 
-				<!-- aside -->
-				<aside class="area_aside">
-					사이드 내용 배너 ,광고, 등
-				</aside>
-				<!-- //aside -->
+				
+					
+				<!-- //본문 -->
+				</main>
 			</div>
+			
+			<!-- aside -->
+			<aside class="area_aside">
+				사이드 내용 배너 ,광고, 퀵바등
+			</aside>
+			<!-- //aside -->
 
 			<!-- footer -->
 			<footer id="footer">
