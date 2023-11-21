@@ -187,8 +187,8 @@ input.button_new{height:52rem; line-height:52rem;}
 .ko_board_list[data-type] > li{border:1rem solid #e5e5e5; box-shadow:0 0 50rem 0 rgb(0 0 0 / 0%); transition:all 0.3s ease;}
 
 .ko_board_list[data-type="A"]{grid-template-columns:1fr 1fr 1fr; gap:40rem;}
-.ko_board_list[data-type="A"] > li a{display:block; position:relative; box-sizing:border-box; padding:50rem 50rem 65rem;}
-.ko_board_list[data-type="A"] [data-board="tit"]{display:-webkit-box; overflow:hidden; height:60rem; line-height:1.4; font-size:22rem; color:#111; letter-spacing:-0.5rem; -webkit-line-clamp:2; -webkit-box-orient:vertical; text-overflow:ellipsis; word-break:break-all;}
+.ko_board_list[data-type="A"] > li a{display:block; position:relative; box-sizing:border-box; padding:clamp(25rem, 4.1667vw, 50rem) clamp(20rem, 2.7778vw, 50rem) clamp(25rem, 4.1667vw, 65rem);}
+.ko_board_list[data-type="A"] [data-board="tit"]{display:-webkit-box; overflow:hidden; height:clamp(46rem, 4.1667vw, 60rem); line-height:1.4; font-size:clamp(18rem, 1.5278vw, 22rem); color:#111; letter-spacing:-0.5rem; -webkit-line-clamp:2; -webkit-box-orient:vertical; text-overflow:ellipsis; word-break:break-all;}
 .ko_board_list[data-type="A"] [data-board="con"]{display:-webkit-box; overflow:hidden; height:5em; line-height:1.6; margin-top:23rem; font-size:16rem; -webkit-line-clamp:3; -webkit-box-orient:vertical; text-overflow:ellipsis; word-break: break-all;}
 .ko_board_list[data-type="A"] [data-board="con"] br{display:none;}
 .ko_board_list[data-type="A"] .board_info_con{display:inline-flex; align-items:center; position:relative; margin-top:110rem;}
