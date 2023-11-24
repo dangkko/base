@@ -23,7 +23,7 @@
 #update{position:fixed; top:0px; left:0px; z-index:99; width:100%; background:#1a1b1d; text-align:center; font-weight:300; color:#f9ed89;}
 #update a{display:inline-block; margin-left:10rem; color:#ff7f7f;}
 	/* skip navigation */
-#skip_menu{position:relative; height:0px; z-index:9999; text-align:center;}
+#skip_menu{height:0px; z-index:9999; text-align:center;}
 #skip_menu a{display:block; position:absolute; top:-35rem; left:0px; z-index:9999; height:33rem; line-height:31rem; box-sizing:border-box; padding:0 10rem; background:#fcfcfc; border:2rem solid #262626; border-top-width:0; color:#555; font-size:14rem;}
 #skip_menu a:hover,
 #skip_menu a:focus,
