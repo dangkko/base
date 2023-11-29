@@ -14,9 +14,6 @@ textarea{overflow:auto;}
 input[type=submit],
 input[type=button],
 button{cursor:pointer;}
-input[type=submit],
-input[type=button],
-button{cursor:pointer;}
 img{vertical-align:top;}
 address, em, i{font-style:normal;}
 table{border-spacing:0; border-collapse:collapse;}

@@ -97,23 +97,25 @@
 .bbsControls ul li a:hover p{color:#333;}
 
 .check_con{display:flex; justify-content:flex-start; align-items:center; position:relative; line-height:1.3; padding-left:32rem; font-size:15rem; cursor:pointer; -webkit-user-select:none; -moz-user-select:none; -ms-user-select:none; user-select:none;}
-.check_con > em{margin-left:11rem; letter-spacing:-0.015rem; white-space:nowrap;}
+.check_con > em{margin-left:11rem; white-space:nowrap;}
 .check_con input{position:absolute; opacity:0; width:0; height:0; cursor:pointer;}
-.check_con .checkmark{position:relative; width:22rem; height:22rem; border:1rem solid #d1d1d1; transition:all 0.2s ease 0s;}
+.check_con .checkmark{position:relative; width:22rem; height:22rem; background-color:#fff; border:1rem solid #d1d1d1; transition:all 0.2s ease 0s;}
 .check_con input:checked ~ .checkmark{border:1rem solid #282828;}
 .check_con .checkmark:after{content:""; display:none; position:absolute;}
 .check_con input:checked ~ .checkmark:after{display:block; transform:rotate(45deg) scale(1); -webkit-transform:rotate(45deg) scale(1); -ms-transform:rotate(45deg) scale(1);}
 .check_con .checkmark:after{top:5rem; left:8rem; width:4rem; height:8rem; border:solid #444; transition:all 1s ease 0s; transform:rotate(45deg) scale(0); -webkit-transform:rotate(45deg) scale(0); -ms-transform:rotate(45deg) scale(0); border-width:0 2rem 2rem 0;}
 
-.bbsNew_container .box_privacy textarea{line-height:1.5; padding:30rem !important; font-size:15rem; color:#444; outline:none;}
-.bbsNew_container .designRadio.agree{display:flex; justify-content:flex-end;}
+.bbsNew_container .box_privacy textarea{line-height:1.5; padding:30rem !important; margin:0; border-radius:5rem 5rem 0 0; font-size:15rem; color:#444; outline:none;}
+.bbsNew_container .box_privacy .check_con{padding-left:0;}
+.bbsNew_container .designRadio.agree{display:flex; align-items:center; min-height:55rem; margin-top:0px; padding:0 25rem; background:#fafafa; border:1rem solid #ececec; border-top-width:0; border-radius:0 0 5rem 5rem; font-weight:500;}
 .bbsNew_container .scroll-textarea{min-height:250rem;}
 .bbsNew_container .scroll-textarea{border:1rem solid #ddd;}
 
 .bbsForm input[type="text"],
 .bbsForm input[type=email],
 .bbsForm input[type=tel],
-.bbsForm input[type=number]{height:52rem; margin:0; padding:0 15rem; transition:all 0.3s ease 0s; outline:none;}
+.bbsForm input[type=number],
+.bbsForm select{height:52rem; margin:0; padding:0 15rem; transition:all 0.3s ease 0s; outline:none;}
 .bbsForm input[type="text"]:focus,
 .bbsForm textarea:focus,
 .bbsForm input[type="text"]:hover,
@@ -127,12 +129,15 @@
 .bbsForm .marking{top:-5rem; margin-bottom:0; margin-left:5rem;}
 .bbsForm textarea{padding:15rem; transition:all 0.3s ease 0s; min-height:230rem; outline:none;}
 .bbsForm_data.mg{margin-top:20rem;}
-.bbsForm .designFile{display:flex; align-items:center;}
+.bbsForm .designFile{display:flex; align-items:center; border-radius:0;}
+.bbsForm .designFile{--heightSize:52rem;}
 .bbsForm .designFile + .designFile{margin-top:6rem;}
 .bbsForm .designFile label{margin-bottom:0; margin-left:5rem; font-size:14rem;}
 .bbsForm .caption{margin-top:10rem; font-size:14rem; color:#c51917;}
 .bbsForm  input[readonly],
 .bbsForm input[disabled]{background:#f3f3f3;}
+.bbsForm .designRadio,
+.bbsForm .designCheck{display:flex; flex-wrap:wrap; align-items:center; gap:3rem 50rem;}
 
 .wdt30{width:327rem;}
 .wdt50{width:500rem;}
@@ -153,13 +158,13 @@
 .data_address ul li{display:flex; align-items:center;}
 .data_address ul li > a{margin-left:8rem;}
 
-.data_email{display:flex; align-items:center; flex-wrap:wrap; max-width:840rem; width:100%; position:relative;}
-.data_email > div{display:flex; align-items:center;}
+.data_email{display:flex; align-items:center; flex-wrap:wrap; width:100%; position:relative;}
+.data_email > div{display:flex; align-items:center; width:100%;}
 .data_email > div > i{margin:0 8rem;}
 .data_email .designSelect{margin:0 4rem;}
 
 .data-spam .inr{display:flex; align-items:stretch; line-height:48rem;}
-.data-spam span{display:block; position:relative; margin-right:5rem; padding:0px 23rem; border:2rem solid; font-size:15rem; font-weight:700;}
+.data-spam span{display:block; position:relative; margin-right:5rem; padding:0px 23rem; background:#222; color:#fff; font-size:15rem; font-weight:700;}
 /* .data-spam span::before{content:"스팸방지"; margin-right:6rem; font-weight:500;} */
 
 .button_new{min-width:100rem; height:50rem; line-height:50rem; padding:0 0px; background:#fff; border:1rem solid #393939; font-size:14rem; text-align:center; transition:all 0.2s ease 0s; cursor:pointer;}
@@ -172,7 +177,7 @@ input.button_new{height:52rem; line-height:52rem;}
 /* NEW ver.1.0.3 */
 .bbsContent .bbsFile{margin-top:20rem;}
 
-.bbsSearch[data-type="A"] .button{position:absolute; top:0; right:0; width:44rem; height:44rem; margin-left:0; min-width:auto; background-color:transparent; background-image:url(../../images/board/icon_search.svg); background-repeat:no-repeat; background-position:center; background-size:19rem; font-size:0; }
+.bbsSearch[data-type="A"] .search_input .button{position:absolute; top:0; right:0; width:44rem; height:44rem; margin-left:0; min-width:auto; background-color:transparent; background-image:url(../../images/board/icon_search.svg); background-repeat:no-repeat; background-position:center; background-size:19rem; font-size:0; }
 .bbsSearch[data-type="A"] form{display:flex; justify-content:flex-end; margin-bottom:0; padding:20rem 0; background:none;}
 .bbsSearch[data-type="A"] select{width:106rem; padding:0 5rem; background:#fff url(../../images/board/arr_search_select.svg) no-repeat 96% 50% /10rem; border:0; border-radius:0; outline:none;}
 .bbsSearch[data-type="A"] input[type=text]{width:300rem; margin:0; margin-left:15rem; padding:0;}
@@ -180,6 +185,7 @@ input.button_new{height:52rem; line-height:52rem;}
 .bbsSearch[data-type="A"] input[type=text]{height:48rem; border-bottom:1rem solid #ccc;}
 .bbsSearch[data-type="A"] input[type=text]::placeholder{color:#cfcfcf;}
 .bbsSearch[data-type="A"] .search_input{position:relative;}
+.bbsSearch[data-type="A"] .btn{margin-left:5rem;}
 .bbsSearch[data-type="A"] select + select{margin-left:14rem;}
 
 .ko_board_list[data-type] .file{display:inline-block; position:relative; top:2rem; width:16rem; height:19rem; margin:0 5rem -2rem 2rem; background:url(../../images/board/icon_file.svg) no-repeat 50% 50%; font-size:0px;}

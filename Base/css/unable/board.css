@@ -154,7 +154,7 @@ html[lang="ru"] ul.bbsList li .notice:before{content:'N';}
 .caption-check .designCheck{margin-top:9rem; margin-top:13rem; padding:8rem 11rem; background:#f7f7f7; font-size:14rem;}
 .caption-check p{display:flex; align-items:center; position:relative; font-weight:500; font-size:16rem;}
 .caption-check p::before{content:"!"; display:block; display:flex; justify-content:center; align-items:center; width:17rem; height:17rem; margin-right:4rem; border:2rem solid; font-weight:900; font-size:13rem; border-radius:100%;}
-.caption-check .designCheck input[type="checkbox"] + label{margin-right:1rem;}
+.caption-check .designCheck input + label{margin-right:1rem;}
 
 input[type="text"] + .input-txt{margin-left: 2rem;}
 .input-txt + input[type="text"]{margin-left: 8rem;}
@@ -199,13 +199,12 @@ input[type="text"] + .input-txt{margin-left: 2rem;}
 .comment_area .comment_password .button{height:33rem; line-height:31rem;}
 
 /* search + button */
-.search_bbs{margin-top:20rem;}
-.search_bbs:after{content:''; display:block; clear:both;}
-.search_bbs .search{float:left;}
-.search_bbs .search input[type="text"]{width:200rem; height:45rem;}
-.search_bbs .search select{height:45rem;}
+.search_bbs{display:flex; flex-wrap:wrap; justify-content:space-between; margin-top:20rem;}
+.search_bbs .search{display:flex; flex-wrap:wrap; align-items:stretch; gap:5rem;}
+.search_bbs .search input[type="text"]{flex:none; width:200rem; height:45rem;}
+.search_bbs .search select{flex:auto; height:45rem;}
 .search_bbs .search .button{min-width:auto;} 
-.search_bbs .btn{float:right;}
+.search_bbs .btn{display:flex; flex-wrap:wrap; align-items:stretch; gap:5rem;}
 
 .search_bbs .btn.reserve input[data-form-type="datepicker"]{width:125rem; padding-right:25rem; height:45rem; line-height:43rem;}
 .search_bbs .btn.reserve input[data-form-type="datepicker"] + .ui-datepicker-trigger{margin-left:-25rem;}
@@ -233,6 +232,10 @@ input[type="text"] + .input-txt{margin-left: 2rem;}
 .pagination a:not([class^="btn_"]):focus{border-color:#cecece; background:#f5f5f5;}
 	/* 댓글안 페이징 */
 [data-bbs-view="comment"] .pagination a[class^="btn_"]{background-color:transparent;}
+	/* 페이징과 버튼좌우 -권한있는경우만 사용 */
+.box-pagin-flex{display:flex; flex-wrap:wrap; justify-content:space-between; align-items:center; margin-top:60rem;}
+.box-pagin-flex .pagination{flex:auto; margin:0 !important; padding-top:0;}
+.box-pagin-flex.col .pagination{flex:none;}
 
 /* file */
 .list_file li{margin-top:4rem;}
@@ -295,33 +298,31 @@ input[type="text"] + .input-txt{margin-left: 2rem;}
 .secret_area p{margin-bottom:10rem; font-weight:300;}
 .secret_area input[type="password"]{width:240rem; height:45rem;}
 .secret_area > *{vertical-align:middle;}
-.secret_area .button{min-width:80rem; height:45rem; line-height:43rem;}
+.secret_area .button{min-width:80rem; height:45rem;}
 .secret_area .button:before{height:43rem;}
 
 /* design radio */
 .designRadio{display:inline-block; margin:2rem 0; vertical-align:middle;}
-.designRadio input[type="radio"]{position:absolute; opacity:0;}
-.designRadio input[type="radio"] + label{position:relative; min-height:16rem; padding-left:20rem; padding-bottom:2rem; margin-right:10rem; cursor:pointer; line-height:1;}
-.designRadio input[type="radio"] + label:before{content:''; display:block; position:absolute; top:0; left:0; width:16rem; height:16rem; background:url(../../images/board/sp_radio.svg) no-repeat 0 -16rem; background-size:16rem 48rem;}
-.designRadio.white input[type="radio"] + label:before{background:url(../../images/board/sp_radio_w.svg) no-repeat 0 -16rem; background-size:16rem 48rem;}
-.designRadio input[type="radio"]:checked + label:before{background-position:0 0;}
-.designRadio input[type="radio"]:disabled + label:before{background-position:0 -32rem;}
+.designRadio input{position:absolute; opacity:0;}
+.designRadio input + label{position:relative; min-height:16rem; padding-left:20rem; padding-bottom:2rem; margin-right:10rem; cursor:pointer; line-height:1;}
+.designRadio input + label:before{content:''; display:block; position:absolute; top:0; left:0; width:16rem; height:16rem; background:url(../../images/board/sp_radio.svg) no-repeat 0 -16rem; background-size:16rem 48rem;}
+.designRadio.white input + label:before{background:url(../../images/board/sp_radio_w.svg) no-repeat 0 -16rem; background-size:16rem 48rem;}
+.designRadio input:checked + label:before{background-position:0 0;}
+.designRadio input:disabled + label:before{background-position:0 -32rem;}
 .designRadio.agree{display:block;margin-top:20rem; text-align:center;}
-.designRadio.agree input[type="radio"] + label{margin:2rem 30rem;}
+.designRadio.agree input + label{margin:2rem 30rem;}
 
 /* design checkbox */
 .designCheck{display:inline-block; margin:2rem 0; vertical-align:middle;}
-.designCheck input[type="checkbox"]{position:absolute; opacity:0;}
-.designCheck input[type="checkbox"] + label{position:relative; min-height:16rem; padding-left:20rem; padding-bottom:2rem; margin-right:10rem; cursor:pointer; line-height:1;}
-.designCheck input[type="checkbox"] + label:before{content:''; display:block; position:absolute; top:-1rem; left:0px; width:16rem; height:16rem; background:url(../../images/board/sp_check.svg) no-repeat 0 -16rem; background-size:16rem 48rem;}
-.designCheck.white input[type="checkbox"] + label:before{background:url(../../images/board/sp_check_w.svg) no-repeat 0 -16rem; background-size:16rem 48rem;}
-.designCheck input[type="checkbox"]:checked + label:before{background-position:0 0;}
-.designCheck input[type="checkbox"]:disabled + label:before{background-position:0 -32rem;}
+.designCheck input{position:absolute; opacity:0;}
+.designCheck input + label{position:relative; min-height:16rem; padding-left:20rem; padding-bottom:2rem; margin-right:10rem; cursor:pointer; line-height:1;}
+.designCheck input + label:before{content:''; display:block; position:absolute; top:0rem; left:0rem; width:16rem; height:16rem; background:url(../../images/board/sp_check.svg) no-repeat 0 -16rem; background-size:16rem 48rem;}
+.designCheck.white input + label:before{background:url(../../images/board/sp_check_w.svg) no-repeat 0 -16rem; background-size:16rem 48rem;}
+.designCheck input:checked + label:before{background-position:0 0;}
+.designCheck input:disabled + label:before{background-position:0 -32rem;}
 
-.designCheck.noText input[type="checkbox"] + label,
-.designRadio.noText input[type="radio"] + label{margin-right:0; font-size:0; vertical-align:middle;}
-.designCheck.noText input[type="checkbox"] + label:before,
-.designRadio.noText input[type="radio"] + label:before{top:-1rem;}
+.designCheck.noText input + label{margin-right:0; font-size:0; vertical-align:middle;}
+.designCheck.noText input + label:before{top:-1rem;}
 
 /* design number */
 .designNumber{counter-reset:title;}
@@ -374,7 +375,7 @@ table.table .designNumber li input[type="text"]{width:auto;}
 .designSelect .select.active{}
 .designSelect .select select{display:none;}
 .selectbox.trans{transition:all 0.4s ease 0.3s;}
-.designSelect .selectbox{position:absolute; top:0; right:0; bottom:0; left:0; z-index:3; height:50rem; line-height:50rem; padding:0 18rem; background:#fff; border:1rem solid transparent; border-bottom:0; font-weight:400; font-size:14rem; color:#333; text-align:left;/* transition:all 0.4s ease 0.3s; */}
+.designSelect .selectbox{position:absolute; top:0; right:0; bottom:0; left:0; z-index:3; height:50rem; line-height:50rem; padding:0 18rem; background:#fff; border:1rem solid transparent; border-bottom:0; font-weight:400; font-size:var(--font-base, 14rem); color:#333; text-align:left;/* transition:all 0.4s ease 0.3s; */}
 .designSelect .selectbox:after{content:''; position:absolute; top:21rem; right:15rem; width:16rem; height:10rem; background:url(../../images/board/arr_view.svg) no-repeat 50% 50%; transform:rotate(270deg); -webkit-transform:rotate(270deg);}
 .designSelect .selectbox:active:after,
 .designSelect .selectbox.active:after{transform:rotate(90deg);}
@@ -386,7 +387,7 @@ table.table .designNumber li input[type="text"]{width:auto;}
 .designSelect .selectbox.active{border:1rem solid #000; border-bottom:0; transition:all 0.4s ease 0s;}
 
 /* datapicker */
-.datepicker{font-size:14rem;}
+.datepicker{font-size:var(--font-base, 14rem);}
 
 /* secret */
 span.file img{display:inline-block; position:relative; top:3rem; height:14rem; margin-left:10rem;}
@@ -461,6 +462,10 @@ col[data-view="th"]{width:8% !important;}
 	.faqList dt {padding: 0 20rem 0 49rem;}
 	.faqList dt a {font-size:14rem; padding:21rem 40rem 21rem 0;}
 	.faqList dd > div {padding:20rem 46rem; font-size:14rem;}
+
+		/* 페이징과 버튼좌우 -권한있는경우만 사용 */
+	.box-pagin-flex{justify-content:center;}
+	.box-pagin-flex > *:not(.pagination){flex:0 1 100%; padding-top:30rem; text-align:center;}
 }
 
 
@@ -498,9 +503,13 @@ col[data-view="th"]{width:8% !important;}
 	
 	.pdfList li{float:none !important; width:100%;}
 	
+	.search_bbs{justify-content:center;}
 	.search_bbs .search,
-	.search_bbs .btn{float:none; text-align:center;}
-	.search_bbs .btn{margin-top:10rem}
+	.search_bbs .btn{flex:0 1 100%;}
+	.search_bbs .btn{justify-content:center; margin-top:10rem;}
+	.search_bbs .search select{flex:none; width:30%;}
+	.search_bbs .search input[type="text"]{flex:auto; width:calc(70% - 95rem);}
+	.search_bbs .search .button{flex:none; width:80rem; padding-left:5rem; padding-right:5rem;}
 	
 	.bbsView col[data-view="th"]{width:80rem !important;}
 	.bbsView col[data-view="td"]{width:auto !important;}
@@ -592,13 +601,13 @@ col[data-view="th"]{width:8% !important;}
 	.bbsView td.tel > span{display:none;}
 	.bbsView .address .button,
 	.bbsView .id .button{top:10rem;}	
-	.designRadio.agree input[type="radio"] + label{margin:2rem 10rem;}
+	.designRadio.agree input + label{margin:2rem 10rem;}
 }
 
 @media screen and (max-width:380px){
 	.search_bbs .search{position:relative;}
 	.search_bbs .search select{position:absolute; left:0; top:0; width:70rem;}
-	.search_bbs .search .button{position:absolute; right:0; top:0;}
+	.search_bbs .search .button{position:absolute; right:0; top:0; width:70rem; height:45rem;}
 	.search_bbs .search input[type="text"]{width:100%; padding-left:80rem; padding-right:70rem;}
 }
 
