@@ -44,10 +44,8 @@ body{font-size:var(--font-base, 16rem);}
     html{font-size:0.161vw /* 1px */;}
 }
 @media (max-width:480px){
-    html{font-size:0.208vw /* 1px */;}	
+    html{font-size:0.271vw /* 1.3px */;}	
 }
-@media (max-width:360px){
-    html{font-size:0.250vw /* 0.9px */;}	
-}
+
 
 /* 3) 레이아웃설정 */

@@ -214,6 +214,13 @@ table.table td.total{font-weight:600; color:#222;}
 .area_popLayer--img.patent img{width:auto; max-width:100%; max-height:100%;}
 .box_view_img .img{display:block;}
 .box_view_img .img img{width:100%;}
+	/* layer popup - basic */
+.layerPop{position:absolute; z-index:90; overflow:hidden; border:1rem solid #353535; border-radius:14rem; z-index:10;}
+.layerPop a{display:block;}
+.layerPop img{max-width:100%;}
+.layerPop .btn{display:flex; justify-content:space-between; padding:13rem 10rem; background:#353535; text-align:left;}
+.layerPop .btn button{display:inline-block; margin-left:15rem; background:none; color:#fff; font-size:13rem;}
+.layerPop .btn button:last-child{float:right; margin:0 12rem 0 0;}
 
 /* 8) 개인정보처리방침 등 */
 .area_guide{font-size:15rem; color:var(--color-gray6); font-weight:400;}
