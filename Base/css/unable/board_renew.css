@@ -251,7 +251,7 @@ input.button_new{height:52rem; line-height:52rem;}
 
 .bbsForm .wdt50{width:100%; max-width:500rem;}
 
-.data_email> div > input{width:100%;}
+.data_email> div > input:not([type="radio"]):not([type="checkbox"]){width:100%;}
 
 /* ko-basic-list */
 .ko-basic-list{border-top:1rem solid;}
