@@ -1,17 +1,19 @@
 <?
 $basename = basename($_SERVER['PHP_SELF']);
 $file_ = explode(".", $basename);	
-$common_ = substr($file_[0], 0, 5); //파일명 sub01까지 짜를때 3차가 있는경우 부모를 on할때 사용
+$common_ = substr($file_[0], 0, 5); //파일명 sub01까지 짜를때 2차가 있는경우 부모를 on할때 사용
+$common_3depth_ = substr($file_[0], 0, 7); //파일명 sub0102까지 짜를때 3차가 있는경우 부모를 on할때 사용
 ?>
 
+<?=$common_?>
 <script>
 	let pageName="content" //page name선언
 
 	$('.gnb > li > a').removeClass('on');
 	$('[data-gnbName="'+ pageName +'"]').addClass('on');
 	$('[data-gnbName="'+ pageName +'_<?=$file_[0]?>"]').addClass('on');
-	$('[data-gnbName="'+ pageName +'_<?=$common_?>"]').addClass('on');
-	$('[data-gnbName="'+ pageName +'_<?=$common_?>"]').parent('li').addClass('active');
+	$('[data-gnbName="'+ pageName +'_<?=$common_?>"]').addClass('on').parent('li').addClass('active');
+	$('[data-gnbName="'+ pageName +'_<?=$common_3depth_?>"]').addClass('on').parent('li').addClass('active');
 
 	if("<?=$board_id?>"){
 	//게시판일경우
@@ -20,6 +22,6 @@ $common_ = substr($file_[0], 0, 5); //파일명 sub01까지 짜를때 3차가 �
 	}
 
 	//서브비쥬얼 컨트롤
-	$('.area_sub_visual').attr('data-sublayout', pageName);
-	$('.area_sub_visual .img--name').attr('src', '/images/content/img_'+pageName+'_bg.jpg');
+	$('.area-subVisual').attr('data-sublayout', pageName);
+	$('.area-subVisual .img--name').attr('src', '/images/content/img_'+pageName+'_bg.jpg');
 </script>
