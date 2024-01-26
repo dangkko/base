@@ -11,8 +11,8 @@
 
 .bbsContent{padding:40rem 20rem 80rem; border-top:1rem solid #d4d4d4 !important;}
 .bbsContent .conts{min-height:370rem; line-height:1.7; padding-bottom:20rem;}
+.bbsContent .conts .img{margin-bottom:30rem; text-align:center;}
 .bbsContent .conts .img img{max-width:100%; height:auto !important;}
-.bbsContent .conts .img{margin-bottom:30rem;}
 .bbsContent table td{border:1rem solid #ddd; border-left:0 !important;}
 .bbsContent table td:last-child{border-right:0;}
 .bbsContent table{max-width:100%;}
@@ -86,8 +86,7 @@
 
 .bbsPager.admPager .inr_pager{}
 .admPager_btn li a{display:block; width:82rem; line-height:1; padding:11rem 0;}
-.admPager_btn{display:flex; position:absolute; right: 0; top: 0;}
-.admPager_btn li:first-child{margin-right:6rem;}
+.admPager_btn{display:flex; position:absolute; right: 0; top: 0; gap:0 6rem;}
 .bbsControls{margin-top:40rem; border-top:1rem solid #222; border-bottom:1rem solid #ddd;}
 .bbsControls ul li a{display:flex; align-items:center; padding:23rem 0; letter-spacing:-0.025rem;}
 .bbsControls ul li:first-child{border-bottom:1rem solid #ddd;}
@@ -176,9 +175,9 @@ input.button_new{height:52rem; line-height:52rem;}
 
 /* NEW ver.1.0.3 */
 .bbsContent .bbsFile{margin-top:20rem;}
-
+.bbsSearch[data-type="A"]{display:flex; flex-wrap:wrap; justify-content:flex-end; align-items:center; padding-bottom:20rem;}
 .bbsSearch[data-type="A"] .search_input .button{position:absolute; top:0; right:0; width:44rem; height:44rem; margin-left:0; min-width:auto; background-color:transparent; background-image:url(../../images/board/icon_search.svg); background-repeat:no-repeat; background-position:center; background-size:19rem; font-size:0; }
-.bbsSearch[data-type="A"] form{display:flex; justify-content:flex-end; margin-bottom:0; padding:20rem 0; background:none;}
+.bbsSearch[data-type="A"] form{display:flex; justify-content:flex-end; margin-bottom:0; padding:0; background:none;}
 .bbsSearch[data-type="A"] select{width:106rem; padding:0 5rem; background:#fff url(../../images/board/arr_search_select.svg) no-repeat 96% 50% /10rem; border:0; border-radius:0; outline:none;}
 .bbsSearch[data-type="A"] input[type=text]{width:300rem; margin:0; margin-left:15rem; padding:0;}
 .bbsSearch[data-type="A"] select,
@@ -233,8 +232,8 @@ input.button_new{height:52rem; line-height:52rem;}
 .ko_board_count{margin-bottom:15rem; font-size:15rem;}
 
 /* NEW ver.1.0.4 */
-.ko_board_list[data-type="A"][data-gallery] [data-board="img"]{overflow:hidden; display:block; height:280rem; background:url(../../images/sample2.jpg) no-repeat 50% 50% / cover; }
-.ko_board_list[data-type="A"][data-gallery] [data-board="img"] img{display:block; position:relative; top:50%; width:100%; transform:translateY(-50%); object-fit:cover;}
+.ko_board_list[data-type="A"][data-gallery] [data-board="img"]{overflow:hidden; display:block; aspect-ratio:16/10; background:url(../../images/sample2.jpg) no-repeat 50% 50% / cover; }
+.ko_board_list[data-type="A"][data-gallery] [data-board="img"] img{object-fit:cover; width:100%; height:100%;}
 .ko_board_list[data-type="A"][data-gallery] [data-board="tit"]{width:95%; height:auto; line-height:1.4; margin-top:19rem; -webkit-line-clamp:1;}
 .ko_board_list[data-type="A"][data-gallery] .board_info_con{margin-top:50rem;}
 .ko_board_list[data-type="A"][data-gallery] > li [data-board="arr"]{display:none;}
@@ -314,7 +313,7 @@ input.button_new{height:52rem; line-height:52rem;}
 	.admPager_btn{position:relative; top:0; right:0;}
 	
 	.bbsNew_container.v2 .bbsPager{padding:35rem 0;}
-	.bbsNew_container.v2 .bbsPager .inr_pager .pager_list{width:152rem; padding:14rem 0; font-size:14rem;}
+	.bbsNew_container.v2 .bbsPager .inr_pager .pager_list{width:152rem; padding:14rem 0; font-size:17rem;}
 	.bbsNew_container.v2 .admPager_btn li a{font-size:14rem;}	
 }
 
@@ -342,7 +341,11 @@ input.button_new{height:52rem; line-height:52rem;}
 	.ko-basic-list{border-top-width:2px;}
 	.ko-basic-list__tit-wrap.new::after{margin-left:4rem; white-space:nowrap;}
 	.ko-basic-list__tit-wrap:not(.new){max-width:100%;}
-	.reply{margin-right:6rem; padding:2rem 5rem; font-weight:400; font-size:13rem; top:0px;}	
+	.reply{margin-right:6rem; padding:2rem 5rem; font-weight:400; font-size:13rem; top:0px;}
+	
+	.bbsSearch[data-type="A"] input[type=text]{width:auto; padding-right:44rem;}
+	.bbsSearch[data-type="A"] .btn{display:flex; flex-wrap:wrap; gap:3rem; width:100%; margin-left:0; margin-top:10rem;}
+	.bbsSearch[data-type="A"] .btn .button{flex:1 1 auto; height:45rem;}
 }
 
 @media screen and (max-width:480px){
@@ -356,7 +359,7 @@ input.button_new{height:52rem; line-height:52rem;}
 	.bbsNew_container.v2 .bbsTitle{font-size:25rem !important;}
 	.bbsNew_container.v2 .bbsDate{margin-top:16rem; padding:12rem 0;}
 	.bbsNew_container.v2 .bbsDate > ul > li{padding:0 11rem; font-size:13rem; color:#888;}
-	.bbsNew_container.v2 .bbsPager .inr_pager .pager_list{width:152rem; padding:15rem 0;}
+	.bbsNew_container.v2 .bbsPager .inr_pager .pager_list{width:152rem; padding:15rem 0; font-size:16rem;}
 	.bbsNew_container.v2 .bbsDate > ul > li > i{margin-right:5rem;}
 	.bbsNew_container.v2 .admPager_btn li a{color:#999; border-color:#d5d5d5;}	
 
@@ -381,9 +384,9 @@ input.button_new{height:52rem; line-height:52rem;}
 	/* NEW ver.1.0.3 */
 	.ko_board_list[data-type="A"]{gap:18rem; grid-template-columns:1fr;}
 	
-	.bbsSearch[data-type="A"] form{margin-bottom:0; padding:0 0 30rem; background:none;}
-	.bbsSearch[data-type="A"] select{display:none;}
+	.bbsSearch[data-type="A"] form{margin-bottom:0; background:none;}	
 	.bbsSearch[data-type="A"] .search_input{width:100%;}
+	.bbsSearch[data-type="A"] select{border-bottom-color:#b5b5b5;}
 	.bbsSearch[data-type="A"] input[type=text]{width:100%; margin-left:0; padding-left:1rem; border:0; border-bottom:1rem solid #b5b5b5; border-radius:0;}
 	.bbsSearch[data-type="A"] input[type="submit"].button{top:auto; right:-1rem; bottom:2rem; margin-left:0; background-size:20rem;}
 	

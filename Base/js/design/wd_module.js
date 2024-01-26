@@ -8,7 +8,6 @@ $(window).resize(function(){
 
 $(window).on('load',function(){
 	calendarH();
-	calendarSlider();
 	treeUI();
 	shopSlide();
 	productView();
@@ -61,36 +60,6 @@ function treeUI(){
 function calendarH(){	
 	var calendarHeight = $('.area_calendar .calendar').outerHeight();
 	$('.area_calendar .list').css('height',calendarHeight+'px');
-}
-
-function calendarSlider(){	
-	if(!($('.area_calendar').length > 0)) return;
-	var calendarSlider = $('.area_calendar .slide').bxSlider();
-	
-	function bxInit(){
-		var winSize = $(window).width(),
-			sizeID;
-		if(winSize < 1023){
-			sizeID = true;
-		}else{
-			sizeID = false;
-		}
-		calendarSlider.reloadSlider({
-			mode:'horizontal',
-			auto:false,
-			controls:true,
-			pager:false,
-			prevText:'이전',
-			nextText:'다음',
-			touchEnabled:sizeID,
-		});
-	}
-
-	bxInit();
-	$(window).resize(function(){
-		calendarSlider.stopAuto(true);
-		bxInit();
-	});
 }
 
 //shop View

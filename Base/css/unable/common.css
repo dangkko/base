@@ -57,7 +57,7 @@
 .tar{text-align:right !important;}
 
 /* 4) button */
-.btn_area{display:flex; flex-wrap:wrap; justify-content:center; align-items:center; margin-top:40rem; padding-bottom:30rem;}
+.btn_area{display:flex; flex-wrap:wrap; justify-content:center; align-items:center; width:100%; margin-top:40rem; padding-bottom:30rem;}
 .btn_area.flex{display:flex; justify-content:space-between; align-items:center;}
 .btn_area.right{justify-content:flex-end;}
 .btn_area.left{justify-content:flex-start;}
@@ -76,10 +76,10 @@
 table .button{height:33rem;}
 	/* button hover */
 .button:hover,
-.button:focus{box-shadow:0px 10rem 15rem rgba(0,0,0,0.15);}
+.button:focus{opacity:0.6;}
 	/* input-button & label-button */
 input.button:hover,
-input.button:focus{opacity:0.8; color:var(--color-white, #fff) !important;}
+input.button:focus{opacity:0.6;}
 label.button{margin-right:0px !important; cursor:pointer;}
 .in label.button:before{transform:translateX(-10%) skew(-15deg) perspective(500px);}
 .in label.button{color:#222 !important; box-shadow:0px 10px 15px rgba(0,0,0,0.15);}
