@@ -139,24 +139,14 @@ html[lang="ru"] ul.bbsList li .notice:before{content:'N';}
 .bbsView > thead > tr > th{padding:20rem 0; border-bottom:1rem solid #eaecf1;}
 .bbsView > tbody > tr > th{text-align:left; font-weight:600;}
 .bbsView > tbody > tr > td{color:#777; word-break:break-all;}
-
-.bbsView .conts table,
-.bbsView .conts td,
-.bbsView .conts th{border:1rem solid black}
-
 .bbsView th[data-view="file"]{border-top:1rem solid #eaecf1;}
 .bbsView th[data-view="file"] + td{padding-left:25rem; border-top:1rem solid #eaecf1;}
 .bbsView th[data-view="file"],
 .bbsView th[data-view="date"],
 .bbsView th[data-view="count"]{padding-left:0;}
 .bbsView td.conts{padding:40rem 20rem; border:0;}
-
 .bbsView div.conts{min-height:350rem;}
-.bbsView .conts .img{padding-bottom:30rem; text-align:center;}
-.bbsView .conts .img img,
-.bbsView .conts img{max-width:100%; height:auto !important;}
 .bbsView textarea{resize:none; height:150rem;}
-
 .bbsView td.date > span{margin-right:10rem;}
 .bbsView td.category div{margin-top:3rem;}
 .bbsView td.file > span{display:block; margin:2rem 0;}
@@ -164,8 +154,6 @@ html[lang="ru"] ul.bbsList li .notice:before{content:'N';}
 .bbsView td.days span{display:inline-block; margin-right:5rem;}
 .bbsView td.days span:after{content:','; display:inline-block;}
 .bbsView td.days span:last-child:after{display:none;}
-
-.bbsView div.conts table{margin-left:auto !important; margin-right:auto !important;}
 .bbsView .button{height:40rem; line-height:39rem; font-size:12rem;}
 .bbsView .tip{ display:block; margin-top:10rem; font-size:14rem; word-break:keep-all; color:#999;}
 .bbsView .spam > span{display:inline-block; height:33rem; line-height:33rem; box-sizing:border-box; padding:0 10rem; margin-right:10rem; background:#222; color:#fff; letter-spacing:3rem; font-size:12rem;}
@@ -175,6 +163,26 @@ html[lang="ru"] ul.bbsList li .notice:before{content:'N';}
 
 .bbsView.dl{border-top:1rem solid #505c78;}
 .bbsTitle ~ .bbsView.dl{border-top-width:0;}
+
+/* view에디터관련 */
+.bbsContent *{font-size:initial;}
+.bbsContent .conts :not(.img):not(.img *){all:revert-layer;}
+.bbsContent .conts{min-height:370rem; line-height:1.7; padding-bottom:20rem;}
+.bbsContent .conts .img{display:flex; flex-direction:column; align-items:center; gap:10rem 0; padding-bottom:30rem; text-align:center;}
+.bbsContent .conts .img img,
+.bbsContent .conts img,
+.bbsContent img{max-width:100% !important; height:auto !important;}
+#content .bbsContent .conts table{border-top:unset;}
+#content .bbsContent .conts table,
+#content .bbsContent .conts td,
+#content .bbsContent .conts th{border:1rem solid black}
+#content .bbsContent table,
+#content .bbsContent table *{all:revert-layer;}
+#content .bbsContent table{max-width:100%;}
+	/* view에디터관련 - 반응형 */
+@media screen and (max-width:768px){
+	#content .bbsContent table{max-width:inherit;}
+}
 
 /* 관리자 및 board common 수정 */
 .designFile + .tip{display:block; margin-top:7rem;}
@@ -385,9 +393,9 @@ table.table .designNumber li input[type="text"]{width:auto;}
 .designNumber.none li input[type="checkbox"]:checked + label:before{content:'v';}
 
 /* design file */
-.designFile{--heightSize:60px; position:relative; width:100%; margin:2rem 0; background:#eee; border-radius:5px;}
+.designFile{--heightSize:60rem; position:relative; width:100%; margin:2rem 0; background:#eee; border-radius:5rem;}
 .designFile em{color:#999; padding:0px !important;}
-.designFile input[type="file"]{overflow:hidden; position:absolute; width:1rem; height:1rem; padding:0; margin:-1px; border:0; clip:rect(0,0,0,0);}
+.designFile input[type="file"]{overflow:hidden; position:absolute; width:1rem; height:1rem; padding:0; margin:-1rem; border:0; clip:rect(0,0,0,0);}
 .designFile input[type="text"]{width:100%; height:100%;}
 .designFile label.btn{display:block; position:relative; z-index:2; width:100%; height:var(--heightSize); line-height:var(--heightSize); box-sizing:border-box; padding:0 30rem; background-color:transparent; text-align:right; font-size:16px; color:#999; cursor:pointer;}
 .designFile:not(.mob) input[type="text"]{position:absolute !important; top:0; left:0; background-color:transparent; border-width:0 !important;}

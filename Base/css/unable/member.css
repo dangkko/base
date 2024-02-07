@@ -144,7 +144,7 @@
 
 	.login_social a{margin:3rem 7rem; font-size:13rem;}
 	.join_area .box{padding-bottom:20rem;}	
-	.join_area .btn_area{padding-top:23rem;}
+	.join_area .btn_area{padding-top:23rem !important;}
 }
 
 @media screen and (max-width:640px){

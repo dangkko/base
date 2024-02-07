@@ -8,18 +8,9 @@
 .bbsDate{margin:17rem 0 40rem;}
 
 .bbsTitle{padding:0 10rem 0 !important; border-top:0; border-bottom:0; font-weight:400 !important; font-size:36rem !important; letter-spacing:-0.03rem;}
-
-.bbsContent{padding:40rem 20rem 80rem; border-top:1rem solid #d4d4d4 !important;}
-.bbsContent .conts{min-height:370rem; line-height:1.7; padding-bottom:20rem;}
-.bbsContent .conts .img{margin-bottom:30rem; text-align:center;}
-.bbsContent .conts .img img{max-width:100%; height:auto !important;}
-.bbsContent table td{border:1rem solid #ddd; border-left:0 !important;}
-.bbsContent table td:last-child{border-right:0;}
-.bbsContent table{max-width:100%;}
-.bbsContent img{height:auto !important; max-width:100% !important;}
-
 .bbsTitle_cont{text-align:center;}
 .bbsTitle_cont > i{display:none; margin-bottom:17rem; padding-bottom:0px; border-bottom:1rem solid #b9b9b9; font-size:15rem; color:#b9b9b9; font-weight:700;}
+.bbsContent{padding:40rem 20rem 80rem; border-top:1rem solid #d4d4d4 !important;}
 
 .bbsPager{padding: 45px 0;}
 .bbsPager .inr_pager{position:relative; width:100%; text-align:center;}
