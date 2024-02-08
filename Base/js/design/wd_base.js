@@ -320,6 +320,7 @@ function layerPop(){
 		if(container.has(e.target).length == 0){
 			container.removeClass('active').fadeOut();
 			//$('body').removeClass('active');
+			$('html,body').off('scroll touchmove mousewheel');
 		}
 	});
 }
@@ -327,6 +328,11 @@ function showPopup(el){
 	var $el = $(el);
 	$el.fadeIn();
 	//$('body').addClass('active');
+	$('html, body').on('scroll touchmove mousewheel', function(event) {
+		event.preventDefault();
+		event.stopPropagation();
+		return false;
+	});
 	setTimeout(function(){
 		$el.addClass('active');
 	}, 100);
