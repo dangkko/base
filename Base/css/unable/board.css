@@ -176,6 +176,26 @@ html[lang="ru"] ul.bbsList li .notice:before{content:'N';}
 .bbsView.dl{border-top:1rem solid #505c78;}
 .bbsTitle ~ .bbsView.dl{border-top-width:0;}
 
+/* view에디터관련 */
+.bbsContent *{font-size:initial;}
+.bbsContent .conts :not(.img):not(.img *){all:revert-layer;}
+.bbsContent .conts{min-height:370rem; line-height:1.7; padding-bottom:20rem;}
+.bbsContent .conts .img{display:flex; flex-direction:column; align-items:center; gap:10rem 0; padding-bottom:30rem; text-align:center;}
+.bbsContent .conts .img img,
+.bbsContent .conts img,
+.bbsContent img{max-width:100% !important; height:auto !important;}
+#content .bbsContent .conts table{border-top:unset;}
+#content .bbsContent .conts table,
+#content .bbsContent .conts td,
+#content .bbsContent .conts th{border:1rem solid black}
+#content .bbsContent table,
+#content .bbsContent table *{all:revert-layer;}
+#content .bbsContent table{max-width:100%;}
+	/* view에디터관련 - 반응형 */
+@media screen and (max-width:768px){
+	#content .bbsContent table{max-width:inherit;}
+}
+
 /* 관리자 및 board common 수정 */
 .designFile + .tip{display:block; margin-top:7rem;}
 .designFile ~ .button.white{vertical-align:middle;}
