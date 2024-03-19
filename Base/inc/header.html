@@ -27,7 +27,7 @@
 
 			<div class="area_util">	
 				<? if(!$_SESSION[member_id]){?>
-					<a href="/member/member.php">로그인</a>
+					<a href="/member/member.html?mode=login">로그인</a>
 				<? } else { ?>
 					<a href=""><?=$_SESSION[member_id]?>님 환영합니다</a>
 					<a href="/member/member.php?mode=logout">로그아웃</a>
