@@ -344,14 +344,12 @@ input[type="text"] + .input-txt{margin-left: 2rem;}
 .iframe_video iframe{position:absolute; top:0; left:0;}
 
 /* 비밀번호확인 */
-.secret_area{position:relative; margin:40rem 0; text-align:center;}
-.secret_area:before{content:''; display:block; width:62rem; height:62rem; border:3rem solid #59626a; border-radius:50%; margin:0 auto 20rem;}
-.secret_area:after{content:''; display:block; width:20rem; height:24rem; background:url(../../images/board/img_secret.gif) no-repeat 0 0; position:absolute; left:50%; top:23rem; margin-left:-10rem;}
-.secret_area p{margin-bottom:10rem; font-weight:300;}
-.secret_area input[type="password"]{width:240rem; height:45rem;}
-.secret_area > *{vertical-align:middle;}
-.secret_area .button{min-width:80rem; height:45rem;}
-.secret_area .button:before{height:43rem;}
+.secret_area{display:flex; flex-wrap:wrap; justify-content:center; position:relative; max-width:400rem; margin:40rem auto; text-align:center;}
+.secret_area i{display:flex; justify-content:center; align-items:center; width:62rem; height:62rem; margin:0 auto 20rem; background:url(../../images/board/img_secret.gif) no-repeat 50% 50%; background-size:20rem 24rem; border:3rem solid #59626a; border-radius:100%; color:#59626a;}
+.secret_area p{flex:0 1 100%; margin-bottom:10rem;}
+.secret_area .secret_area__form{display:flex; align-items:center; gap:4rem; margin-top:10rem;}
+.secret_area input[type="password"]{flex:auto; width:240rem; height:45rem;}
+.secret_area .button{flex:none; min-width:80rem; min-height:45rem; margin:0; border:2rem solid #333; border-radius:50rem;}
 
 /* design radio */
 .designRadio{display:inline-block; margin:2rem 0; vertical-align:middle;}
@@ -573,7 +571,8 @@ col[data-view="th"]{width:8% !important;}
 	.comment_area .write input[type="password"]{width:calc(100% - 90rem);}
 	.comment_area .list .btn{position:static; margin-top:10rem;}
 	
-	.secret_area input[type="password"]{display:block; margin:0 auto 10rem;}
+	.secret_area .secret_area__form{flex-wrap:wrap; justify-content:center;}
+	.secret_area .secret_area__form input[type="password"]{flex:0 1 100%;}
 
 	ul.bbsList li .more{right:0;}
 	ul.bbsList li .notice{padding:2rem 10rem; font-size:12rem;}
