@@ -15,6 +15,7 @@
  * 8) 개인정보처리방침 등
  * 9) tooltip
  * 10) accordion
+ * 11) 에디터상쇄
  *
  */
  
@@ -57,7 +58,7 @@
 .tar{text-align:right !important;}
 
 /* 4) button */
-.btn_area{display:flex; flex-wrap:wrap; justify-content:center; align-items:center; width:100%; margin-top:40rem; padding-bottom:30rem;}
+.btn_area{display:flex; flex-wrap:wrap; justify-content:center; align-items:center; margin-top:40rem; padding-bottom:30rem;}
 .btn_area.flex{display:flex; justify-content:space-between; align-items:center;}
 .btn_area.right{justify-content:flex-end;}
 .btn_area.left{justify-content:flex-start;}
@@ -76,10 +77,10 @@
 table .button{height:33rem;}
 	/* button hover */
 .button:hover,
-.button:focus{opacity:0.6;}
+.button:focus{box-shadow:0px 10rem 15rem rgba(0,0,0,0.15);}
 	/* input-button & label-button */
 input.button:hover,
-input.button:focus{opacity:0.6;}
+input.button:focus{opacity:0.8; color:var(--color-white, #fff) !important;}
 label.button{margin-right:0px !important; cursor:pointer;}
 .in label.button:before{transform:translateX(-10%) skew(-15deg) perspective(500px);}
 .in label.button{color:#222 !important; box-shadow:0px 10px 15px rgba(0,0,0,0.15);}
@@ -213,7 +214,7 @@ table.table td.total{font-weight:600; color:#222;}
 .area_popLayer--img .popBox .btn_close{top:0; right:-70rem;}
 .area_popLayer--img.patent img{width:auto; max-width:100%; max-height:100%;}
 .box_view_img .img{display:block;}
-.box_view_img .img img{width:100%;}
+.box_view_img .img img{width:100%;}	
 	/* layer popup - basic */
 .layerPop{position:absolute; z-index:90; overflow:hidden; border:1rem solid #353535; border-radius:14rem; z-index:10;}
 .layerPop a{display:block;}
@@ -360,3 +361,8 @@ html[lang="zh"] .area_guide li{word-break:break-all;}
 	/* 9) tooltip */
 	[data-tooltip="explan"] .box{padding:10rem;}
 }
+   
+/* 11) 에디터상쇄 */
+.edit-wrap *{all:revert-layer;}
+.edit-wrap img{max-width:100%; height:auto !important;}
+.edit-wrap:after{content:''; display:block; clear:both;}
