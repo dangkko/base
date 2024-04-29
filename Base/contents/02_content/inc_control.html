@@ -18,6 +18,10 @@ $common_3depth_ = substr($file_[0], 0, 7); //파일명 sub0102까지 짜를때 3
 	//게시판일경우
 		$('[data-gnbName="<?=$board_id?>"]').addClass('on');
 		$('[data-gnbName="<?=$board_id?>"]').parent('li').addClass('active');
+	}else if("<?=$online_id?>"){
+	//온라인문의경우
+		$('[data-gnbName="<?=$online_id?>"]').addClass('on');
+		$('[data-gnbName="<?=$online_id?>"]').parent('li').addClass('active');
 	}
 
 	//서브비쥬얼 컨트롤
