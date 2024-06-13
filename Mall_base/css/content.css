@@ -1,0 +1,17 @@
+@charset "utf-8";
+/*
+ * content.css
+ * 하단은 예시입니다. 디자인맞게 수정하세요.
+ *
+ */
+	 
+#content{padding-bottom:70rem;}
+#content > .inr{max-width:1260rem; margin:0 auto; padding:0 20rem;}
+#content h2{margin-top:80rem; margin-bottom: 30rem; font-size:35rem; color:#111; text-align:center; font-weight:700; word-break:keep-all;}
+
+@media screen and (max-width:1024px){
+	#header{border-bottom:1rem solid #dedede;}
+}
+@media screen and (max-width:480px){
+	#content h2{margin-top:50rem; font-size:28rem;}
+}

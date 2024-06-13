@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+		<meta name="format-detection" content="telephone=no">
+		<title><?=$site[og_title]?></title>
+		<link rel="stylesheet" type="text/css" href="/css/unable/common.css?ver=20231227"/>
+		<link rel="stylesheet" type="text/css" href="/js/jquery-ui.css"/>
+		<link rel="stylesheet" type="text/css" href="/js/design/swiper-bundle.min.css"/><!-- slide -->
+		<link rel="stylesheet" type="text/css" href="/css/layout.css?ver=20231227"/>
+		<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css"><!-- 백터아이콘 -->
+
+		<? $checked_uri_position = explode("?", $_SERVER[REQUEST_URI]); ?>
+		<? $checked_uri_position[0] = end(explode("/",$checked_uri_position[0]));?>
+		<? if($checked_uri_position[0] == "" || $checked_uri_position[0] == "index.html" || $checked_uri_position[0] == "main.html"){
+			$m_main_ = true;
+		?>
+		    <!-- 메인일때 -->
+		    <link rel="stylesheet" type="text/css" href="/css/main.css?ver=20231227"/>
+		<? } else {
+			$m_main_ = false;
+		?>
+		    <!-- 아닐경우 -->
+		    <link rel="stylesheet" type="text/css" href="/css/content.css?ver=20231227"/>
+		<? } ?>
+
+		<script src="/js/jquery-1.12.2.min.js"></script>
+		<script src="/js/jquery-ui.js"></script>
+		<script src="/js/design/swiper-bundle.min.js"></script>
+		<script src="/js/design/wd_base.js"></script>
+		<script src="/js/design/wd_module.js"></script>
+		<script src="/js/design/wd_custom.js"></script>
+		<script src="/js/design/wd_shop.js"></script>
+
+		<script src="/ko_mall/js/jquery.cookie.js"></script>
+		
+		<link rel="shortcut icon" href="/images/favicon.ico"/>
+		<? if($img_urls){ ?>
+			<meta property="og:image" content="<?=$img_urls?>">
+		<? }else{ ?>
+			<meta property="og:image" content="/images/ogimage.jpg">
+		<? } ?>		
+
+		<link rel="canonical" href="<?=$site[url]?>" />
+		<link rel="alternate" href="<?=$site[url]?>" />
+		<meta property="og:url" content="<?=$site[url]?>" />
+		<meta property="og:title" content="<?=$site[og_title]?>" />
+		<meta name="description"  content="<?=$site[description]?>" />
+		<meta property="og:description" content="<?=$site[og_description]?>" />
+		<meta property="og:site_name" content="<?=$site[og_site_name]?>" />
+		<meta property="naver-site-verification" content="<?=$site[naver_tag]?>" />
+		<meta name="google-site-verification" content="<?=$site[google_tag]?>" />
+		<meta property="og:type" content="website" />
+
+	</head>
+	<body>
+	<?
+		if($m_main_){
+			$popup = @mysqli_fetch_array(@mysqli_query($connect,"SELECT * FROM koweb_program_config WHERE id='popup'"));
+			if($popup['state'] == "Y"){
+				include $_SERVER['DOCUMENT_ROOT']."/popup/_popup.php";
+				include $_SERVER['DOCUMENT_ROOT']."/popup/layer_popup.php";
+			}
+		}
+	?>
+		<div id="skip_menu">
+			<a href="#content">본문 바로가기</a>
+		</div>
+		<div id="wrap">

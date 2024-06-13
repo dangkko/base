@@ -1,0 +1,105 @@
+			<!-- header -->
+			<!-- 작업 check 
+				1. inr_1260 경우 디자인따라 삭제하거나 수정해서 사용하면됨. (단순사이즈 작업하는 div)
+			-->
+
+			<header id="header">
+				<h1 class="logo"><a href="/"><img src="/images/common/logo.svg" alt="<?=$mall_config[company]?>"/></a></h1>
+
+				<!-- gnb -->
+				<!-- 작업 check 
+					1. data-gnbName="about" 경우 css로 숨김처리된 상태 디자인 맞게 수정해서 사용
+				-->
+				<nav>
+					<div class="inr_1260">
+						<button type="button" class="gnb-btn__open" title="전체메뉴열기"><span><i>전체메뉴</i></span></button>
+						<ul class="gnb">
+							<!-- 헤더용 카테고리 출력함수(상품 리스트 부분과 분리)
+							<li>
+								<a href="/product/product.html" data-gnbName="product"><span>제품구매</span></a>
+								<div class="box">
+									<ul>
+										<?								
+											$depth1_query = "SELECT * FROM koweb_product_category_config WHERE depth = '1' AND state = 'Y' AND delete_state = 'N' ORDER BY sort ASC";
+											$depth1_result = query($depth1_query);
+											while($depth1_row = mysqli_fetch_array($depth1_result)) {								
+										?>
+											<li><a data-set-on="<?=$depth1_row[id] ?>" href="/product/product.html?category=<?=$depth1_row[id] ?>"><span><?=$depth1_row[title] ?></span></a></li>
+										<? } ?>
+									</ul>
+								</div>
+							</li> -->
+
+							<!-- 헤더 상품리스트가 바로 나오게 처리할경우 -->
+							<? load_category_header($connect, "default", "pc", "2"); ?>
+							<li><a href="/contents/03_board/board.html?board_id=board_notice" data-gnbName="board"><span>COMMUNITY</span></a>
+								<div class="box">
+									<ul>
+										<li><a href="/contents/03_board/board.html?board_id=board_notice" data-gnbName="board_notice"><span>공지사항</span></a></li>
+										<li><a href="/contents/03_board/board.html?board_id=board_gallery" data-gnbName="board_gallery"><span>갤러리</span></a></li>
+										<li><a href="/contents/03_board/board.html?board_id=board_question" data-gnbName="board_question"><span>문의게시판</span></a></li>
+										<li><a href="/contents/03_board/board.html?board_id=board_review" data-gnbName="board_review"><span>리뷰게시판</span></a></li>
+									</ul>
+								</div>
+							</li>
+							<li><a href="/contents/01_about/sub01.html" data-gnbName="about"><span>회사소개</span></a></li>
+						</ul>
+					</div>
+				</nav>
+				<!-- //gnb -->
+
+				<div class="area_util">
+					<div class="inr_1260">
+						<ul class="util-list">
+							<? if($_SESSION['member_id']){ ?>
+								<!-- 로그인후 -->
+								<li><a href="/member/member.html?mode=logout" data-util="logout"><span>LOGOUT</span></a></li>
+								<li><a href="/member/member.html?mode=intro" data-util="mypage"><span>MYPAGE</span></a></li>
+							<? }else{ ?>
+								<!-- 로그인전 -->
+								<li><a href="/member/member.html" data-util="login"><span>LOGIN</span></a></li>
+								<li><a href="/member/member.html?mode=agree" data-util="join"><span>JOIN US</span></a></li>
+							<? } ?>
+							<?
+							if(!$_SESSION['member_id']){
+								$cart_cnt = count($_SESSION['s_cart']);
+							}else{
+								$cart_cnt = mysqli_num_rows(query("SELECT * FROM koweb_cart WHERE member_id = '{$_SESSION['member_id']}'"));
+							}
+							?>
+							<li><a href="/product/product.html?mode=cart" data-util="basket"><i class="basket-count"><?=$cart_cnt?></i><span>CART</span></a></li>
+						</ul>
+						
+						<!-- 검색 -->
+						<div class="search-util">
+							<form action="/product/product.html" method="GET">
+								<div class="box">
+									<input type="text" name="keyword" title="제품검색어 입력란">
+									<button type="button" class="btn_search"><i class="xi-search"></i><span>검색</span></button>
+								</div>
+							</form>
+							<!-- 모바일 사용 -->
+							<button type="button" class="search-util__control"><i class="xi-search"></i>검색열기</button>
+						</div>
+					</div>
+				</div>
+
+				<!-- 전체메뉴 또는 모바일메뉴 -->
+				<div class="gnb-mob">
+					<div class="util"></div>
+					<div class="gnb">
+					</div>
+					<button type="button" class="gnb-mob__close"><i class="xi-close-thin"></i>전체메뉴닫기</button>
+				</div>
+				<!-- //전체메뉴 또는 모바일메뉴 -->
+			</header>
+			
+
+			<? if(!($m_main_)){?> 
+				<!-- 서브일때 -->
+				<!-- 서브비쥬얼 영역 -->
+				<? include $_SERVER['DOCUMENT_ROOT'] . "/inc/inc_visual_sub.html"; ?>
+
+				<div id="container">
+					<main id="content">
+			<? } ?>

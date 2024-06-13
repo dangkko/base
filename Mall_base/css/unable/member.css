@@ -45,7 +45,7 @@
 .join_area .box.find p{margin-top:10rem; font-size:13rem; text-align:center;}
 .join_area .box.find .tac{margin-top:10rem;}
 .join_area .box.find .bbsView th{background:transparent;}
-.join_area .btn_area{display:flex; justify-content:center; align-items:center; gap:5px; padding-top:14rem !important; text-align:center;}
+.join_area .btn_area{display:flex; justify-content:center; align-items:center; gap:5px; padding-top:14rem; text-align:center;}
 .join_area .btn_area.social{justify-content:flex-end;}
 .join_area .bbsView{margin-top:30rem;}	
 .join_area .bbsView td em{font-size:13rem; word-break:keep-all;}
@@ -74,10 +74,6 @@
 .area_namecheck .box{padding:15rem; border:1rem solid #d8d8d8;}
 .area_namecheck .box p{margin-bottom:5rem; word-break:keep-all;}
 .area_namecheck .box p.red{color:#e92054;}
-
-/* 아이디찾기 / 비밀번호찾기 */
-.join_area [data-member-form="phone"]{display:flex; align-items:center; gap:5rem; width:100%;}
-.join_area [data-member-form="phone"] input[type="text"]{flex:auto; width:100%;}
 
 /* 회원가입 정보입력 - 20231129 add */
 .list-join input[type="text"],
@@ -149,7 +145,6 @@
 	.login_social a{margin:3rem 7rem; font-size:13rem;}
 	.join_area .box{padding-bottom:20rem;}	
 	.join_area .btn_area{padding-top:23rem !important;}
-	.join_area .btn_area.custom{justify-content:center;}
 }
 
 @media screen and (max-width:640px){
@@ -165,8 +160,7 @@
 	.login_social:before{margin-bottom:15rem;}
 	.join_area .box.join{max-width:none;}
 	.join_area textarea{height:120rem; padding:10rem; font-weight:300;}
-	.join_area .check{padding-top:8rem; font-size:14rem;}
-	.join_area .btn_area.custom{flex-direction:row;}
+	.join_area .check{padding-top:8rem; font-size:14rem;}	
 
 	/* 회원가입 정보입력 - 20231129 add */
 	.list-join{display:block;}

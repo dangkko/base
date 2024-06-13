@@ -1,0 +1,98 @@
+			<? if(!($m_main_)){?>
+				</main>
+			</div>
+			<? } ?>
+			
+			<aside class="quick-menu">
+				<ul class="quick-menu__list">
+					<li><a href="#" target="_blank" data-sns="kakao"><span class="xi-kakaotalk"></span>카카오톡</a></li>
+					<li><a href="#wrap" class="btn_up hasLink"><span class="xi-angle-up-min"></span>맨위로</a></li>
+					<li><a href="#footer" class="btn_down hasLink"><span class="xi-angle-down-min"></span>맨아래로</a></li>
+				</ul>
+			</aside>
+			
+			<script>
+				let sideHeight = $(window).height() / 2;
+				$(window).scroll(function() {
+					let winTop = $(document).scrollTop();
+					// gnb
+					if(winTop > sideHeight){
+						$('.quick-menu').addClass("show");			
+					}else{
+						$('.quick-menu').removeClass("show");
+					}
+				}).scroll();
+			</script>
+			
+			
+			<!-- footer -->
+			<footer id="footer">
+				<div class="inr">
+					<div class="footer-inr__top">
+						<ul class="link">
+							<li><a href="/member/member.html?mode=agreement">이용약관</a></li>
+							<li><a href="/member/member.html?mode=private">개인정보처리방침</a></li>
+							<li><a href="/member/member.html?mode=guide">이용안내</a></li>
+							<li><a href="/ko_mall">관리자</a></li>
+						</ul>
+						
+						<ul class="sns">
+							<li><a href="#" data-sns="facebook"><i class="xi-facebook"></i>페이스북</a></li>
+							<li><a href="#" data-sns="instar"><i class="xi-instagram"></i>인스타그램</a></li>
+							<li><a href="#" data-sns="blog"><i class="xi-naver"></i>블로그</a></li>
+							<li><a href="#" data-sns="kakao"><i class="xi-kakaostory"></i>카카오스토리</a></li>
+						</ul>
+					</div>
+				</div>
+				<div class="footer-inr__bottom">
+					<div class="footer-info">
+						<span><i>회사명 : </i><?=$mall_config[company]?></span>
+						<span><i>대표자 : </i><?=$mall_config[ceo_name]?></span>
+						<span><i>주소 : </i><?=$mall_config[company_address]?></span>
+						<br>
+						<span><i>사업자등록번호 : </i><?=$mall_config[company_regist_no]?></span>
+						<span><i>통신판매업신고 : </i><?=$mall_config[t_no]?></span>
+						<br>
+						<span><i>대표전화 : </i><a href="tel:<?=$mall_config[company_phone]?>"><?=$mall_config[company_phone]?></a></span>
+						<span><i>FAX : </i><?=$mall_config[fax_no]?></span>
+						<span><i>E-MAIL : </i><a href="mailto:<?=$mall_config[it_mail]?>"><?=$mall_config[it_mail]?></a></span>
+						<p>© <?=$mall_config[company]?>. All right reserved. Designed by KOWEB.</p>
+					</div>
+					
+					<div class="footer-cs">
+						<h2>C/S CENTER</h2>
+						<a href="tel:<?=$mall_config[company_phone]?>" class="tel"><?=$mall_config[company_phone]?></a>
+						<p>평일 오전 10:00 - 오후 05:00 <br>주말 및 공휴일 휴무</p>
+					</div>
+					<div class="footer-bank">
+						<h2>BANK INFO</h2>
+						<?
+						//관리자 - 설정 - 사업자정보 설정 - 노출계좌에서 수정가능합니다.
+						echo htmlspecialchars_decode ($mall_config[company_bank])
+						?>						
+					</div>
+					<div class="footer-address">
+						<h2>RETURNS&DELIVERY</h2>
+						<address><?=$mall_config[company_address]?></address>
+					</div>
+				</div>
+			</footer>
+			<!-- //footer -->
+				
+		</div><!-- //wrap -->
+	</body>
+</html>
+<script>
+	if("<?=$_SESSION[board_config]?>" == "okkk"){
+		var params = {};  
+		window.location.search.replace(/[?&]+([^=&]+)=([^&]*)/gi, 
+			function(str, key, value) { 
+				params[key] = value; 
+			}
+		);
+		$(opener.document).find("#pap").val(params.code);
+		<? unset($_SESSION[board_config]); ?>
+		//$.removeCookie('Get'); // => false
+		self.close();
+	}
+</script>

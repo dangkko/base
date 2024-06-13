@@ -1,0 +1,40 @@
+@charset "utf-8";
+@import url('https://dangkko.github.io/dangkko.github.com/pretendard/css/pretendard-dynamic-subset.css');
+
+/* 
+ * base CSS Document
+ */
+
+html,body{font-size:6.25%;}
+body,p,div,span,h1,h2,h3,h4,h5,h6,ul,ol,li,dl,dt,dd,table,th,td,form,fieldset,legend,input,textarea,button,select,figure,figcaption{margin:0; padding:0;}
+body,input,textarea,button,select{font-family:'Pretendard', '맑은 고딕', '돋움', Dotum, '굴림', Gulim, Sans-serif; color:var(--color-base, #333);}
+img, fieldset, button{border:0;}
+textarea{overflow:auto;}
+input[type=submit],
+input[type=button],
+button{cursor:pointer;}
+img{vertical-align:top;}
+address, em, i{font-style:normal;}
+table{border-spacing:0; border-collapse:collapse;}
+table,th,td{border:none;}
+caption,legend{overflow:hidden; position:absolute; width:1px; height:1px; padding:0; margin:-1px; border:0; clip:rect(0,0,0,0);}
+legend, .hidden{width:0px; height:0px; padding:0; margin:0; overflow:hidden !important; text-indent:100%; white-space:nowrap; font-size:0;}
+svg:focus,
+svg *:focus{outline:none;}
+pre{margin:0px; padding:0px; font-family:inherit; white-space:pre-wrap;}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section{display:block;}
+
+/* 링크 기본값 */
+a{text-decoration:none; color:inherit;}
+a[href="tel"],
+a[href="mailto"]{text-decoration:none;}
+
+/* 리스트 스타일 제거 */
+ul,ol,li{list-style:none;}
+
+/* mobile */
+*{-webkit-text-size-adjust:none;}
+body{-webkit-text-size-adjust:none; -moz-text-size-adjust:none; -ms-text-size-adjust:none;}
+

@@ -1,0 +1,16 @@
+@charset "utf-8";
+
+/* 
+ * board, member, module, shop Custom CSS Document - 디자인역할에 따라 프로그램관련 UI수정이 가능
+ * user write 주석부분에 새로운것을 선언해서 상쇄하고자 할경우 선언한다.
+ * 다른부분은 사용할만 부분을 미리 선언을 해둔것으로 선언된 내용은 지우고 새롭게 작성하시면 됩니다.
+ *
+ */
+
+/* 상품목록 */
+[data-shop-list="default"] .img{aspect-ratio:9/12;}
+[data-shop-list="default"] .img img{object-fit:cover;}
+[data-shop-list="default"] komall-discount{color:var(--color-point);}
+@media screen and (max-width:1024px){
+	[data-shop-list="default"] komall-discount{color:var(--color-white);}
+}
