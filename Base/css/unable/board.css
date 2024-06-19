@@ -32,19 +32,18 @@
 .blogList{border-top:1rem solid;}
 .blogList li{padding:20rem 5rem; border-bottom:1rem solid #eaecf1; transition:all 0.3s ease 0s;}
 .blogList li:after{content:''; display:block; clear:both;}
-.blogList li > a{display:grid; grid-template:'thumb subject' auto 'thumb conts' auto 'thumb date' auto / 180rem auto;}
-.blogList li em{grid-area:subject; display:inline-block; color:#111; font-weight:600; font-size:20rem; display:-webkit-box; overflow:hidden; -webkit-line-clamp:1; -webkit-box-orient:vertical; text-overflow:ellipsis;}
+.blogList li > a{display:grid; grid-template:'thumb subject' auto 'thumb conts' 1fr 'thumb date' auto / 220rem auto; gap:0 30rem;}
+.blogList li em{grid-area:subject; display:inline-block; margin-top:10rem; color:#111; font-weight:600; font-size:20rem; display:-webkit-box; overflow:hidden; -webkit-line-clamp:1; -webkit-box-orient:vertical; text-overflow:ellipsis;}
 .blogList li p{grid-area:conts; margin-top:10rem; line-height:1.4; font-size:17rem; display:-webkit-box; overflow:hidden; -webkit-line-clamp:3; -webkit-box-orient:vertical; text-overflow:ellipsis;}
 .blogList li i{grid-area:date; display:block; margin-top:20rem; font-size:14rem; color:#666;}
-.blogList li .img{grid-area:thumb; display:block; overflow:hidden; width:150rem; height:120rem; text-align:center;}
+.blogList li .img{grid-area:thumb; display:block; overflow:hidden; width:100%; text-align:center;}
 .blogList li .img img{object-fit:cover; width:100%; height:100%;}
 .blogList li:hover,
 .blogList li:focus{background:#f0f6f8;}
 
 @media screen and (max-width:640px){
 	.blogList li{padding:20rem 0;}
-	.blogList li > a{position:relative; grid-template-columns:150rem auto;}
-	.blogList li .img{width:120rem; height:100rem;}
+	.blogList li > a{position:relative; grid-template-columns:150rem auto; gap:0 20rem;}
 }
 @media screen and (max-width:480px){
 	.blogList li > a{grid-template:'thumb' auto 'subject' auto 'conts' auto 'date' auto / 1fr;}
