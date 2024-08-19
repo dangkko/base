@@ -29,8 +29,8 @@
 				<? if(!$_SESSION[member_id]){?>
 					<a href="/member/member.html?mode=login">로그인</a>
 				<? } else { ?>
-					<a href=""><?=$_SESSION[member_id]?>님 환영합니다</a>
-					<a href="/member/member.php?mode=logout">로그아웃</a>
+					<a href="/member/member.html?mode=check&return_mode=intro"><?=$_SESSION[member_id]?>님 환영합니다</a><!-- 정보수정 -->
+					<a href="/member/member.php?mode=logout">로그아웃</a>					
 				<? } ?>
 					<a href="/ko_admin/login.html" target="_blank">관리자바로가기</a>
 			</div>
