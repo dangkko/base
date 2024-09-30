@@ -123,6 +123,12 @@
 .list-join [data-member-form="addr"] input[id="zip"]{width:40%;}
 .list-join [data-member-form="addr"] input[id="zip"][readonly]{background-color:#fff;}
 .list-join [data-member-form="addr"] .button{flex:none; margin-right:5rem;}
+	/* 연락처 */
+.list-join [data-member-form="phone"]{flex-wrap:wrap;}
+.list-join [data-member-form="phone"] .nowrap{flex:0 1 100%;}
+	/* 스팸 */
+.list-join [data-member-form="spam"] .nowrap{align-items:stretch !important;}
+.list-join [data-member-form="spam"] .spam{display:flex; justify-content:center; align-items:center; padding:0 15rem; background:#fff; border:1rem solid #393939; font-weight:15rem; font-weight:700; color:#393939;}
 
 @media screen and (max-width:1024px){
 	.login_social .btn_login_naver:before{background-image:url(../../images/module/icon_naver@x3.png);}

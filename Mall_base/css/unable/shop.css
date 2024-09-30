@@ -4,14 +4,14 @@
  * shop.css - 작업중
  * 수정을 하고자 할경우 custom_shop.css에서 따로 수정한다.
  *
- * 0)기본공통 - 수정 20240206
- * 1)아코디언 - 수정 20240206
- * 2)table변형 - 수정 20240206
- * 3)상품목록 - 수정 20240114
- * 4)목록 보기형태 - 수정 20240312
- * 5)마이페이지 - 수정 20240206
- * 6)약관 - 수정 20240206
- * 7)cart - 수정 20240206
+ * 0) 기본공통 - 수정 20240206
+ * 1) 아코디언 - 수정 20240206
+ * 2) table변형 - 수정 20240206
+ * 3) 상품목록 - 수정 20240114
+ * 4) 목록 보기형태 - 수정 20240312
+ * 5) 마이페이지 - 수정 20240905
+ * 6) 약관 - 수정 20240206
+ * 7) cart - 수정 20240206
  *
  */
 
@@ -226,6 +226,21 @@ html[lang="th"] [data-shop-list="default"] > li > a .price i:after{content:'ว�
 .area_shopMypage .link > .btn_link04:before{background-position:-141rem -161rem;}
 .area_shopMypage .link > a:hover{box-shadow: 3rem 10rem 22rem rgb(0 0 0 / 4%);}
 .area_shopMypage .link[class*="col"] a{flex:1 1 25%;}
+	/* 소셜회원가입 선택 */
+.member-sns-box{max-width:410rem; margin:0 auto;}
+.member-sns-box .or{display:block; position:relative; margin-top:30rem;}
+.member-sns-box .or:before{content:'or'; display:block; position:relative; z-index:5; width:100rem; margin:0 auto 25rem; background:#fff; font-size:20rem; font-weight:600; color:rgba(65,70,78,0.4); text-align:center;}
+.member-sns-box .or:after{content:''; opacity:0.1; display:block; position:absolute; top:12rem; left:50%; z-index:4; width:80%; height:1rem; background:#41464e; transform:translateX(-50%);}
+.member-sns-box ul{display:flex; flex-direction:column; gap:10rem;}
+.member-sns_btn{display:flex; align-items:center; gap:30rem; position:relative; min-height:60rem; box-sizing:border-box; padding:5rem 10rem; background-color:#27d34a; border-radius:3rem; color:#fff; font-weight:500; font-size:16rem; transition:0.5s cubic-bezier(0, 0, 0.21, 0.87) 0s;}
+.member-sns_btn i{flex:none; display:flex; justify-content:center; align-items:center; width:50rem; height:50rem; font-size:25rem; color:#fff;}
+.member-sns_btn.kakao{background-color:#fddc3f; color:#111;}
+.member-sns_btn.kakao i{color:#111;}
+.member-sns_btn.facebook{background-color:#4f75be;}
+.member-sns_btn.google{background-color:#f45a5c;}
+.member-sns_btn.homepage{justify-content:center; background-color:#fff; border:1rem solid #3c3c3c; color:#111;}
+.member-sns_btn:hover{z-index:1; box-shadow:5rem 15rem 20rem rgba(0,0,0,0.15);}
+
 	/* 5) 마이페이지 - 반응형 */
 @media screen and (max-width:1220px){
 	.area_shopMypage .link{margin-bottom:30rem;}
