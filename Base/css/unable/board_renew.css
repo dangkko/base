@@ -247,7 +247,7 @@ input.button_new{height:52rem; line-height:52rem;}
 .ko-basic-list{border-top:1rem solid;}
 .ko-basic-list a{display:flex; align-items:center; position:relative; padding:28rem 20rem; border-bottom:1rem solid #eee;}
 .ko-basic-list a:hover .ko-basic-list__tit{color:var(--color-point, #838383);}
-.ko-basic-list__tit{display:block;display:-webkit-box; position:relative; overflow:hidden; width:100%; max-width:550rem; max-height:26rem; line-height:1; -webkit-line-clamp:1; -webkit-box-orient:vertical; text-overflow:ellipsis; font-weight:600; font-size:17px; color:#222; letter-spacing:-0.5rem; transition:opacity 0.3s ease; transition: all 0.3s ease;}
+.ko-basic-list__tit{display:block;display:-webkit-box; position:relative; overflow:hidden; width:100%; max-width:550rem; max-height:26rem; line-height:1; -webkit-line-clamp:1; -webkit-box-orient:vertical; text-overflow:ellipsis; font-weight:600; font-size:17rem; color:#222; letter-spacing:-0.5rem; transition:opacity 0.3s ease; transition: all 0.3s ease;}
 .ko-basic-list__date{position:absolute; right:20rem; font-size:14rem;}
 .ko-basic-list__num{display:block; min-width:50rem; margin-right:25rem; font-size:14rem; text-align:center;}
 .ko-basic-list__num.notice{padding:2rem 0px; background:#222; border-radius:3rem; color:#fff;}
