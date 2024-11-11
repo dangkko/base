@@ -28,9 +28,6 @@ body{font-size:var(--font-base, 16rem);}
 @media (min-width:1921px){
 	html{font-size:0.052vw /* 1px */;}
 }
-@media (max-width:1500px){
-	html{font-size:0.067vw /* 1px */;}
-}
 @media (max-width:1300px){
     html{font-size:0.077vw /* 1px */;}
 }
@@ -39,9 +36,6 @@ body{font-size:var(--font-base, 16rem);}
 }
 @media (max-width:768px){
     html{font-size:0.130vw /* 1px */;}
-}
-@media (max-width:620px){
-    html{font-size:0.161vw /* 1px */;}
 }
 @media (max-width:480px){
     html{font-size:0.271vw /* 1.3px */;}	
