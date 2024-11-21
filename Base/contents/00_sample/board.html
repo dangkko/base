@@ -1,0 +1,21 @@
+<? include $_SERVER['DOCUMENT_ROOT'] . "/head.php"; ?>
+<? include $_SERVER['DOCUMENT_ROOT'] . "/inc/top.html"; ?>
+<? include $_SERVER['DOCUMENT_ROOT'] . "/inc/header.html"; ?>
+
+<?
+  /*
+   * 작업참고
+   * 게시판경우 서브레이아웃이 정해지면 해당페이지에 레이아웃 겉 코딩을 넣어서 마무리해줍니다.
+  */
+?>
+
+<article data-subarea="">
+	<div class="inr-1200">
+<? include_once  $_SERVER['DOCUMENT_ROOT'] . '/board/board.php'; ?>
+	</div>
+</article>
+
+
+	
+<? include("inc_control.html") ?>
+<? include $_SERVER['DOCUMENT_ROOT'] . "/inc/footer.html"; ?>

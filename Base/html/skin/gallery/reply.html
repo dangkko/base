@@ -1,0 +1,111 @@
+<script type="text/javascript">
+$(document).on('click', 'a[href="#"]', function(e){
+    e.preventDefault();
+});
+
+
+$(function(){
+	$('.btn_del').click(function(){
+		$("."+$(this).attr('id')).toggle('show');
+	});
+
+	$('.hide_all').click(function(){
+			$("."+$(this).attr('id')).toggle('hide');
+	});
+});
+</script>
+
+<? if($board_write5  >=  $site_level ){ ?> 
+	<form name="comment" method="post" action="?sub=<?=$sub?>&style=memo_ok"  onsubmit="return false">
+	<?   $encodekey  =  chr(rand(65, 90)).chr(rand(65, 90)).chr(rand(65, 90)).time() ;   $decodekey  =     encrypt_md5 (time(), $encodekey );     ?> 
+	<input TYPE="hidden" NAME="encodekey"  value="<?=$encodekey?>" >
+	<input TYPE="hidden" NAME="decodekey" value="<?=$decodekey?>">
+	<input TYPE="hidden" NAME="board_category" value="<?=$board_category?>">
+	<!-- PC, TABLET -->	
+
+	<!-- 댓글사용시 -->
+	<div class="comment_area">
+		<h4>댓글<span>2</span></h4>
+		<!-- 댓글작성 -->
+
+	<? if($site_userid == ""){ ?>
+
+		<div class="write">
+				<div class="input">
+					<span>
+						<label for="comment_name">작성자</label>
+						<input type="text" name="com_name" id="comment_name" value="">
+					</span>
+					
+					<span>
+						<label for="comment_pw">비밀번호</label>
+						<input type="password" name="com_pin" id="comment_pw" value="">
+					</span>
+				</div>
+				<textarea name="ment" id="comment" title="댓글입력하기" placeholder="내용과 무관한 글은 임의로 삭제 될 수 있습니다."></textarea>
+				<div class="send">					
+					<a href="#" class="btn_submit" onclick="JavaScript:ok();">등록</a>
+				</div>
+			</div>
+	<? } else { ?>
+		<input TYPE="hidden" value="<?=$site_username?>" name="com_name">
+		<input TYPE="hidden" value="asdf23rdfsr23fsdfq34fvzdxf" name="com_pin"> 
+		<input TYPE="hidden" value="<?=$site_userid?>" name="com_mem_id"> 
+	<? } ?>
+
+	<input type="hidden" name="num" value="<?=$num?>">
+	<input type="hidden" name="h_url" value="<?="?sub=$sub&style=content&num=$num&sw=$sw&sn=$sn&st=$st&sc=$sc&page=$page&board_category=$board_category"?>" ID="Hidden7">
+	</form>
+<?}?> 
+
+<!-- 삭제눌럿을때 비번확인 -->
+<div class="list">
+	<ul>
+			<?
+			$qry = " SELECT *  FROM daegu_board_comment where tb='$tb' and com_idx = $num  order by idx desc "; 
+			$comment_result=mysqli_query($dbp, $qry); 
+			while($comment_row=mysqli_fetch_array($comment_result)) {   
+				$idx  =$comment_row[idx];
+				$com_idx  =$comment_row[com_idx];
+				$com_mem_auth  =$comment_row[com_mem_auth];
+				$com_name   =$comment_row[com_name];
+				$com_pin  =$comment_row[com_pin];
+				$com_writeday   =$comment_row[com_writeday];
+				$com_ment  =$comment_row[com_ment];
+				$com_mem_id =$comment_row[com_mem_id];
+				//if ($com_mem_auth  ) {$com_name = "<b>.$com_name.</b>" ;}   
+			?>
+			<li>
+				<span class="name"><?=$com_name?></span>
+				<div class="btn">
+					<span class="date"><?=date( "Y-m-d", strtotime($com_writeday))?></span>
+					<a href="#" class="btn_reply">댓글달기</a>
+					<? 	if ($com_mem_id == $site_userid){ ?>
+						<? 	if ( $site_userid != ""){   ?>
+							<a href="#"  class="btn_del" id="passwod_<?=$comment_row[idx]?>">삭제</a>
+						<? } else {?>
+							<a href="#"  class="btn_del" id="passwod_<?=$comment_row[idx]?>">삭제</a>
+						<? } ?>
+					<? } ?>
+				</div>
+				<p><?=$com_ment?></p>
+				<div class="comment_password passwod_<?=$comment_row[idx]?> delbox_<?=$comment_row[idx]?>" style="display:none;">
+					<form action="?sub=$sub&style=memo_ok&mode=com_del&com_idx=$com_idx&idx=$idx&num=$num&board_category=$board_category" method="post" name="del_form_<?=$idx?>">
+					<input type="hidden" name="idx" value="<?=$idx?>" />
+					<input type="hidden" name="board_category" value="<?=$board_category?>" />
+					<input type="hidden" name="com_idx" value="<?=$com_idx?>" />
+					<input type="hidden" name="style" value="memo_ok" />
+					<input type="hidden" name="num" value="<?=$num?>" />
+					<input type="hidden" name="sub" value="<?=$sub?>" />
+					<input type="hidden" name="mode" value="com_del" />
+					<p>작성시 설정한 비밀번호를 입력해주세요.</p>
+					<input type="password" name="pin" id=""/>
+					<a href="#" class="button" onclick="del_form_<?=$idx?>.submit();">확인</a>
+					<a href="#" class="button gray hide_all" id="delbox_<?=$comment_row[idx]?>">취소</a>
+					</form>
+				</div>		
+			</li>
+	
+<?}?>
+</ul>
+<!-- //삭제눌럿을때 비번확인 -->		

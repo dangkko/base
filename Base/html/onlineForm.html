@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">		
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1">
+		<meta name="format-detection" content="telephone=no">
+		<title>목록 | 갤러리/동영상게시판 | 모아깡-사용자</title>
+		<link rel="stylesheet" type="text/css" href="/css/unable/common.css?ver=1.1"/>
+		<link rel="stylesheet" type="text/css" href="/js/jquery-ui.css"/>
+		<link rel="stylesheet" type="text/css" href="/js/design/swiper-bundle.min.css"/> <!-- slide -->
+		<link rel="stylesheet" type="text/css" href="/css/layout.css?ver=1.1"/>
+		<link rel="stylesheet" type="text/css" href="/css/content.css?ver=1.1"/><!-- sub에서만 사용 -->
+
+		<script type="text/javascript" src="/js/jquery-3.6.0.min.js"></script>
+		<script type="text/javascript" src="/js/jquery-ui.js"></script>
+		<script type="text/javascript" src="/js/design/swiper-bundle.min.js"></script> <!-- slide -->
+		<script type="text/javascript" src="/js/design/wd_base.js"></script>
+		<script type="text/javascript" src="/js/design/wd_module.js"></script>
+		<script type="text/javascript" src="/js/design/wd_custom.js"></script>
+		
+		<!--[if lte IE 10]>
+			<script type="text/javascript">
+				 document.write('<div id="update">보고계신 사이트는 <b>마이크로소프트 엣지에 최적화 된</b> 사이트 입니다. Windows Internet Explorer를 <b>업데이트</b>를 받으세요 <a href="https://www.microsoft.com/ko-kr/edge" target="_blank" title="새창">Microsoft Edge 업데이트하기</a></div>');
+			</script>
+		<![endif]-->
+	</head>
+	<body>
+		<div id="skip_menu">
+			<a href="#content">본문 바로가기</a>
+		</div>
+		
+		<div id="wrap">
+			<!-- header -->
+			<header id="header">
+				<h1><a href="/">모아깡 USER MOAMASTER</a></h1>
+				<!-- gnb -->
+				<nav>
+					<ul class="gnb">
+						<li><a href="/" data-gnb="dashboard">대시보드</a></li>
+						<li><a href="/html/html_guide.html" data-gnb="guide">HTML디자인가이드</a></li>
+						<li><a href="/3kadmin/dashboard.html" data-gnb="admin">모아관리자</a></li>
+					</ul>
+				</nav>
+				<!-- //gnb -->
+			</header>
+			<!-- //header -->
+
+
+			<div id="container" data-width="max-width:1360px">
+				<!-- 본문 -->
+				<div id="content" class="scrollbar-dynamic">
+					<article>
+						<h2>갤러리 & 동영상 게시판 목록</h2>	
+		
+				
+<!-- 내용 -->	
+<div class="bbsNew_container">
+	<div class="box_privacy">
+		<textarea name="comments" id="" style="width:100%; height:200px;" readonly class="scrollbar-inner">
+참고용 임시 약관입니다.
+
+[개인정보의 수집 항목]
+1. 필수 정보 - 성명, 연락처, 이메일
+ㆍ이용목적
+- 성명 : 서비스 이용에 따른 본인 식별 절차에 이용
+- 전화번호, 이메일 : 공지사항 전달, 본인 의사 확인, 불만 처리 등 원활한 의사소통 경로의 확보에 대한 정확한 내용의 확보
+- 휴가는 홈페이지, 전화를 통한 본인 확인 등의 방법으로 개인정보를 수집 합니다.
+- 회원님의 개인정보는 회원탈회시 까지 보유 및 이용하며, 개인정보 수집∙이용 목적이 달성된 후에는 재생할 수 없는 방법에 의하여 완전히 삭제하며, 추후 열람이나 이용이 불가능한 상태로 처리합니다.
+※ 상기 개인정보 수집∙이용에 대하여 귀하는 동의하지 않을 수 있습니다. 단, 동의 거부 시 홈페이지 이용이 불가합니다.
+		</textarea>
+		<div class="designRadio agree">
+			<label class="check_con">
+				<input type="checkbox" name="diagnosis">
+				<i class="checkmark"></i>
+				<em>개인정보 수집 및 이용 동의 <i class="co1">(필수)</i></em>				
+			</label>
+		</div>
+	</div>
+
+	<!-- 온라인폼 -->
+	<div class="bbsForm">
+	    <div class="bbsForm_data">
+		   <label>이름<i class="marking">필수항목</i></label>
+		   <div class="inr">
+			  <input type="text" name="name" id="name" class="wdt30" placeholder="이름을 입력해주세요."/>
+		   </div>
+	    </div>
+	    <div class="bbsForm_data">
+		   <label>연락처<i class="marking">필수항목</i></label>
+		   <div class="inr data_call wdt50">
+			  <div class="designSelect">
+				 <select name='cate'>
+					<option value="">010</option>
+					<option value="제목">011</option>
+					<option value="작성자">019</option>
+					<option value="내용">070</option>
+				 </select>
+			  </div>
+			  <i></i>
+			  <input type="text" name="phone1" id="phone1" maxlength="4" class="" />
+			  <i></i>
+			  <input type="text" name="phone2" id="phone2" maxlength="4" class="" />
+		   </div>
+	    </div>
+	    <div class="bbsForm_data">
+		   <label>주소<i class="marking">필수항목</i></label>
+		   <div class="inr data_address wdt50">
+			  <ul>
+				 <li><input type="text" name="address1" id="address1" value readonly="readonly" class="" /><a href="#" class="button_new"><span>우편번호</span></a></li>
+				 <li><input type="text" name="address2" id="address2" value readonly="readonly" class="" /></li>
+				 <li><input type="text" name="address3" id="address3" value placeholder=" 상세주소를 입력해주세요" class="" /></li>
+			  </ul>
+		   </div>
+	    </div>
+		<div class="bbsForm_data">
+		    <label>이메일<i class="marking">필수항목</i></label>
+		    <div class="inr data_email">	
+			   <div class="">
+				 <input type="text" name="email1" id="email1" value="" class="required" title="이메일" placeholder="ex)koweb">
+				 <i>@</i>
+				 <input type="text" name="email2" value="" id="email2" class="required" title="이메일 직접입력">
+				 <div class="designSelect">
+				    <select name="tmp_mail" id="tmp_mail" class="select-hidden">
+					  <option value="other">직접입력</option>
+					  <option value="naver.com">naver.com</option>
+					  <option value="daum.net">daum.net</option>
+					  <option value="hanmail.net">hanmail.net</option>
+					  <option value="hotmail.com">hotmail.com</option>
+					  <option value="gmail.com">gmail.com</option>
+				    </select>
+				 </div>
+			   </div>
+			   <input type="hidden" name="email3" id="email3" value="">
+			   <!-- <input type="button" class="button_new black" id="mail_chk" value="인증하기"> -->
+			</div>
+		 </div>
+	    <div class="bbsForm_data">
+		   <label>제목<i class="marking">필수항목</i></label>
+		   <div class="inr">
+			  <input type="text" name="title" id="title" class="inputFull" placeholder="제목을 입력해주세요."/>
+		   </div>
+	    </div>
+	    <div class="bbsForm_data">
+		   <label>내용</label>
+		   <div class="inr">
+			  <textarea name="comments" id="" class="inputFull" placeholder="문의 내용을 입력해주세요."></textarea>
+		   </div>
+	    </div>
+	    <div class="bbsForm_data mg">
+		   <!-- <label>첨부파일</label> -->
+		   <div class="inr wdt50">
+			  <div class="designFile">
+				 <input type="text" readonly="readonly" value="" class="inputFull" placeholder="첨부할 파일을 선택해주세요." />
+				 <input type="file" name="fileUpload" id="fileUpload" />
+				 <label for="fileUpload" class="button_new black">파일선택</label>
+			  </div>
+			  <div class="designFile">
+				<input type="text" readonly="readonly" value="" class="inputFull" placeholder="첨부할 파일을 선택해주세요." />
+				<input type="file" name="fileUpload" id="fileUpload" />
+				<label for="fileUpload" class="button_new black">파일선택</label>
+			 </div>
+			 <div class="designFile">
+				<input type="text" readonly="readonly" value="" class="inputFull" placeholder="첨부할 파일을 선택해주세요." />
+				<input type="file" name="fileUpload" id="fileUpload" />
+				<label for="fileUpload" class="button_new black">파일선택</label>
+			 </div>
+		   </div>
+		   
+	    </div>
+	    <div class="bbsForm_data">
+		   <label>비밀번호<i class="marking">필수항목</i></label>
+		   <div class="inr">
+			  <input type="text" name="title" id="title" class="wdt30" placeholder="비밀번호를 입력해주세요."/>
+			  <p class="caption">※ 글 수정, 삭제시 필요합니다.</p>
+		   </div>
+	    </div>
+		<div class="bbsForm_data data-spam">
+			<label>스팸번호입력<i class="marking">필수항목</i></label>
+			<div class="inr">
+				<span>8359</span>
+				<input type="text" name="rand_auth_" id="rand_auth_" value="" class="required" title="스팸방지번호" placeholder="좌측 번호를 입력해주세요.">
+			</div>
+			<p class="caption">※ 스팸방지번호를 입력하지 않으면 문의를 할 수 없습니다.</p>
+		</div>
+	</div>
+	<!-- //온라인폼 -->
+
+	<!-- 버튼 -->
+	<div class="btn_area">
+	    <a href="#" class="button gray">취소</a>
+	    <a href="#" class="button">저장</a>
+	</div>
+	<!-- //버튼 -->
+</div>
+
+<!-- //내용 -->
+
+
+					</article>
+				</div>
+				<!-- //본문 -->
+			</div>
+
+			<!-- footer -->
+			<footer id="footer">
+				<p>ⓒ 3kkang All Rights Reserved.</p>
+			</footer>
+			<!-- //footer -->
+		</div>
+	</body>
+</html>

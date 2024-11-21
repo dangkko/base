@@ -1,0 +1,1031 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">		
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1">
+		<meta name="format-detection" content="telephone=no">
+		<title>HTML디자인가이드 | KOWEB-사용자</title>
+		<link rel="stylesheet" type="text/css" href="/css/unable/common.css?ver=20231120"/>
+		<link rel="stylesheet" type="text/css" href="/js/jquery-ui.css"/>
+		<link rel="stylesheet" type="text/css" href="/js/design/swiper-bundle.min.css"/> <!-- slide -->
+		<link rel="stylesheet" type="text/css" href="/js/jquery.scrollbar.css"/> <!-- scrollbar -->
+		<link rel="stylesheet" type="text/css" href="/css/layout.css?ver=20231120"/>
+		
+		<link rel="stylesheet" type="text/css" href="/css/content.css?ver=20231120"/><!-- sub에서만 사용 -->
+
+		<script src="/js/jquery-3.6.0.min.js"></script>
+		<script src="/js/jquery-ui.js"></script>
+		<script src="/js/design/swiper-bundle.min.js"></script> <!-- slide -->
+		<script src="/js/jquery.scrollbar.js"></script> <!-- scrollbar -->
+		<script src="/js/design/wd_base.js"></script>
+		<script src="/js/design/wd_module.js"></script>
+		<script src="/js/design/wd_custom.js"></script>
+	</head>
+	<body>
+		<div id="skip_menu">
+			<a href="#content">본문 바로가기</a>
+		</div>
+		
+		<div id="wrap">
+			<!-- header -->
+			<header id="header">
+				<h1><a href="/">USER KOMASTER</a></h1>
+				<!-- gnb -->
+				<nav>
+					<ul class="gnb">
+						<li><a href="/" data-gnb="dashboard">대시보드</a></li>
+						<li><a href="/html/html_guide.html" data-gnb="guide" class="on">HTML디자인가이드</a></li>
+						<li><a href="/ko_admin/dashboard.html" data-gnb="admin">관리자</a></li>
+					</ul>
+				</nav>
+				<!-- //gnb -->
+			</header>
+			<!-- //header -->
+
+
+			<div id="container" data-width="max-width:1360px">
+				<!-- 본문 -->
+				<div id="content" class="scrollbar-dynamic">
+					<article>
+
+
+
+<div style="padding:40px 20px;">
+	<h2>HTML Design guide</h2>		
+	<p class="txt_point02" ><strong>작업시 요소보기로 소스 보지마시고, 꼭 페이지 소스보기하신 후 마크업안 내용을 가져가서 작업바랍니다.</strong> 스타일을 수정하고자 할경우 <strong>custom_board.css</strong> 파일에서 상쇄하여 처리합니다.</p>
+</div>		
+<!-- 내용 -->	
+<div class="btn_area left pt0" id="top" style="padding:40px 20px; border-bottom:1px solid #eee;">
+	<!-- 
+	<a href="#chapter01" class="button white">게시판코딩모음</a>
+	<a href="#chapter02" class="button white">모듈코딩모음</a>
+	 -->
+	<a href="#chapter08" class="button white">레이어팝업</a>
+	<a href="#chapter03" class="button white">버튼타입</a>
+	<a href="#chapter04" class="button white">텍스트</a>
+	<a href="#chapter05" class="button white">table영역</a>
+	<a href="#chapter06" class="button white">설명글</a>
+	<a href="#chapter07" class="button white">아코디언(모바일전용)타입</a>
+	<a href="#chapter09" class="button white">input radio, checkbox, file 디자인</a>
+	<a href="#chapter11" class="button white">툴팁사용</a>	
+	<a href="#chapter12" class="button white">일반페이징사용(게시판)</a>
+	<a href="#chapter13" class="button white">사이트맵</a>
+</div>
+
+
+<!-- 
+<div style="padding:40px 20px; border-bottom:1px solid #eee;">
+	<h3 id="chapter01" style="margin-top:60px; font-size:25px; color:#111;">게시판 코딩모음</h3>
+	
+	<p class="mt20"><strong>기본(일반)게시판 : </strong>공지글, 답글 여부를 표시한다. 상세는 머릿말, 댓글사용시, 글내용사용방식별, 답글시 등 케이스별로 전부 코딩되어있다. <span class="txt_point01">포옹적으로 전체적 사용이 가능</span>하다.</p>
+	
+	<div class="btn_area left pt10">
+		<a href="/html/bbs_default_list.html" class="button blue">기본(일반)게시판 목록</a>
+		<a href="/html/bbs_default_view.html" class="button white">기본(일반)게시판 상세</a>
+		<a href="/html/bbs_default_write.html" class="button white">기본(일반)게시판 글쓰기&amp;수정</a>
+	</div>
+	
+	<p><strong>갤러리 게시판 : </strong>공지글 별도로 구분된다. 목록에 카테고리 또는 상태값을 노출하고자 할경우 사용할 수 있다. <br/>상세는 머릿말, 댓글사용시, 글내용 사용방식별 등 케이스별로 전부 코딩되어있다. <span class="txt_point01">답글형태는 제공되지않는다.</span></p>
+	<div class="btn_area left pt10">
+		<a href="/html/bbs_gallery_list.html" class="button blue">갤러리 게시판 목록</a>
+		<a href="/html/bbs_default_view.html" class="button white">갤러리 게시판 상세</a>
+		<a href="/html/bbs_default_write.html" class="button white">갤러리 게시판 글쓰기&amp;수정</a>
+	</div>
+	
+	<p><strong>유튜브/동영상 게시판 : </strong>공지글 별도로 구분된다. 목록에 카테고리 또는 상태값을 노출하고자 할경우 사용할 수 있다. <br/>상세는 머릿말, 기타정보노출, 댓글사용시, 글내용 사용방식별 등 케이스별로 전부 코딩되어있다. <span class="txt_point01">답글형태는 제공되지않는다.</span></p>
+	<div class="btn_area left pt10">
+		<a href="/html/bbs_gallery_list.html" class="button blue">유튜브/동영상 게시판 목록</a>
+		<a href="/html/bbs_video_view.html" class="button white">유튜브/동영상 게시판 상세</a>
+		<a href="/html/bbs_default_write.html" class="button white">유튜브/동영상 게시판 글쓰기&amp;수정</a>
+	</div>
+	
+	<p><strong>블로그형 게시판 : </strong>공지글별도로 구분, 목록 사진, 제목, 글내용을 노출할때 사용하면 유용하다. <br/>상세는 머릿말, 기타정보노출, 댓글사용시, 글내용 사용방식별 등 케이스별로 전부 코딩되어있다. <span class="txt_point01">답글형태는 제공되지않는다.</span></p>
+	<div class="btn_area left pt10">
+		<a href="/html/bbs_blog_list.html" class="button blue">블로그형 게시판 목록</a>
+		<a href="/html/bbs_default_view.html" class="button white">블로그형 게시판 상세</a>
+		<a href="/html/bbs_default_write.html" class="button white">블로그형 게시판 글쓰기&amp;수정</a>
+	</div>
+	
+	<p><strong>이벤트형 게시판 : </strong>공지글별도로 구분 및 상태값, 목록 사진, 제목, 노출할때 사용<br/>상세는 머릿말, 기타정보노출, 댓글사용시, 글내용 사용방식별 등 케이스별로 전부 코딩되어있다. <span class="txt_point01">답글형태는 제공되지않는다.</span></p>
+	<div class="btn_area left pt10">
+		<a href="/html/bbs_event_list.html" class="button blue">이벤트형 게시판 목록</a>
+		<a href="/html/bbs_event_view.html" class="button white">이벤트형 게시판 상세</a>
+		<a href="/html/bbs_event_write.html" class="button white">이벤트형 게시판 글쓰기&amp;수정</a>
+		<a href="/html/bbs_event_form.html" class="button white">이벤트형 참가하기</a>
+	</div>
+	
+	<p><strong>문의하기(답변) 게시판 : </strong>공지글별도로 구분, 상태값, 제목, 관리자가 답변을 하면 상세에 원문에 하단에 답변이 같이 노출되는 형태<br/>상세는 머릿말, 기타정보노출, 글내용, 관리자답변 사용방식별 등 케이스별로 전부 코딩되어있다. <span class="txt_point01">댓글, 답글형태는 제공되지않는다.</span></p>
+	<div class="btn_area left pt10">
+		<a href="/html/online_form_list.html" class="button blue">문의하기(답변) 게시판 목록</a>
+		<a href="/html/online_form_view.html" class="button white">문의하기(답변) 게시판 상세</a>
+		<a href="/html/online_form_write.html" class="button white">문의하기(답변) 게시판 글쓰기&amp;수정</a>
+		<a href="/html/online_form_answer.html" class="button white">관리자답변 쓰기 &amp; 수정하기</a>
+	</div>
+	
+	<p><strong>FAQ형 게시판 : </strong>공지글별도로 구분 및 목록에 카테고리, 제목, 내용 노출되며 제목을 클릭하여 내용을 목록에서 바로 노출할때 사용한다.<br/>상세는 제목을 클릭시 아코디언 형태로나오며 내용, 첨부파일유무, 권한자에 한에 편집을 제공하는 버튼이 코딩되어있다. <span class="txt_point01">답글/댓글 형태는 제공되지않는다.</span></p>
+	<div class="btn_area left pt10">
+		<a href="/html/bbs_faq_list.html" class="button blue">FAQ형 게시판 목록&amp;상세</a>
+		<a href="/html/bbs_faq_write.html" class="button white">FAQ형 게시판 글쓰기&amp;수정</a>
+	</div>
+	
+	<p><strong>일정A(달력+목록) 게시판 : </strong>공지글별도로 구분 되며 목록에 상태값, 날짜, 교육명(커스텀 별로다름), 모집인원(커스텀 별로다름) 노출되며 목록에서 교육명을 클릭하여 하단에 상세보기를 제공한다. <br/>공지글에 대해서만 상세페이지를 별도로 따로 제공한다.<span class="txt_point01">답글 형태는 제공되지않는다.</span></p>
+	<div class="btn_area left pt10">
+		<a href="/html/bbs_scheduleA_list.html" class="button blue">일정A(달력) 게시판 목록&amp;상세</a>
+		<a href="/html/bbs_schedule_write.html" class="button white">일정(달력) 게시판 글쓰기&amp;수정</a>
+	</div>
+	
+	<p><strong>일정B(달력+목록은 mobile형태에서 추가제공) 게시판 : </strong>공지글별도로 구분 되며 목록에 상태값, 날짜, 교육명(커스텀 별로다름), 모집인원(커스텀 별로다름) 노출되며 달력에서 교육명을 클릭하여 하단에 상세보기를 제공한다. <br/>모바일(가로폭 768px)에서 제공하는 목록은 달력의 숫자를 클릭시 해당날짜의 데이터로 교체가 된다. 이건 pc에서는 목록이 노출되지 않기 때문에 모바일(가로폭 768px)이 아니라면 보이지않는다. <br/>공지글에 대해서만 상세페이지를 별도로 따로 제공한다.<span class="txt_point01">답글 형태는 제공되지않는다.</span></p>
+	<div class="btn_area left pt10">
+		<a href="/html/bbs_scheduleB_list.html" class="button blue">일정B(달력) 게시판 목록&amp;상세</a>
+		<a href="/html/bbs_schedule_write.html" class="button white">일정(달력) 게시판 글쓰기&amp;수정</a>
+	</div>
+	
+	<p><strong>PDF보기 게시판 : </strong>공지글별도로 구분 되며 목록에 카테고리, 제목, 작성일 노출되며 목록에서 클릭하여 파일다운로드 또는 바로가기를 제공할때 사용된다. <br/>공지글에 대해서만 상세페이지를 별도로 따로 제공한다.<span class="txt_point01">답글/댓글 형태는 제공되지않는다.</span></p>
+	<div class="btn_area left pt10">
+		<a href="/html/bbs_pdf_list.html" class="button blue">PDF보기 게시판 목록</a>
+		<a href="/html/bbs_default_write.html" class="button white">PDF보기 게시판 글쓰기&amp;수정</a>
+	</div>
+	
+</div> 
+
+
+
+<div style="padding:40px 20px; border-bottom:1px solid #eee;">
+	<h3 id="chapter02" style="margin-top:60px; font-size:25px; color:#111;">모듈 코딩모음</h3>
+	
+	<p><strong>모듈 지점찾기 : </strong>공지글별도로 구분 되며 목록에 카테고리, 매장명, 주소, 전화번호, 지도보기 노출되며 목록에서 view를 클릭하여 지도바로가기를 제공할때 사용된다. <br/>공지글에 대해서만 상세를 따로 제공한다.<span class="txt_point01">답글/댓글 형태는 제공되지않는다.</span></p>
+	<div class="btn_area left pt10">
+		<a href="/html/module_area_list.html" class="button green">지점찾기 게시판 목록</a>
+		<a href="/html/module_area_write.html" class="button white">지점찾기 게시판 글쓰기&amp;수정</a>
+	</div>
+	
+	<p><strong>모듈 제품보기 : </strong>공지글별도로 구분 되며 목록에 카테고리, 제품명, 등록일, 예약하기 버튼(예약할경우만) 노출되며 목록에서 제품명클릭과 예약하기 버튼 클릭시 별도로 링크는 경우사용 <br/>예약하기는 없는경우 버튼을 없애면되며 코딩페이지에 전체링크를 감싼 형태예시를 참고한다.<span class="txt_point01">답글 형태는 제공되지않는다.</span></p>
+	<div class="btn_area left pt10">
+		<a href="/html/module_product_list.html" class="button green">제품보기(예약가능) 목록</a>
+		<a href="/html/module_product_view.html" class="button white">제품보기(예약가능) 상세</a>
+		<a href="/html/module_product_write.html" class="button white">제품보기(예약가능) 글쓰기&amp;수정</a>
+		<a href="/html/module_product_booking.html" class="button white">제품보기 예약하기</a>
+	</div>
+</div>
+-->
+
+
+<div style="padding:40px 20px; border-bottom:1px dashed #cfcece;">
+	<h3 id="chapter08" style="margin-top:60px; font-size:25px; color:#111;">Layer POPUP (레이어팝업)</h3>
+	<p>레이어팝업 관련 사용방법은 소스보기를 하여 레이어팝업 보기쪽 마크업된 항목을 확인하세요. 레이어가 여러개 일경우 showPopup 다음에오는 div id값을 여러개 선언하면 됨 <br>
+	닫기 선언을 따로 하고 싶으면 샘플B참고
+	</p>
+	<div style="margin-top:10px;">
+		<!-- 소스 -->						
+		<a href="javascript:;" onclick="javascript:showPopup(popLayer01);" class="button">레이어팝업보기샘플A</a>		
+		<a href="javascript:;" onclick="javascript:showPopup(popImgOnly);" class="button">사진만보기(인증서,특허증)</a>	
+		<a href="javascript:;" onclick="javascript:showPopup(popLayer02);" class="button">레이어팝업보기샘플B</a>	
+		<a href="javascript:;" onclick="javascript:showPopup(personal);" class="button">개인정보처리방침</a>		
+		<a href="javascript:;" onclick="javascript:showPopup(consent);" class="button">개인정보수집 및 이용동의</a>		
+		<a href="javascript:;" onclick="javascript:showPopup(refuse_email);" class="button">이메일 무단수집거부</a>		
+		
+		
+		<!-- 레이어팝업소스 -->
+		<div id="popLayer01" data-pop-layer="layer" style="display:none;">
+			<div class="popBox"><!-- width를 style="--popWid:700rem" 선언하면 크게 사용가능합니다. -->
+				<!-- title -->
+				<h2 class="popTitle">레이어팝업샘플</h2>
+				<!-- 내용 -->
+				<div class="popConts">		
+					내용 닫기하고싶으면 안에 class="close" 하면됩니다.
+				</div>
+			</div>
+		</div>				
+		<!-- //소스 -->
+		
+		<!-- 이미지 팝업 -->
+		<div id="popImgOnly" data-pop-layer="layer" class="area_popLayer--img" style="display:none;">
+			<div class="popBox">
+				<!-- scroll -->
+				<div class="scrollbar-inner">
+					<div class="box_view_img">
+						<span class="img"><img src="/images/sample3.jpg" alt=""/></span>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<div id="popLayer02" data-pop-layer="layer" style="display:none;">
+			<div class="popBox" style="--popWid:600rem;"><!-- width를 style 선언하여 조절해서 사용가능합니다. -->
+				<!-- title -->
+				<h2 class="popTitle">레이어팝업샘플B</h2>
+				<!-- 내용 -->
+				<div class="popConts">		
+					내용 닫기하고싶으면 안에 class="close" 하면됩니다.
+					<p>
+						000는 (이하 '회사'는) 고객님의 개인정보를 중요시하며, "정보통신망 이용촉진 및 정보보호"에 관한 법률을 준수하고 있습니다.<br/><br/>
+						회사는 개인정보처리방침을 통하여 고객님께서 제공하시는 개인정보가 어떠한 용도와 방식으로 이용되고 있으며, 개인정보보호를 위해 어떠한 조치가 취해지고 있는지 알려드립니다.
+						회사는 개인정보처리방침을 개정하는 경우 웹사이트 공지사항(또는 개별공지)을 통하여 공지할 것입니다<br/><br/>
+						본 방침은 : 2022 년 9 월 1 일 부터 시행됩니다.
+					</p>
+					<div class="btn_area">
+						<a href="#" class="button white close">닫기</a>
+					</div>		
+				</div>
+			</div>
+		</div>	
+		
+		<!-- 개인정보처리방침 -->
+		<div id="personal" data-pop-layer="layer" style="display:none;">
+			<div class="popBox" style="--popWid:600rem;"><!-- width를 style 선언하여 조절해서 사용가능합니다. -->
+				<!-- title -->
+				<h2 class="popTitle">개인정보처리방침</h2>
+				<div class="popConts">		
+					<!-- 내용 -->
+					<div class="area_guide">
+						<p>
+							000는 (이하 '회사'는) 고객님의 개인정보를 중요시하며, "정보통신망 이용촉진 및 정보보호"에 관한 법률을 준수하고 있습니다.<br/><br/>
+							회사는 개인정보처리방침을 통하여 고객님께서 제공하시는 개인정보가 어떠한 용도와 방식으로 이용되고 있으며, 개인정보보호를 위해 어떠한 조치가 취해지고 있는지 알려드립니다.
+							회사는 개인정보처리방침을 개정하는 경우 웹사이트 공지사항(또는 개별공지)을 통하여 공지할 것입니다<br/><br/>
+							본 방침은 : 2022 년 9 월 1 일 부터 시행됩니다.
+						</p>
+						
+						<h3>1. 수집하는 개인정보의 항목 및 수집방법</h3>
+						<ul>
+							<li><strong>가. 수집하는 개인정보의 항목</strong>
+								<ul>
+									<li>회사는 정보 제공을 위해 아래와 같은 개인정보를 수집하고 있습니다. - 성명, 이메일, 연락처, 주소</li>
+								</ul>
+							</li>
+							<li><strong>나. 개인정보 수집방법</strong>
+								<ul>
+									<li>회사는 홈페이지 문의 및 협력 상담하기를 통해 개인정보를 수집합니다.</li>
+								</ul>
+							</li>
+						</ul>
+						
+						<h3>2. 개인정보의 수집 및 이용목적</h3>
+						<p>정보 전달, 콘텐츠 제공</p>
+						
+						<h3>3. 개인정보의 보유 및 이용기간</h3>
+						<p>이용자의 개인정보는 원칙적으로 개인정보의 수집 및 이용목적이 달성되면 지체 없이 파기합니다.</p>
+						
+						<h3>4. 개인정보 파기절차 및 방법</h3>
+						<p>이용자의 개인정보는 원칙적으로 개인정보의 수집 및 이용목적이 달성되면 지체 없이 파기합니다. 회사의 개인정보 파기절차 및 방법은 다음과 같습니다.</p>
+						<ul>
+							<li><strong>가. 파기절차</strong>
+								<ul>
+									<li>회사가 제공하는 정보를 받는 동안 개인정보는 회사가 지속적으로 보유하며 정보를 제공하기 위하여 이용합니다. 개인정보의 수집목적 또는 제공받은 목적이 달성된 때에는 개인정보를 지체 없이 파기합니다. 다만, 수집목적 또는 제공받은 목적이 달성된 경우에도 상법 등 법령의 규정에 의하여 보존할 필요성이 있는 경우에 한하여 개인정보를 보유할 수 있습니다. 이 경우 해당 개인 정보는 보관의 목적으로만 관리합니다.</li>
+								</ul>
+							</li>
+							<li><strong>나. 파기방법</strong>
+								<ul>
+									<li>- 종이에 출력된 개인정보는 분쇄기로 분쇄하거나 소각을 통하여 파기합니다.</li>
+									<li>- 전자적 파일 형태로 저장된 개인정보는 기록을 재생할 수 없는 기술적 방법을 사용하여 삭제합니다.</li>
+								</ul>
+							</li>
+						</ul>
+						
+						<h3>5. 개인정보 제공</h3>
+						<p>회사는 이용자의 개인정보를 원칙적으로 외부에 제공하지 않습니다. 다만, 아래의 경우에는 예외로 합니다.</p>
+						<ul>
+							<li>- 이용자들이 사전에 동의한 경우</li>
+							<li>- 법령의 규정에 의거하거나, 수사 목적으로 법령에 정해진 절차와 방법에 따라 수사기관의 요구가 있는 경우</li>
+						</ul>
+						
+						<h3>6. 개인정보 자동 수집 장치의 설치/운영 및 거부에 관한 사항</h3>
+						<p>회사는 이용자들의 정보를 저장하고 수시로 불러오는 '쿠키(cookie)' 등을 사용하여 개인정보를 자동으로 수집하지 않습니다.</p>
+						
+						<h3>7. 이용자의 권리와 의무</h3>
+						<p>이용자는 언제든지 자신이 제공한 개인정보를 열람, 수정 및 삭제할 수 있는 권리를 갖고 있습니다.<br/>
+						이용자가 개인정보 조회, 수정 및 삭제를 하고자 할 경우 회사 개인정보관리 책임자에게 이메일을 보내 요청합니다. 이용자가 개인정보의 삭제를 요구할 경우 회사는 즉시 해당 데이터를 영구히 재생할 수 없는 형태로 완전히 파기합니다. 이용자는 개인 정보를 보호 받을 권리와 함께 스스로를 보호하고 타인의 정보를 침해하지 않을 의무도 가지고 있습니다. 이용자는 본인의 개인정보를 최대한 정확하게 입력하고 본인의 개인정보가 유출되지 않도록 유의하여 불의의 사고를 예방해야 합니다.<br/>
+						만 14세 미만 아동의 경우, 법정 대리인이 아동의 개인정보를 조회하거나 수정할 권리, 수집 및 이용 동의를 철회할 권리를 가집니다.</p>
+						
+						<h3>8. 개인정보관리책임자 및 담당자의 연락처</h3>
+						<p>귀하께서는 회사의 서비스를 이용하시며 발생하는 모든 개인정보보호 관련 민원을 개인정보관리책임자 혹은 담당부서로 신고하실 수 있습니다. 회사는 이용자들의 신고사항에 대해 신속하게 충분한 답변을 드릴 것입니다.</p>
+						<ul>
+							<li>- 개인정보 담당부서 : 영업부</li>
+							<!-- <li>- 전 화 : 000-000-0000</li> -->
+							<li>- 이메일: ourtym@daum.net</li>
+						</ul>
+						
+						<div class="box_guide">
+							<p>기타 개인정보침해에 대한 신고나 상담이 필요하신 경우에는 아래 기관에 문의하시기 바랍니다.</p>
+							<ul>
+								<li>- 개인분쟁조정위원회 (www.1336.or.kr / 1336)</li>
+								<li>- 정보보호마크인증위원회 (www.eprivacy.or.kr / 02-580-0533~4)</li>
+								<li>- 대검찰청 인터넷범죄수사센터 (http://icic.sppo.go.kr / 02-3480-3600)</li>
+								<li>- 경찰청 사이버테러대응센터 (www.ctrc.go.kr / 02-392-0330)</li>
+							</ul>
+						</div>
+					</div>
+					<!-- //내용 -->	
+				</div>
+			</div>
+		</div>	
+		<!-- //개인정보처리방침 -->
+		
+		
+		<!-- 개인정보수집 및 이용동의 -->
+		<div id="consent" data-pop-layer="layer" style="display:none;">
+			<div class="popBox" style="--popWid:500rem; --popHig:500rem;"><!-- width를 style 선언하여 조절해서 사용가능합니다. -->
+				<!-- title -->
+				<h2 class="popTitle">개인정보수집 및 이용동의</h2>
+				<!-- 내용 -->
+				<div class="popConts">		
+					<div class="area_guide">
+						<h3 class="mt0">1. 개인정보의 수집 및 이용목적</h3>
+						<ul>
+							<li>서비스 이용에 따른 본인식별, 실명확인, 가입의사 확인, 연령제한 서비스 이용</li>
+							<li>고지사항 전달, 불만처리 의사소통 경로 확보, 물품배송 시 정확한 배송지 정보 확보</li>
+							<li>기타 원활한 양질의 서비스 제공 등</li>
+						</ul>
+						
+						<h3>2. 수집하는 개인정보의 항목</h3>
+						<p>이름, 전화, 이메일, 제품명, 내용 그 외 선택항목</p>
+						
+						<h3>3. 개인정보의 보유 및 이용기간</h3>
+						<p>원칙적으로 개인정보의 수집 또는 제공받은 목적 달성 시 지체 없이 파기합니다.<br/>다만, 원활한 서비스의 상담을 위해 상담 완료 후 내용을 3개월간 보유할 수 있으며 전자상거래에서의 소비자보호에 관한 법률 등 타법률에 의해 보존할 필요가 있는 경우에는 일정기간 보존합니다.</p>
+					</div>	
+				</div>
+			</div>
+		</div>
+		<!-- //개인정보수집 및 이용동의 -->
+		
+		<!-- 이메일 무단수집거부 -->
+		<div id="refuse_email" data-pop-layer="layer" style="display:none;">
+			<div class="popBox" style="--popHig:300rem;">
+				<!-- title -->
+				<h2 class="popTitle">이메일 무단수집거부</h2>
+				<!-- 내용 -->
+				<div class="popConts">		
+					<p>본 웹사이트에 게시된 이메일 주소가 전자우편 수집 프로그램이나 그 밖의 기술적 장치를 이용하여 무단으로 수집되는 것을 거부 합니다. <br><br>이를 위반시 정보통신망법에 의해 형사처벌됨을 유념하여 주시기 바랍니다.</p>
+				</div>
+			</div>
+		</div>	
+		<!-- //이메일 무단수집거부 -->
+	</div>
+</div>
+
+
+
+
+
+<div style="padding:40px 20px; border-bottom:1px solid #eee;">
+	<h3 id="chapter03" style="margin-top:60px; font-size:25px; color:#111;">Button 스타일</h3>
+	<p>기본버튼 - 버튼 영역 정렬 왼쪽</p>
+	
+	<div class="btn_area left pt10">
+		<a href="#" class="button"><span>기본버튼</span></a>
+		<a href="#" class="button blue"><span>블루버튼</span></a>
+		<a href="#" class="button red"><span>레드버튼</span></a>
+		<a href="#" class="button black"><span>블랙버튼</span></a>
+		<a href="#" class="button gray"><span>그레이버튼</span></a>
+		<a href="#" class="button white"><span>화이트버튼</span></a>
+	</div>
+	
+	<p>폼형식에 버튼디자인 사용 - input submit </p>
+	<div class="btn_area left pt10">
+		<input type="submit" name="" id="" class="button" value="전송버튼"/>
+		<input type="submit" name="" id="" class="button blue" value="블루input버튼"/>
+		<input type="submit" name="" id="" class="button red" value="레드input버튼"/>
+		<input type="submit" name="" id="" class="button black" value="블랙input버튼"/>
+		<input type="submit" name="" id="" class="button gray" value="그레이input버튼"/>
+		<input type="submit" name="" id="" class="button white" value="화이트input버튼"/>
+	</div>
+	
+	<p>작은버튼 - 버튼기본 가운데정렬</p>
+	<div class="btn_area">
+		<a href="#" class="button sm">기본작은버튼</a>
+		<a href="#" class="button sm blue">블루작은버튼</a>
+		<a href="#" class="button sm red">레드작은버튼</a>
+		<a href="#" class="button sm black">블랙작은버튼</a>
+		<a href="#" class="button sm gray">그레이작은버튼</a>
+		<a href="#" class="button sm white">화이트작은버튼</a>
+	</div>
+	
+	<p>큰버튼 - 버튼 오른쪽 정렬</p>
+	<div class="btn_area right">
+		<a href="#" class="button lg">기본큰버튼</a>
+		<a href="#" class="button lg blue">블루큰버튼</a>
+		<a href="#" class="button lg red">레드큰버튼</a>
+		<a href="#" class="button lg black">블랙큰버튼</a>
+		<a href="#" class="button lg gray">그레이큰버튼</a>
+		<a href="#" class="button lg white">화이트큰버튼</a>
+	</div>
+</div>
+
+
+
+
+
+
+<div style="padding:40px 20px; border-bottom:1px solid #eee;">
+	<h3 id="chapter04" style="margin-top:60px; font-size:25px; color:#111;">텍스트 컬러</h3>
+	<p>포인트로 텍스트컬러는 01~03까지 준비되어있다. 추가로 사용하고자 할경우 content.css에 추가로 선언하여 사용한다.</p>
+	
+	<p>class 명 <span class="txt_point01">txt_point01 제목과 버튼</span>이 일직선상에 놓여야 할 경우</p>
+	<p>class 명 <span class="txt_point02">txt_point02 제목과 버튼</span>이 일직선상에 놓여야 할 경우</p>
+	<p>class 명 <span class="txt_point03">txt_point03 제목과 버튼</span>이 일직선상에 놓여야 할 경우</p>
+	
+	<h3 style="margin-top:60px; font-size:25px; color:#111;">Margin</h3>
+	<p>margin top만 컨트롤 기본값을 주었다. css변경은 content.css통해 상쇄시킨다.</p>
+	<div style="margin-top:10px;">
+		<span>class="mt0" margin-top:0px</span><br/>
+		<span>class="mt10" margin-top:10px</span><br/>
+		<span>class="mt10" margin-top:20px;</span><br/>
+		<span>class="mt30" margin-top:30px;</span>
+	</div>
+</div>
+
+
+
+
+<div style="padding:40px 20px; border-bottom:1px solid #eee;">
+	<h3 id="chapter05" style="margin-top:60px; font-size:25px; color:#111;">table영역</h3>
+	<p>tbody만 있는 table td는 왼쪽이 기본정렬이다.</p>
+	
+	<!-- 마크업 -->	
+	<table class="table">
+		<caption>수록내용예시 표</caption>
+		<colgroup>
+			<col style="width:15%"/>
+			<col style="width:35%"/>
+			<col style="width:15%"/>
+			<col/>
+		</colgroup>
+		<tbody>
+			<tr>
+				<th scope="row">식품(시료명)</th>
+				<td>갓</td>
+				<th scope="row">식품(시료명)</th>
+				<td>갓</td>
+			</tr>
+			<tr>
+				<th scope="row">식품(시료명)</th>
+				<td>그대로(As is)</td>
+				<th scope="row">식품생산지지역</th>
+				<td>갓</td>
+			</tr>
+			<tr>
+				<th scope="row">가운데정렬</th>
+				<td class="tac"> class tac 시료채취일</td>
+				<th scope="row">오른쪽 정렬</th>
+				<td class="tar">class tar 플루페녹수론</td>
+			</tr>
+		</tbody>
+	</table>	
+	<!-- //마크업 -->
+	
+	<p style="margin-top:20px">thead, tbody 있는 table td가 가운데 정렬이 기본이다.</p>
+	<!-- 마크업 -->
+	<table class="table">
+		<caption>수록내용예시 표</caption>
+		<colgroup>
+			<col style="width:15%"/>
+			<col style="width:35%"/>
+			<col style="width:15%"/>
+			<col/>
+		</colgroup>
+		<thead>
+			<tr>
+				<th scope="col">제목</th>
+				<th scope="col">제목</th>
+				<th scope="col">제목</th>
+				<th scope="col">제목</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<th scope="row">식품(시료명)</th>
+				<td colspan="3">테이블은 가운데 정렬 기본</td>
+			</tr>
+			<tr>
+				<th scope="row">식품(시료명)</th>
+				<td>그대로(As is)</td>
+				<th scope="row">식품생산지지역</th>
+				<td>갓</td>
+			</tr>
+			<tr>
+				<th scope="row">왼쪽정렬</th>
+				<td class="tal"> class tac 시료채취일</td>
+				<th scope="row">오른쪽 정렬</th>
+				<td class="tar">class tar 플루페녹수론</td>
+			</tr>
+		</tbody>
+	</table>
+	<!-- //마크업 -->
+	
+	<p style="margin-top:20px">tbody만있는 table이지만 th에 컬러가 있는 포인트 table로 사용하고자 할경우 class="table <strong>blue</strong>" 선언</p>
+	<!-- 마크업 -->
+	<table class="table blue">
+	    <caption>품목코드 상세정보</caption>
+	    <colgroup>
+	        <col style="width:15%"/>
+	        <col />
+	    </colgroup>
+	    <tbody>
+	        <tr>
+	            <th scope="row">MIMS 코드</th>
+	            <td>R010101003</td>
+	        </tr>
+	        <tr>
+	            <th scope="row">MIMS 식품명</th>
+	            <td>식물성원료 > 곡류 > 곡류 > 곡류 > 밀</td>
+	        </tr>
+	    </tbody>
+	</table>
+	<!-- //마크업 -->
+	
+	<p style="margin-top:20px">thead에 있는 th은 블루색상이 기본이지만 gray로 사용하고자 할경우 class="table <strong>gray</strong>" 선언</p>
+	<!-- 마크업 -->
+	<table class="table gray">
+	    <caption>품목코드 상세정보</caption>
+	    <colgroup>
+	        <col style="width:35%"/>
+	        <col />
+	    </colgroup>
+	    <thead>
+	    	<tr>
+	    		<th scope="col">MIMS 코드</th>
+	    		<th scope="col">MIMS 식품명</th>
+	    	</tr>
+	    </thead>
+	    <tbody>
+	        <tr>
+	            <td>R010101003</td>
+	            <td>식물성원료 > 곡류 > 곡류 > 곡류 > 밀</td>
+	        </tr>
+	    </tbody>
+	</table>
+	<!-- //마크업 -->
+	
+	<p style="margin-top:20px">data table이고 링크도 없지만 tr에 hover시 효과를 주고싶은 경우 class="table <strong>hover</strong>" 을 선언한다.</p>
+	<!-- 마크업 -->
+	<table class="table hover">
+		<caption>수록내용예시 표</caption>
+		<colgroup>
+			<col style="width:15%"/>
+			<col style="width:35%"/>
+			<col style="width:15%"/>
+			<col/>
+		</colgroup>
+		<thead>
+			<tr>
+				<th scope="col">제목</th>
+				<th scope="col">제목</th>
+				<th scope="col">제목</th>
+				<th scope="col">제목</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<th scope="row">식품(시료명)</th>
+				<td colspan="3">테이블은 가운데 정렬 기본</td>
+			</tr>
+			<tr>
+				<th scope="row">식품(시료명)</th>
+				<td>그대로(As is)</td>
+				<th scope="row">식품생산지지역</th>
+				<td>갓</td>
+			</tr>
+			<tr>
+				<th scope="row">왼쪽정렬</th>
+				<td class="tal"> class tal 시료채취일</td>
+				<th scope="row">오른쪽 정렬</th>
+				<td class="tar">class tar 플루페녹수론</td>
+			</tr>
+		</tbody>
+	</table>
+	<!-- //마크업 -->
+	
+	
+    <p style="margin-top:20px">data table이고 thead에 line이 필요하고 회색으로 하고싶은경우 class="table <strong>line gray</strong>" 을 선언한다.</p>
+    <!-- 마크업 -->
+    <table class="table gray line">
+        <caption>수록내용예시 표</caption>
+        <colgroup>
+            <col style="width:15%"/>
+            <col style="width:35%"/>
+            <col style="width:15%"/>
+            <col/>
+        </colgroup>
+        <thead>
+            <tr>
+                <th scope="col" rowspan="2">제목</th>
+                <th scope="col" colspan="2">제목</th>
+                <th scope="col">제목</th>
+            </tr>
+            <tr>
+                <th scope="col">제목</th>
+                <th scope="col">제목</th>
+                <th scope="col">제목</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th scope="row">식품(시료명)</th>
+                <td colspan="3">테이블은 가운데 정렬 기본 / 작은 버튼을 같이 사용하고자 할경우 <a href="#" class="button sm">바로가기</a></td>
+            </tr>
+            <tr>
+                <th scope="row">식품(시료명)</th>
+                <td>그대로(As is (raw. fresh))</td>
+                <th scope="row">식품생산지지역</th>
+                <td>갓</td>
+            </tr>
+            <tr>
+                <th scope="row">왼쪽정렬</th>
+                <td class="tal"> class tal 시료채취일</td>
+                <th scope="row">오른쪽 정렬</th>
+                <td class="tar">class tar 플루페녹수론</td>
+            </tr>
+        </tbody>
+    </table>
+    <!-- //마크업 -->
+	
+	<h4 style="margin-top:40px; font-size:20px; color:#111;">table 반응형 Scroll 포함대응</h4>
+	<p style="margin-top:10px">data table이고 thead에 colspan rowspan이 많아 line이 필요할경우 class="table <strong>line</strong>" 을 선언한다. 아래 예시는 폼형식을 table에 꼭 사용해야할 경우 예시다. class="table <strong>line form</strong>" 선언되어있다.<br/>
+	모바일에서 대응이 필요할때 가로스크롤이 나오게하기위해 <strong>scroll</strong> 클래스도 추가한다. class="table <strong>line form scroll</strong>"</p>
+    <!-- 마크업 -->
+    <table class="table line form scroll">
+        <caption>수록내용예시 표</caption>
+        <colgroup>
+            <col style="width:15%"/>
+            <col style="width:35%"/>
+            <col style="width:15%"/>
+            <col/>
+        </colgroup>
+        <thead>
+            <tr>
+                <th scope="col" rowspan="2">제목</th>
+                <th scope="col" colspan="2">제목</th>
+                <th scope="col">제목</th>
+            </tr>
+            <tr>
+                <th scope="col">제목</th>
+                <th scope="col">제목</th>
+                <th scope="col">제목</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th scope="row">식품(시료명)</th>
+                <td colspan="3">기본 버튼을 같이 사용하고자 할경우 <a href="#" class="button sm white">바로가기</a></td>
+            </tr>
+            <tr>
+                <th scope="row"><span class="marking">필수항목</span><label for="">식품(시료명)</label></th>
+                <td><input type="text" name="" id=""/></td>
+                <th scope="row"><span class="marking">필수항목</span><label for="">식품생산지지역</label></th>
+                <td>
+                	<select name="" id="">
+                		<option value="">선택하세요</option>
+                		<option value="">강원도</option>
+                		<option value="">서울</option>
+                	</select>
+                </td>
+            </tr>
+            <tr>
+                <th scope="row">라디오버튼</th>
+                <td>
+                	<div class="designRadio">
+                		<input type="radio" name="searchType" id="searchTypeB"><label for="searchTypeB">화학물질별</label>
+						<input type="radio" name="searchType" id="searchTypeA"><label for="searchTypeA">대표분류별</label>
+                	</div>
+                </td>
+                <th scope="row">오른쪽 정렬</th>
+                <td>class tar 플루페녹수론</td>
+            </tr>
+        </tbody>
+    </table>
+    <!-- //마크업 -->
+
+	<h4 style="margin-top:40px; font-size:20px; color:#111;">table 반응형 th/td 한줄씩처리</h4>
+	<p style="margin-top:10px"><strong>scroll</strong> table에 class를 선언했었다면 일정사이즈에서 가로스크롤만 표현되지만 th, td 한줄로만 무조건 처리할경우 사용방법입니다. data-table-respon 속성을 선언해서 사용한다. 이경우 tbody만있는 테이블에서만 사용가능하다.</p>
+
+	<!-- 마크업 -->
+	<table class="table">
+		<caption>수록내용예시 표</caption>
+		<colgroup>
+			<col data-table-respon="th" style="width:15%"/>
+			<col data-table-respon="td" style="width:35%"/>
+			<col data-table-respon="th" style="width:15%"/>
+			<col data-table-respon="td"/>
+		</colgroup>		
+		<tbody>
+			<tr>
+				<th scope="row" data-table-respon="th">식품(시료명)</th>
+				<td colspan="3" data-table-respon="td">테이블은 가운데 정렬 기본</td>
+			</tr>
+			<tr>
+				<th scope="row" data-table-respon="th">식품(시료명)</th>
+				<td data-table-respon="td">그대로(As is)</td>
+				<th scope="row" data-table-respon="th">식품생산지지역</th>
+				<td data-table-respon="td">갓</td>
+			</tr>
+			<tr>
+				<th scope="row" data-table-respon="th">왼쪽정렬</th>
+				<td class="tal" data-table-respon="td"> class tac 시료채취일</td>
+				<th scope="row" data-table-respon="th">오른쪽 정렬</th>
+				<td class="tar" data-table-respon="td">class tar 플루페녹수론</td>
+			</tr>
+		</tbody>
+	</table>
+	<!-- //마크업 -->
+    
+</div>
+
+
+	
+
+
+
+<div style="padding:40px 20px; border-bottom:1px solid #eee;">
+	<h3 id="chapter06" style="margin-top:60px; font-size:25px; color:#111;">설명글</h3>
+	<p>포인트로 텍스트컬러는 01~03까지 준비되어있다. 추가로 사용하고자 할경우 content.css에 추가로 선언하여 사용한다.</p>
+	
+	<!-- 마크업 -->
+	<div class="box_attention">박스안에 글씨만 쓰고싶은 경우 사용하는 방법입니다. <strong>강조는 strong태그</strong> 이용하시면 됩니다. 줄이 길어지면 br도 넣어도 되요.</div>
+	<!-- //마크업 -->
+
+	<!-- 마크업 -->
+	<div class="box_attention icon_risk">박스안에 위험성표시 아이콘을 넣고 사용하는 방법입니다. <strong>강조는 strong태그</strong> 이용하시면 됩니다. 줄이 길어지면 br도 넣어도 되요.</div>
+	<!-- //마크업 -->
+	
+	<!-- 마크업 -->
+	<p class="text_risk">박스없이 위험성표시 및 글씨만 사용할 경우 이용합니다. <strong>강조는 strong태그</strong> 이용하시면 됩니다. 줄이 길어지면 br도 넣어도 되요.</p>
+	<!-- //마크업 -->
+</div>
+
+
+
+
+
+<div style="padding:40px 20px; border-bottom:1px solid #eee;">
+	<h3 id="chapter07" style="margin-top:60px; font-size:25px; color:#111;">아코디언(모바일전용) 타입</h3>
+	<p>PC에서는 정상적으로 노출이 되나 모바일에서 아코디언형태로 변경이되어 보여주고자 할경우 사용하는 방법을 먼저안내합니다. 가로폭(width 1024px)기준으로 발동합니다.<br/>
+	클릭되는 a태그는 1025px전까지는 노출되지 않습니다.</p>
+	
+	<!-- 마크업 -->
+	<a href="#" data-control="accordion">댓글<em>3</em></a>
+	<div data-control="accordion_conts">
+		이안은 디자인 나온대로 코딩을 하는 영역입니다.<br/>
+		댓글1<br/>
+		댓글2<br/>
+		댓글3
+	</div>
+	<!-- //마크업 -->
+</div>
+
+
+
+
+
+<div style="padding:40px 20px; border-bottom:1px solid #eee;">
+	<h3 id="chapter09" style="margin-top:60px; font-size:25px; color:#111;">input radio, checkbox 디자인</h3>
+	<p style="margin-bottom:10px;">input radio 또는 checkbox를 번호를 주어 디자인을 추가하거나 또는 번호를 제외한 디자인만 적용하는 경우 사용하는 방식이다. 주의해야할것은 숫자형식의 디자인은 ol li 목록태그를 꼭 이용해야한다. ol class="<strong>designNumber</strong>""를 선언할것</p>
+	
+	<p style="margin-top:20px; margin-bottom:10px;">designFile - file적용</p>
+	<!-- 마크업 -->
+	<div class="designFile">
+		<em>첨부파일</em>
+		<input type="text" readonly="readonly" value="">
+		<input type="file" name="fileUpload1" id="fileUpload1">
+		<label for="fileUpload1" class="btn">파일을 첨부해주세요.</label>
+	</div>
+	<!-- //마크업 -->
+	
+	<!-- 마크업 -->
+	<ol class="designNumber">
+		<li><input type="radio" name="group" id="group01"/><label for="group01">제품(물질)</label></li>
+		<li><input type="radio" name="group" id="group02" checked/><label for="group02">제도</label></li>
+		<li>
+			<input type="radio" name="group" id="group03"/><label for="group03">기타</label>
+			<input type="text" name="" id="" title="기타내용입력란" class="input300" disabled/>
+		</li>
+		<li><input type="radio" name="group" id="group04" disabled/><label for="group04">제도</label></li>
+	</ol>
+	<!-- //마크업 -->
+	
+	<p style="margin-top:20px; margin-bottom:10px;">designNumber - radio 버튼에 숫자를 표기안할경우</p>
+	
+	<!-- 마크업 -->
+	<ol class="designNumber none">
+		<li><input type="radio" name="nonegroup" id="nonegroup1"/><label for="nonegroup1">상</label></li>
+		<li><input type="radio" name="nonegroup" id="nonegroup2" checked/><label for="nonegroup2">중</label></li>
+		<li><input type="radio" name="nonegroup" id="nonegroup3"/><label for="nonegroup3">하</label></li>
+		<li><input type="radio" name="nonegroup" id="nonegroup4" disabled/><label for="nonegroup4">하하하하</label></li>
+	</ol>
+	<!-- //마크업 -->
+	
+	<p style="margin-top:20px; margin-bottom:10px;">designNumber - checkbox적용</p>
+	
+	<!-- 마크업 -->
+	<ol class="designNumber">
+		<li><input type="checkbox" name="check01" id="check01" checked/><label for="check01">제품(물질)</label></li>
+		<li><input type="checkbox" name="check02" id="check02" /><label for="check02">제도</label></li>
+		<li>
+			<input type="checkbox" name="check03" id="check03"/><label for="check03">기타</label>
+			<input type="text" name="" id="" title="기타내용입력란" class="input300"/>
+		</li>
+	</ol>
+	<!-- //마크업 -->
+	
+	<p style="margin-top:20px; margin-bottom:10px;">radio를 디자인형식 사용할 경우, 우측은 radio 흰색버전</p>
+	
+	<!-- 마크업 -->
+	<div class="designRadio">
+		<input type="radio" name="radioA" id="radioA1" checked/><label for="radioA1">제품(물질)</label>
+		<input type="radio" name="radioA" id="radioA2" /><label for="radioA2">제도</label>
+		<input type="radio" name="radioA" id="radioA3"/><label for="radioA3">기타</label>
+		<input type="radio" name="radioA" id="radioA4" disabled/><label for="radioA4">기타타타</label>
+	</div>
+	<!-- //마크업 -->
+	
+	<div style="display:inline-block; background:#191919; padding:10px; color:#fff;">
+	
+	<!-- 마크업 -->
+	<div class="designRadio white">
+		<input type="radio" name="radioA" id="radioA1" checked/><label for="radioA1">제품(물질)</label>
+		<input type="radio" name="radioA" id="radioA2" /><label for="radioA2">제도</label>
+		<input type="radio" name="radioA" id="radioA3"/><label for="radioA3">기타</label>
+		<input type="radio" name="radioA" id="radioA4" disabled/><label for="radioA4">기타타타</label>
+	</div>
+	<!-- //마크업 -->
+	
+	</div>
+	
+	<p style="margin-top:20px; margin-bottom:10px;">checkbox를 디자인형식 사용할 경우, 우측은 checkbox 흰색버전</p>
+	
+	<!-- 마크업 -->
+	<div class="designCheck">
+		<input type="checkbox" name="checkA1" id="checkA1" checked/><label for="checkA1">제품(물질)</label>
+		<input type="checkbox" name="checkA2" id="checkA2" /><label for="checkA2">제도</label>
+		<input type="checkbox" name="checkA3" id="checkA3"/><label for="checkA3">기타</label>
+		<input type="checkbox" name="checkA4" id="checkA4" disabled/><label for="checkA4">기타타타</label>
+	</div>
+	<!-- //마크업 -->
+	
+	<div style="display:inline-block; background:#191919; padding:10px; color:#fff;">
+	
+	<!-- 마크업 -->
+	<div class="designCheck white">
+		<input type="checkbox" name="checkA1" id="checkA1" checked/><label for="checkA1">제품(물질)</label>
+		<input type="checkbox" name="checkA2" id="checkA2" /><label for="checkA2">제도</label>
+		<input type="checkbox" name="checkA3" id="checkA3"/><label for="checkA3">기타</label>
+		<input type="checkbox" name="checkA4" id="checkA4" disabled/><label for="checkA4">기타타타</label>
+	</div>
+	<!-- //마크업 -->
+	
+	</div>
+	
+	<p style="margin-top:30px; margin-bottom:10px;">입력폼을 선택시 class <strong>in active</strong> 선언하여 디자인을 추가하고자 할경우 사용. 해당은 폼 커스텀영역이기때문에 <strong>custom_board.css</strong> 선언하여작업한다.<br/>
+	포커스만 되었을경우 부모 li에 class="<strong>in</strong>" 들어온다. 그 뒤 입력폼에 값이 입력이 되면 class="<strong>in active</strong>" 으로 처리되며 값 만 입력되고 포커스가 빠지면 class="<strong>active</strong>" 값, 포커스가 없다면 class는 삭제된다.<br/>
+	예시로 class까지 준경우다.</p>
+	
+	<div class="cus_design">
+	<!-- 마크업 -->
+	<ul class="designValue">
+		<li>
+			<label for="name">이름</label>
+			<input type="text" name="name" id="name" />
+		</li>
+		<li data-form-design="select">
+			<label for="category">참고사이트</label>
+			<select name="category" id="category">
+				<option value="홈페이지제작">홈페이지제작</option>
+				<option value="쇼핑몰제작">쇼핑몰제작</option>
+				<option value="유지보수">유지보수</option>
+				<option value="온라인광고">온라인광고</option>
+				<option value="모바일">모바일</option>
+				<option value="기타">기타</option>
+			</select>
+		</li>
+	</ul>
+	<!-- //마크업 -->
+	</div>
+	
+</div>
+
+
+
+
+
+
+<div style="padding:40px 20px; border-bottom:1px solid #eee;">
+	<h3 id="chapter11" style="margin-top:60px; font-size:25px; color:#111;">툴팁사용</h3>
+	<p>
+		마우스hover시 툴팁이 나오게 사용하고자 할경우 이용한다. 예시를 참고하여 box안에 진하게 또는 색만넣고자 하는경우 확인하여 사용한다.<br/>
+		table안에 사용한 경우 모바일기준(width 768px)되면 클릭시 열리는 박스는 fixed처리되어 화면 정중간에 나오게 된다. 모바일의 경우 박스의 외부를 클릭시 툴팁은 닫힌다.
+	</p>
+	
+	<table class="table scroll">
+		<caption>테이블 예시</caption>
+		<colgroup>
+			<col style="width:20%"/>
+		</colgroup>
+		<tbody>
+			<tr>
+				<th scope="row">table안에 툴팁기본
+					<!-- 마크업 -->
+					<a href="javascript:;" data-tooltip="explan">안내
+						<span class="box">
+							<em class="txt_point02">table툴팁 기본이란?</em><br/>
+							- 기본적으로 table안에서 툴팁은 모바일사이즈 768px에서는 열렸을때 다른효과로 처리가된다. 이점만 유의하면된다.
+						</span>
+					</a>
+					<!-- //마크업 -->
+				</th>
+				<td>없음</td>
+				<td>배경색없음</td>
+				<td class="tar">
+					툴팁 오른쪽기준
+					<a href="javascript:;" data-tooltip="explan" class="right">안내
+						<span class="box">
+							<strong class="txt_point01">툴팁 오른쪽 기준이란?</strong><br/>
+							-  예시처럼 a태그에 class="right"를 선언하면 오른쪽기준으로 보여지며<br/>모바일기준 width768px 가로폭 기준에서는 다른 table안의 툴팁과 동일하게 보여진다.<br/>
+							-  툴팁은 밖의 영역을 클릭되면 모바일에서는 닫히게 된다.
+						</span>
+					</a>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+	
+	<div class="box_attention">
+		다른곳에서도 사용가능합니다. 
+		<!-- 마크업 -->
+		<a href="javascript:;" data-tooltip="explan">안내
+			<span class="box">
+				<strong class="txt_point02">※ 환산계수 적용 설명</strong><br/>
+				-  2016년 국건영 코드집의 환산계수를 적용하였습니다.<br/>
+				건조된 식품 자체를 원재료로 봄에 따라, 국건영 환산계수를 적용하지 않습니다. 예) 품목명 : 대추(건조) = ‘1’ 로 적용"
+			</span>
+		</a>
+		<!-- //마크업 -->
+	
+		 마크업 규칙만 시켜주세요.
+	</div>
+</div>
+
+
+
+
+
+
+<div style="padding:40px 20px; border-bottom:1px solid #eee;">
+	<h3 id="chapter12" style="margin-top:60px; font-size:25px; color:#111;">일반페이징사용</h3>
+	<p style="margin-bottom:10px;">게시판 페이징이 필요하므로 아래 마크업을 사용하세요. 개발작업 넣을시 줄바꿈없이 넣으시면 됩니다.</p>
+	
+<!-- 마크업 -->
+<div class="pagination">
+	<a href="#" class="btn_first">맨처음</a>
+	<a href="#" class="btn_prev">이전</a>
+	<!-- 선택된페이지 -->
+	<span>1</span>
+	<!-- //선택된페이지 -->
+	<a href="#">2</a>
+	<a href="#">3</a>
+	<a href="#">4</a>
+	<a href="#">5</a>
+	<a href="#">6</a>
+	<a href="#">7</a>
+	<a href="#">8</a>
+	<a href="#">9</a>
+	<a href="#">10</a>
+	<a href="#" class="btn_next">다음</a>
+	<a href="#" class="btn_last">맨마지막</a>
+</div>
+<!-- //마크업 -->
+	
+</div>
+
+
+
+
+
+
+<div style="padding:40px 20px; border-bottom:1px solid #eee;">
+	<h3 id="chapter13" style="margin-top:60px; font-size:25px; color:#111;">Site map</h3>
+	<p style="margin-bottom:10px;">header gnb항목중 ul 하위부터 자동으로 끌어오는 제이쿼리 적용된 내용이다. 디자인 수정은 content.css 통해 상쇄시킨다.</p>
+	
+	
+<!-- 마크업 -->
+<div class="area_sitemap"></div>
+<!-- //마크업 -->
+	
+</div>
+
+		
+<!-- //내용 -->
+
+					</article>
+				</div>
+				<!-- //본문 -->
+				
+				<a href="#top" class="btn_top">TOP</a>
+			</div>
+
+			<!-- footer -->
+			<footer id="footer">
+				<p>ⓒ 3kkang All Rights Reserved.</p>
+			</footer>
+			<!-- //footer -->
+		</div>
+	</body>
+</html>

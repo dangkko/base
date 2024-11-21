@@ -1,40 +1,68 @@
 	<header id="header">
-		<div class="gnb_area">
-			<h1><a href="/">로고명칭</a></h1>
+		
+		<h1><a href="/">로고명칭</a></h1>
 
-			<nav>
-				<ul class="gnb">
-					<li><a href="/contents/01_about/sub01.html" data-gnbName="about"><span>1메뉴</span></a>
-						<div class="box">
-							<ul>
-								<li><a href="/contents/01_about/sub01.html" data-gnbName="about_sub01"><span>1-1메뉴</span></a></li>
-								<li><a href="/contents/01_about/sub02.html" data-gnbName="about_sub02"><span>1-2메뉴</span></a></li>
-							</ul>
-						</div>
-					</li>
-					<li><a href="/contents/02_content/sub01.html" data-gnbName="content"><span>2메뉴</a>
-						<div class="box">
-							<ul>
-								<li><a href="/contents/02_content/sub01.html" data-gnbName="content_sub01"><span>2-1메뉴</span></a></li>
-								<li><a href="/contents/02_content/sub02.html" data-gnbName="content_sub02"><span>2-2메뉴</span></a></li>
-								<li><a href="/contents/02_content/sub03.html" data-gnbName="content_sub03"><span>2-3메뉴</span></a></li>
-								<li><a href="/contents/02_content/sub04.html" data-gnbName="content_sub04"><span>2-4메뉴</span></a></li>
-							</ul>
-						</div>
-					</li>
-				</ul>
-			</nav>
+		<!-- gnb -->
+		<nav data-mobValue>
+			<ul class="gnb">
+				<li><a href="/contents/01_about/sub01.html" data-gnbName="about"><span>1메뉴</span></a>
+					<div class="box">
+						<ul>
+							<li><a href="/contents/01_about/sub0102.html" data-gnbName="about_sub0102"><span>2차메뉴</span></a>
+								<!-- 3차 감싸고있는 div는 디자인따라 css 추가작업하세요. -->
+								<div class="box">
+									<ul>
+										<li><a href="/contents/01_about/sub010201.html" data-gnbName="about_sub010201"><span>3차메뉴</span></a>
+									</ul>
+								</div>
+							</li>
+						</ul>
+					</div>
+				</li>
+				<li><a href="/contents/02_content/sub01.html" data-gnbName="content"><span>2메뉴</a>
+					<div class="box">
+						<ul>
+							<li><a href="/contents/02_content/sub01.html" data-gnbName="content_sub01"><span>2-1메뉴</span></a></li>
+							<li><a href="/contents/02_content/sub02.html" data-gnbName="content_sub02"><span>2-2메뉴</span></a></li>
+							<li><a href="/contents/02_content/board.html?board_id=board_notice" data-gnbName="board_notice"><span>공지사항</span></a></li>
+							<li><a href="/contents/02_content/board.html?board_id=board_test4" data-gnbName="board_test4"><span>갤러리</span></a></li>
+						</ul>
+					</div>
+				</li>
+			</ul>
+		</nav>
+		<!-- //gnb -->
 
-			<div class="area_util">	
-				<? if(!$_SESSION[member_id]){?>
-					<a href="/member/member.html?mode=login">로그인</a>
-				<? } else { ?>
-					<a href="/member/member.html?mode=check&return_mode=intro"><?=$_SESSION[member_id]?>님 환영합니다</a><!-- 정보수정 -->
-					<a href="/member/member.php?mode=logout">로그아웃</a>					
-				<? } ?>
-					<a href="/ko_admin/login.html" target="_blank">관리자바로가기</a>
-			</div>
+		<div class="util-area">		
+			<div class="open-control lang-area">		
+				<button type="button" class="open-control__btn"><i class="xi-globus"></i><span>KOR</span></button>
+				<div class="list">
+					<ul>
+						<li><a href="/">KOR</a></li>
+						<li><a href="/eng">ENG</a></li>		
+					</ul>
+				</div>
+			</div>						
+	
+			<? if(!$_SESSION[member_id]){?>
+				<a href="/member/member.html?mode=login">로그인</a>
+			<? } else { ?>
+				<a href="/member/member.html?mode=check&return_mode=intro"><?=$_SESSION[member_id]?>님 환영합니다</a>
+				<a href="/member/member.php?mode=logout">로그아웃</a>
+				<a href="/member/member.html?mode=check&return_mode=intro">정보수정</a>
+			<? } ?>
+				<a href="/ko_admin/login.html" target="_blank">관리자바로가기</a>
+
+			<button type="button" class="mega-menu__btn"><span><i>MENU</i></span></button>
 		</div>
+
+		<!-- mega gnb or mobile -->
+		<div class="mega-menu">
+			<div class="gnb-mob">				
+			</div>
+			<a href="#" class="mega-menu__close"><em><span><i>MENU CLOSE</i></span></em></a>
+		</div>
+		<!-- //mega gnb -->				
 	</header>
 
 
@@ -43,7 +71,7 @@
 		<!-- 서브일때 -->
 		<!-- 서브비쥬얼 영역 -->
 		<? include $_SERVER['DOCUMENT_ROOT'] . "/inc/inc_visual_sub.html"; ?>
-
+		
 		<div id="container">
 			<main id="content">
 	<? } ?>

@@ -1,0 +1,48 @@
+<div class="bbsSearch" data-type="A">
+	<form action="<?=$_SERVER['REQUEST_URL']?>" method="get">
+		<input type="hidden" name="board_id" value="<?=$board_id?>" />
+		<input type="hidden" name="start" value="0" />
+		<? if($board[use_category] == "Y"){ ?>
+			<select name="cate" id="searchType_">
+			<option value="">전체</option>
+				<? 
+				$cate_detail = explode("|", $board[category_detail]);
+				foreach($cate_detail as $v){ 
+					echo "<option value='$v'>$v</option>";
+				} ?>
+			</select>
+		<? } ?>
+		<? if($board[use_category] == "I"){ ?>
+			<select name="cate" id="searchType_">
+			<option value="">전체</option>
+			<? 
+				$cat_q = "SELECT * FROM $board_id GROUP BY category";
+				$cat_ = mysqli_query($dbp, $cat_q);
+				while($cat_row = mysqli_fetch_array($cat_)){
+					echo "<option value='$cat_row[category]'>$cat_row[category]</option>";
+				}
+			?>
+			</select>
+		<? } ?>	
+		<select name="search_key" id="searchType">
+			<option value="">전체</option>
+			<option value="title"> 제목</option>
+			<!--<option value="name">작성자</option>-->
+			<!-- <option value="내용">내용</option> -->
+		</select>
+
+		<div class="search_input">
+			<input type="text" id="keyword" name="keyword" value="" placeholder="검색어를 입력해주세요">
+			<input type="submit" class="button" value="검색">	
+		</div>
+	</form>	
+</div>					
+
+<? if($board[use_category] == "I" || $board[use_category] == "Y"){ ?>
+<script type="text/javascript">
+	$("#searchType_ option[value='"+"<?=$cate?>"+"']").prop("selected", true);
+</script>
+<? } ?>
+<script type="text/javascript">
+	$("#searchType option[value='"+"<?=$search_key?>"+"']").prop("selected", true);
+</script>

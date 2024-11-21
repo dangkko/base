@@ -1,0 +1,347 @@
+<? if($mode == "modify"){ 
+	if(isblank($_SESSION[member_id])) {
+		alert("로그인을 해주세요");
+		url("/member/member.php?mode=login");
+		exit;
+	}
+	$auth_token = hash("sha256", $_SESSION[member_id] . $password);
+	$password = hash("sha256", $password);
+
+	$query = "SELECT * FROM koweb_member WHERE id='$_SESSION[member_id]' AND password='$password'";
+	$result = mysql_query($query);
+	$check = mysql_num_rows($result);
+	if($check < 1){
+		error("비밀번호를 확인해주세요");
+		exit;
+	}
+
+	$row = mysql_fetch_array($result);
+	$email = explode("@",$row[email]);
+	$birthday = explode("-",$row[birthday]);
+	$phone = explode("-", $row[phone]);
+	$mode_title = "회원정보 수정";
+	if(isblank($return_mode)) error("비정상적인 접근입니다.");
+} else {
+	$mode_title = "회원가입";
+}
+
+if(!$mode){
+	$mode = "write";
+}
+?>
+
+<script src="http://dmaps.daum.net/map_js_init/postcode.v2.js"></script>
+<script type="text/javascript">
+
+	function member_id_ajax() {
+		
+		if($("input[name='id']").val() == "") { 
+			alert("아이디를 입력해주세요.");
+			return false;
+		}
+
+		var check_ = $("input[name='id']").val();
+
+		$.ajax({
+			type : "POST",
+			url : "/member/member_check_ajax.php",
+			data : {
+				variable_data : check_
+			},
+			success : function(args) {
+				alert(args);
+			}
+		});
+	}
+
+	function execDaumPostcode(){
+		new daum.Postcode(
+		{
+			oncomplete: function(data)
+			{
+				// 팝업에서 검색결과 항목을 클릭했을때 실행할 코드를 작성하는 부분.
+				// 각 주소의 노출 규칙에 따라 주소를 조합한다.
+				// 내려오는 변수가 값이 없는 경우엔 공백('')값을 가지므로, 이를 참고하여 분기 한다.
+				var fullAddr  = "";					// 최종 주소 변수
+				var extraAddr = "";					// 조합형 주소 변수
+
+				// 사용자가 선택한 주소 타입에 따라 해당 주소 값을 가져온다.
+				if (data.userSelectedType === "R")
+				{
+					// 사용자가 도로명 주소를 선택했을 경우
+					fullAddr = data.roadAddress;
+				}
+				else
+				{
+					// 사용자가 지번 주소를 선택했을 경우(J)
+					fullAddr = data.jibunAddress;
+				}
+
+				// 사용자가 선택한 주소가 도로명 타입일때 조합한다.
+				if (data.userSelectedType === "R")
+				{
+					// 법정동명이 있을 경우 추가한다.
+					if (data.bname !== "")
+					{
+						extraAddr += data.bname;
+					}
+
+					// 건물명이 있을 경우 추가한다.
+					if (data.buildingName !== "")
+					{
+						extraAddr += (extraAddr !== "" ? ", " + data.buildingName : data.buildingName);
+					}
+
+					// 조합형주소의 유무에 따라 양쪽에 괄호를 추가하여 최종 주소를 만든다.
+					fullAddr += (extraAddr !== "" ? " (" + extraAddr + ")" : "");
+				}
+
+				// 우편번호와 주소 정보를 해당 필드에 넣는다.
+				document.getElementById("zip").value      = data.zonecode;			// 5자리 새우편번호 사용
+				document.getElementById("address1").value = fullAddr;
+
+				// 커서를 상세주소 필드로 이동한다.
+				document.getElementById("address2").focus();
+			}
+		}).open();
+	}
+
+	function mail_check(){ 
+		if($("#tmp_mail").val() == "other"){
+			$("#email2").val("");
+			$("#email2").prop("disabled", "");
+		} else {
+			$("#email2").val("");
+			$("#email2").val($("#tmp_mail").val());
+			$("#email2").prop("disabled", "disabled");
+		}
+			$("#email3").val($("#email2").val());
+	}	
+
+	$(function() {
+		$("select[name='birth1'] option[value='<?=$row[auth_read]?>']").prop("selected", true);
+		$("select[name='phone1'] option[value='<?=$phone[0]?>']").prop("selected", true);
+		$("select[name='tmp_email'] option[value='<?=$email[1]?>']").prop("selected", true);
+		$("select[name='tmp_mail'] option[value='<?=$email[1]?>']").prop("selected", true);
+		$("select[name='phone1'] option[value='<?=$phone[0]?>']").prop("selected", true);
+		$("select[name='birthday1'] option[value='<?=$birthday[0]?>']").prop("selected", true);
+		$("select[name='birthday2'] option[value='<?=$birthday[1]?>']").prop("selected", true);
+		$("select[name='birthday3'] option[value='<?=$birthday[2]?>']").prop("selected", true);
+		$("input:radio[name='gender']:radio[value='<?=$row[gender]?>']").prop("checked",true); 
+		$("input:radio[name='level']:radio[value='<?=$row[auth_level]?>']").prop("checked",true); 
+		
+		$("#id").on("keyup keypress keydown", function(e) {
+			var txt = "한글, 특수문자를 제외한 4~20자까지의 영문과 숫자로 입력해주세요.";
+			var id = $(this).val();
+			var num = id.search(/[0-9]/g);
+			var eng = id.search(/[a-z]/ig);
+
+			if(id.length < 4 || id.length > 20) {
+				txt = "아이디는 4~20자 사이로 입력해 주세요.";
+			} else {
+				if(num < 0 || eng < 0) {
+					txt = "아이디는 영문과 숫자 조합 형태로 입력해 주세요.";
+				} else {
+					txt = "적합한 아이디 입니다.";
+				}
+			}
+
+			$(this).siblings("em").html(txt);	
+		});
+		$("#password").on("keyup", function(e) {
+			var txt = "비밀번호는 8~12자 사이의 영문, 특수문자(~!@\#$%^*\()\-=+_'), 숫자 조합 형태로 입력해 주세요.";
+			var pw = $(this).val();
+			var num = pw.search(/[0-9]/g);
+			var eng = pw.search(/[a-z]/ig);
+			var special = pw.search(/[~!@\#$%^*\()\-=+_']/gi);
+
+			if(pw.length < 8 || pw.length > 12) {
+				txt = "비밀번호는 8~12자 사이로 입력해 주세요.";
+			} else {
+				if(num < 0 || eng < 0 || special < 0) {
+					//txt = "비밀번호는 영문과 숫자 조합 형태로 입력해 주세요.";
+					txt = "비밀번호는 영문, 특수문자(~!@\#$%^*\()\-=+_'), 숫자 조합 형태로 입력해 주세요.";
+				} else {
+					txt = "적합한 비밀번호 입니다.";
+				}
+			}
+
+			$(this).siblings("em").html(txt);	
+
+			$("#password2").trigger("keyup");
+		});
+		$("#password2").on("keyup keypress keydown", function(e) {
+			var txt = "";
+			var pw1 = $("#password").val();
+			var pw2 = $(this).val();
+
+			if(pw1 == pw2) {
+				txt = "비밀번호와 비밀번호 확인의 값이 동일합니다.";
+			} else {
+				txt = "비밀번호와 비밀번호 확인의 값이 동일하지 않습니다.";
+			}
+
+			$(this).siblings("em").html(txt);	
+		});
+	});
+</script>
+
+
+<form method='post' action="<?=$PHP_SELF?>" enctype='multipart/form-data'>
+<input type="hidden" name="mode" value="<?=$mode?>_proc" />
+<input type="hidden" name="no" value="<?=$no?>" />
+<input type="hidden" name="email3" value="<?=$email[1]?>" id="email3" />
+<input type="hidden" name="step" value="3" id="step" />
+
+<div class="join_area">
+	<h2><i><?=$mode_title?></i></h2>
+	<p>회원가입에 필요한 정보를 입력해주세요.</p>
+
+	<table class="bbsView">
+		<caption><?=$mode_title?></caption>
+		<colgroup>
+			<col data-member-form="th" style="width:20%;"/>
+			<col data-member-form="td" style="width:80%;"/>
+		</colgroup>
+		<tbody>
+			<tr>
+				<th scope="row"><span class="marking">필수항목</span><label for="id">회원아이디</label></th>
+				<td data-member-form="id">
+					<? if($mode == "join") { ?>
+						<input type="text" id="id" name="id" value="<?=$row[id]?>" class="required" title="아이디" />
+						<a href="#" class="button white" onclick="member_id_ajax();">중복확인</a>
+						<em>한글, 특수문자를 제외한 4~20자까지의 영문과 숫자로 입력해주세요.</em>
+					<? } else {?>
+						<span><?=$row[id]?></span>
+					<? } ?>
+				</td>
+			</tr>
+			<tr>
+				<th scope="row"><span class="marking">필수항목</span><label for="password">비밀번호</label></th>
+				<td data-member-form="pw1">
+					<input type="password" id="password" name="password" title="비밀번호" <? if($mode == "join") echo "class='required'"; ?> />
+					<em>비밀번호는 8~12자 사이의 영문, 특수문자(~!@\#$%^*\()\-=+_'), 숫자 조합 형태로 입력해 주세요.</em>
+				</td>
+			</tr>
+			<tr>
+				<th scope="row"><span class="marking">필수항목</span><label for="password2">비밀번호확인</label></th>
+				<td data-member-form="pw2">
+					<input type="password" id="password2" name="password2" title="비밀번호 확인" <? if($mode == "join") echo "class='required'"; ?> />
+					<em></em>
+				</td>
+			</tr>
+			<tr>
+				<th scope="row"><span class="marking">필수항목</span><label for="name">이름</label></th>
+				<td data-member-form="name"><input type="text" id="name" name="name" value="<?=$row[name]?>" title="이름" class="required" /></td>
+			</tr>
+			<tr>
+				<th scope="row"><span class="marking">필수항목</span><label for="email">이메일</label></th>
+				<td data-member-form="email">	
+					<input type="text" name="email1" id="email1" value="<?=$email[0]?>" /> @ 
+					<select name="tmp_mail" id="tmp_mail" onchange="javascript:mail_check();" class="input200">
+						<option value="">선택하세요</option>
+						<option value="naver.com">naver.com</option>
+						<option value="daum.net">daum.net</option>
+						<option value="hanmail.net">hanmail.net</option>
+						<option value="hotmail.com">hotmail.com</option>
+						<option value="gmail.com">gmail.com</option>
+						<option value="other">직접입력</option>
+					</select>
+					<input type="text" name="email2" value="<?=$email[1]?>" id="email2" disabled/>
+					<? if($mode == "modify"){ ?>
+						<input type="checkbox" name="change_mail" value="Y" id="change_mail" /><label for="change_mail">변경</label>
+						<p>메일 변경을 원하시면 메일 작성 후 우측 체크박스를 클릭해 주세요.</p>
+					<? } ?>
+				</td>
+			</tr>
+			<tr>
+				<th scope="row"><label for="gender">성별</label></th>
+				<td data-member-form="gender">
+					<div class="designRadio">
+						<input type="radio" name="gender" id="genderM" value="남성" checked> <label for="genderM">남성</label>
+						<input type="radio" name="gender" id="genderF" value="여성"> <label for="genderF">여성</label>
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<th scope="row"><span class="marking">필수항목</span><label for="phone1">연락처</label></th>
+				<td data-member-form="phone">
+					<select name="phone1" id="phone1" class="input100">
+						<option value="010">010</option>
+						<option value="011">011</option>
+						<option value="016">016</option>
+						<option value="017">017</option>
+						<option value="018">018</option>
+						<option value="019">019</option>
+					</select> -
+					<input type="text" name="phone2" id="phone2" value="<?=$phone[1]?>" title="연락처" maxlength="4" class="input100 required" title="연락처" /> -
+					<input type="text" name="phone3" id="phone3" value="<?=$phone[2]?>" title="연락처" maxlength="4" class="input100 required" title="연락처" />
+					<? if($mode == "modify"){ ?>
+						<div class="designCheck">
+							<input type="checkbox" name="change_phone" value="Y" id="change_phone" /><label for="change_phone">변경</label>
+						</div>
+						<em>연락처 변경을 원하시면 작성 후 우측 체크박스를 클릭해 주세요.</em>
+					<? } else { ?>
+						<em>해당 연락처는 아이디 비밀번호 찾기시 이용합니다. </em>
+					<? } ?>
+				</td>
+			</tr>
+			<tr>
+				<th scope="row">주소</th>
+				<td data-member-form="addr">
+					<span>
+						<input type="text" name="zip" id="zip"  value="<?=$row[zip]?>"/>	
+						<a href="javascript:execDaumPostcode()" class="button white">우편번호검색</a>
+					</span>
+					<input type="text" name="address1" id="address1" class="inputFull" value="<?=$row[address1]?>" />
+					<input type="text" name="address2" id="address2" class="inputFull" value="<?=$row[address2]?>" />								
+				</td>
+			</tr>
+			<tr>
+				<th><span class="marking">필수항목</span><label for="birthday">생년월일</label></th>
+				<td data-member-form="date">
+					<input type="text" name="birthday" id="birthday" value="<?=$row[birthday]?>" class="datepicker required" data-form-type="datepicker" title="생년월일" />					
+				</td>
+			</tr>
+		</tbody>
+	</table>
+	<div class="btn_area">
+		<input class="button lg" type="submit" value="<?=$mode_title?>" id="btn_chk">
+	</div>
+</form>
+
+<script>
+	$("#btn_chk").click(function(){
+		var chk = true;
+		var tmp_email = $("#email1").val() + "@" + $("#email2").val();
+		$("[data-phone]").each(function(){
+			if($(this).val().length != 4 && $(this).val()){
+				alert("4자리수를 정확히 입력해주세요.");
+				chk = false;
+				return false;
+			}
+			
+		});
+
+		if(!chk) return false;
+
+		var special_pattern = "@";
+		var chk_email = $("#email1").val();
+		var chk_email2 = $("#email2").val();
+
+		if(chk_email.indexOf(special_pattern) != -1){
+			alert("이메일의 아이디만 입력해주세요!!");
+			return false;
+		}
+		if(chk_email2.indexOf(special_pattern) != -1){
+			alert("이메일 주소만 입력해주세요!!");
+			return false;
+		}
+		
+		/*if("<?=$mode?>" == "join"){
+			if(!confirm("입력하신 이메일 주소 "+tmp_email+"  로 회원가입을 진행하시겠습니까?")){
+				return false;
+			}
+		}*/
+	});
+</script>

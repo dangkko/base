@@ -4,12 +4,16 @@
 @import url('custom_board.css');
 
 /*
- * layout.css.css
+ * layout.css
  * 레이아웃 공통요소들 작업요소에 맞게 수정하시면됩니다.
  *
  * 1) root 설정
  * 2) 폰트설정
- * 3) 레이아웃설정
+ * 3) open-control
+ * 4) 언어선택
+ * 5) 준비중
+ * 6) 관련사이트-목록열기형
+ * 7) 레이아웃설정
  *
  */
 
@@ -20,7 +24,22 @@
 	--color-white:#fff;
 	--color-black:#000;
 	--font-base:16rem;
-	--font-eng:'Poppins',Sans-serif;
+
+	--font18:18rem;
+	--font20:20rem;
+	--font25:25rem;
+	
+	--font-eng:'Poppins', Sans-serif;
+	--font-combine:'Poppins', 'Pretendard', Sans-serif;
+	--trans-ani:0.3s ease 0s;
+}
+@media (max-width:1024px){
+	:root{
+		--font-base:clamp(14rem, 1.563vw, 16rem);
+		--font18:clamp(16rem, 1.758vw, 18rem);
+		--font20:clamp(18rem, 1.953vw, 20rem);
+		--font25:clamp(22rem, 2.441vw, 25rem);
+	}
 }
 
 /* 2) 폰트설정 */
@@ -41,5 +60,131 @@ body{font-size:var(--font-base, 16rem);}
     html{font-size:0.271vw /* 1.3px */;}	
 }
 
+/* 3) open-control */
+/* div.open-control
+ *     button.open-control__btn
+ *     div.list or ul.list
+ * */
+.open-control{position:relative;}
+.open-control .list{display:none; position:absolute; top:100%; width:100%; padding:15rem; background-color:#fff; border:1rem solid #eee;}
+.open-control .list a{display:inline-block;}
 
-/* 3) 레이아웃설정 */
+/* 4) 언어선택 */
+.lang-area{position:relative; min-width:120rem;}
+.lang-area .open-control__btn{display:flex; align-items:center; gap:10rem; background-color:transparent; font-size:17rem; font-weight:500;}
+.lang-area .list ul{display:flex; flex-direction:column; gap:5rem; font-size:15rem;}
+.lang-area .list a{opacity:0.5; font-weight:600; transition:0.3s ease;}
+.lang-area .list a:hover{opacity:1;}
+
+/* 5) 준비중 */
+.ready-page{padding:80rem 0 50rem; text-align:center;}
+.ready-page strong{display:block; font-size:35rem;}
+.ready-page strong i{opacity:0.2; display:block; margin-bottom:10rem; font-size:45rem;}
+.ready-page p{margin-top:20rem; font-size:18rem; line-height:1.4;}
+@media (max-width:480px){
+	.ready-page{padding-top:20rem;}
+	.ready-page	strong{font-size:30rem;}
+	.ready-page	p{font-size:16rem; word-break:keep-all;}
+	.ready-page	p br{display:none;}
+}
+
+/* 6) 관련사이트-목록열기형 */
+.relate-site{position:relative; max-width:260rem;}
+.relate-site .open-control__btn{position:relative; width:100%; height:55rem; box-sizing:border-box; padding:0 30rem 0 20rem; background-color:transparent; border:1rem solid rgba(14,14,14,0.15); font-size:15rem; font-weight:600; text-align:left; color:#333; transition:0.3s ease;}
+.relate-site .open-control__btn .xi-plus-min{position:absolute; right:20rem; top:50%; margin-top:-10rem; font-size:20rem; transition:transform 0.3s;}
+.relate-site .open-control__btn.active{border-color:#111;}
+.relate-site .open-control__btn.active .xi-plus-min{transform:rotate(45deg);}
+.relate-site .list{display:none; position:absolute; bottom:100%; top:auto; width:100%; box-sizing:border-box; padding:35rem 20rem; background:#fff; border:1rem solid #111; border-bottom:0;}
+.relate-site .list ul > li{margin-top:10rem;}
+.relate-site .list ul > li:first-child{margin-top:0;}
+.relate-site .list a{opacity:0.5; display:inline-block; font-size:14rem; font-weight:500; transition:opacity 0.3s;}
+.relate-site .list a:hover{opacity:1;}
+@media (max-width:480px){
+	.relate-site{max-width:100%;}
+}
+
+/* 7) 레이아웃설정 */
+#header{display:flex; justify-content:flex-end; align-items:center; position:relative; z-index:90; width:100%; padding:0 50rem;}
+#header h1{position:absolute; left:50rem;}
+
+/* gnb */
+#header nav{padding-top:38rem;}
+#header nav .gnb{display:flex; align-items:center;}
+#header nav .gnb li a{display:inline-block; word-break:keep-all;}
+#header nav .gnb > li{position:relative;}
+#header nav .gnb > li > a{padding:0 50rem 38rem; font-size:18rem;}
+#header nav .gnb > li .box:not(.depth03){width:100%; min-width:180rem; padding:20rem; background-color:#fff; border:1rem solid #eee; box-shadow:0 20rem 30rem rgba(0,0,0,0.15);}
+#header nav .gnb > li .box:not(.depth03) a{display:block; font-weight:500; transition:opacity 0.3s ease;}
+#header nav .gnb > li .box:not(.depth03):is(:hover) a{opacity:0.5;}
+#header nav .gnb > li .box:not(.depth03):is(:hover) a:hover{opacity:1;}
+#header nav .gnb .box > ul{display:flex; flex-direction:column; gap:7rem;}
+#header nav .gnb .box.depth03{margin-left:10rem;}
+	/* gnb active */
+#header nav .gnb .box:not(.depth03){opacity:0; visibility:hidden; position:absolute; left:50%; transform:translate(-50%, -30rem); transition:0.3s ease; transition-property:opacity, visibility, transform;}
+#header nav .gnb .active .box:not(.depth03){opacity:1; visibility:visible; transform:translate(-50%, 0);}
+@media (max-width:1024px){
+	#header nav{display:none;}
+}
+
+/* maga menu */
+.mega-menu{opacity:0; visibility:hidden; display:flex; align-items:stretch; position:fixed; top:0; left:0; z-index:9999; width:100%; height:100%; background-color:rgba(0,0,0,0.6); transition:0.3s ease; transition-property:opacity, visibility;}
+.mega-menu.active{opacity:1; visibility:visible;}
+.mega-menu .open{display:none;}
+.gnb-mob{overflow-y:auto; width:80%; background-color:#fff;}
+.gnb-mob .gnb{padding:30rem;}
+.gnb-mob .gnb > li{position:relative; border-bottom:1rem solid rgba(0,0,0,0.1);}
+.gnb-mob .gnb > li > a{display:flex; align-items:center; padding:20rem 20rem; font-size:23rem; font-weight:500;}
+.gnb-mob .gnb > li .open{position:absolute; top:20rem; right:20rem; width:20rem; height:20rem; background-color:transparent; font-size:0;}
+.gnb-mob .gnb > li .open:before{content:'\e913'; display:block; font-family:xeicon !important; font-size:20rem;}
+.gnb-mob .gnb > li > a.active ~ .open:before{content:'\e91a';}
+.gnb-mob .gnb > li > a.on{color:var(--color-point);}
+.gnb-mob .box{display:none; padding:30rem; background-color:#f3f3f3;}
+.gnb-mob .box ul{display:flex; flex-direction:column; gap:10rem;}
+.gnb-mob .box a{display:block; font-size:18rem;}
+.gnb-mob .box a span{line-height:1.4; background:linear-gradient(90deg, #222, #222); background-size:0 2rem; background-repeat:no-repeat; background-position:0 100%; transition:0.5s;}
+.gnb-mob .box a.on span{background-size:100% 2rem; font-weight:700;}
+	/* maga control */
+[class*="mega-menu__"]{display:block; width:60rem; height:60rem; background-color:transparent;}
+[class*="mega-menu__"] span{display:block; position:relative; width:16rem; height:14rem; margin:0 auto; font-size:0;}
+[class*="mega-menu__"] span i,
+[class*="mega-menu__"] span:before,
+[class*="mega-menu__"] span:after{display:block; position:absolute; height:2rem; background-color:#222; transform:rotate(0);}
+[class*="mega-menu__"] span:before,
+[class*="mega-menu__"] span:after{content:''; width:100%;}
+[class*="mega-menu__"] span:before{right:0; top:0; transition:0.5s ease 0s;}
+[class*="mega-menu__"] span:after{left:0; bottom:0; transition:0.5s ease 0s;}
+[class*="mega-menu__"] span i{opacity:1; left:0; top:6rem; width:100%; transition:opacity 0.3s, transform 0.5s ease 1.1s;}
+[class*="mega-menu__"].active i{opacity:0;}
+[class*="mega-menu__"].active span:before{right:0; top:5rem; transform:rotate(45deg);}
+[class*="mega-menu__"].active span:after{left:0; bottom:7rem; transform:rotate(-45deg);}
+	/* mega menu - open btn */
+	/* pc에서만 사용한다면 display none처리 */
+.mega-menu__btn{display:block;}
+	/* mega menu - close btn */
+.mega-menu__close{flex:auto; width:auto; height:auto; -webkit-backdrop-filter:blur(5px); backdrop-filter:blur(5px);}
+.mega-menu__close em{display:flex; justify-content:center; align-items:center; width:60rem; height:60rem;}
+.mega-menu__close span{width:26rem; height:24rem;}
+.mega-menu__close span i,
+.mega-menu__close span:before,
+.mega-menu__close span:after{background-color:#fff;}
+.mega-menu__close.active span:before{top:11rem;}
+.mega-menu__close.active span:after{bottom:11rem;}
+.mega-menu__close:focus{outline:none;}
+@media (hover: hover){
+	.gnb-mob .box a:hover span{background-size:100% 2rem;}
+}
+@media (max-width:1024px){
+	[class*="mega-menu__"]{display:block;}
+	.mega-menu__close{display:flex; justify-content:flex-end; padding-right:30rem; padding-top:20rem;}
+	.mega-menu .open{display:block;}
+}
+@media (max-width:480px){
+	.mega-menu__close{padding-right:10rem;}
+	.gnb-mob .gnb{padding:20rem 0;}
+	.gnb-mob .gnb > li > a{font-size:18rem;}
+	.gnb-mob .box{padding:25rem 20rem;}
+	.gnb-mob .box a{font-size:16rem;}
+}
+
+/* util */
+.util-area{display:flex; align-items:center;}

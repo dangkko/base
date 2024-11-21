@@ -6,6 +6,7 @@ $(function(){
 	is_ie();
 	tooltip();
 	hasBtn();
+	btnOpenControl();
 });
 
 $(window).on('load',function(){
@@ -17,7 +18,6 @@ $(window).on('load',function(){
 	designFile();
 	designValue();
 	faqBtn();
-	tabCol();
 	layerPop();
 	controlAccor();
 });
@@ -205,40 +205,6 @@ function hasBtn(){
 	});
 }
 
-//tab length
-function tabCol(){
-	if(!($('.tabCol').length > 0)) return;
-	tabControl();
-	function tabControl(){
-		$('.tabCol').each( function(i){
-			var tabWid = $(this).outerWidth();
-			var tabSize = $(this).children('ul').outerWidth();
-			
-			if(tabWid < tabSize){
-				$(this).addClass('full');
-			}else{
-				$(this).removeClass('full');
-			}
-	
-			var tabLeft = $(this).find('a.on').position();
-			if(typeof tabLeft !== 'undefined'){
-				$(this).animate( { scrollLeft : tabLeft.left }, 400 );		
-			}
-		});
-	}
-	var myTimer
-	, widSize = $(window).width();
-	$(window).resize(function(){
-		clearTimeout(myTimer);
-		myTimer = setTimeout(function(){
-			var mainWid = $(window).width();
-			if(widSize != mainWid){
-				tabControl();
-			}
-		},350);
-	});
-}
-
 //accordion
 function controlAccor(){
 	if(!($('[data-control="accordion"]').length > 0)) return;
@@ -297,15 +263,6 @@ function tooltip(){
 	widthHandler(widthMatch);
 }
 
-
-//sitemap
-$(window).on('load',function(){
-	if($('.area_sitemap').length > 0){
-		var gnbSite = $('#header nav').html();
-		$('.area_sitemap').append(gnbSite);
-	}
-});
-
 //layer popup
 function layerPop(){
 	if(!($('[data-pop-layer]').length > 0)) return;
@@ -337,4 +294,47 @@ function showPopup(el){
 		$el.addClass('active');
 	}, 100);
 	return false;
+}
+
+//sitemap - 삭제예정
+$(window).on('load',function(){
+	if($('.area_sitemap').length > 0){
+		var gnbSite = $('#header nav').html();
+		$('.area_sitemap').append(gnbSite);
+	}
+});
+
+//click open control
+/* div.open-control
+ *     button.open-control__btn
+ *     div.list or ul.list
+ * */
+function btnOpenControl(){
+	if(!($('.open-control').length > 0)) return;
+	
+	$('.open-control').each(function(){
+		var sliteLi = $(this)
+		, siteBtn = sliteLi.children('.open-control__btn')
+		, siteList = sliteLi.children('.list');
+		siteBtn.on({
+			click: function(){
+				if($(this).hasClass('active')){
+					$(this).removeClass('active').siblings('.list').stop().slideUp();
+				}else{
+					$(this).addClass('active').siblings('.list').stop().slideDown();
+				}
+			},
+		});
+		sliteLi.on({
+			mouseleave: function(){
+				$(this).children('button').removeClass('active').end().children('.list').stop().slideUp();
+			},
+		});
+		$('*').not('.open-control *').on({
+			focus: function(){
+				siteBtn.removeClass('active');
+				siteList.stop().slideUp();
+			},
+		})
+	});
 }

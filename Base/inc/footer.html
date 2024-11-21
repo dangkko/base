@@ -8,6 +8,22 @@
 				<a href="javascript:;" onclick="javascript:showPopup(consent);">개인정보수집 및 이용동의</a>		
 				<a href="javascript:;" onclick="javascript:showPopup(refuse_email);">이메일 무단수집거부</a>
 				<a href="javascript:;" onclick="javascript:showPopup(terms);">이용약관</a>
+
+				<div class="relate-site open-control">
+					<button type="button" class="open-control__btn"><span>관련사이트</span><i class="xi-plus-min"></i></button>
+					<div class="list">
+						<ul>
+							<li><a href="https://www.mohw.go.kr/" target="_blank">보건복지부</a></li>
+							<li><a href="https://www.kdca.go.kr/" target="_blank">질병관리청</a></li>
+							<li><a href="https://helpline.kdca.go.kr/cdchelp/" target="_blank">희귀질환 헬프라인</a></li>
+							<li><a href="https://www.nhis.or.kr/" target="_blank">국민건강보험</a></li>
+							<li><a href="https://health.kdca.go.kr/" target="_blank">국가건겅정보포털</a></li>
+						</ul>
+					</div>
+				</div>
+
+				<!-- 작업check : hasLink 클래스사용시 herf선언된 id값 시점으로 이동한다. -->
+				<a href="#wrap" class="hasLink top-btn"><span>TOP</span></a>
 			</footer>
 			
 			<!-- 개인정보처리방침내용 -->
@@ -22,6 +38,6 @@
 			<!-- 이용약관 -->
 			<? include $_SERVER['DOCUMENT_ROOT'] . "/inc/inc_terms.html"; ?>
 
-		</div>
+		</div><!--// wrap-->
 	</body>
 </html>

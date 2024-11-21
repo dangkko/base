@@ -1,3 +1,66 @@
 @charset "utf-8";
 
-/* main */
+/*
+ * main.css
+ * 메인영역 삽입 추가하시면됩니다. 아래 커스텀진행하세요.
+ *
+ * 1) main visual
+ *
+ */
+ 
+/* 1) main visual */
+[data-mainVisual]{position:relative; height:100vh; height:calc(var(--vh, 1vh) * 100);}
+[data-mainVisual] .visual-list{height:100%;}
+	/* text */
+[data-visual="text"]{display:flex; flex-direction:column; gap:25rem; position:absolute; top:50%; left:50%; z-index:5; max-width:1400rem; width:100%; box-sizing:content-box; padding:0 20rem; color:#fff; transform:translate(-50%, -50%);}
+[data-visual="text"] strong{font-size:18rem; color:#99bbff; font-weight:500;}
+[data-visual="text"] em{font-size:70rem; font-weight:600;}
+[data-visual="text"] span{margin-top:25rem; font-size:24rem; line-height:1.6; font-weight:300;}
+[data-visual="text"] :is(strong, em, span){opacity:0; transform:translateY(30rem); transition:1s ease 0s; transition-property:opacity, transform; word-break:keep-all;}
+	/* img */
+[data-visual="img"]{overflow:hidden; display:block; height:100%;}
+[data-visual="img"] img{object-fit:cover; width:100%; height:100%; transform:scale(1.1); transition:transform 7000ms linear;}
+	/* active motion */
+[data-visual="img"].motion__in img{transform:scale(1);}
+[data-visual="text"].motion__in :is(strong, em, span){opacity:1; transform:translateY(0rem);}
+[data-visual="text"].motion__in strong{transition-delay:0.15s;}
+[data-visual="text"].motion__in em{transition-delay:0.3s;}
+[data-visual="text"].motion__in span{transition-delay:0.45s;}
+	/* control */
+[data-mainVisual] .swiper-page{--swiper-theme-color:#fff; --swiper-pagination-bullet-inactive-color:#eee; position:absolute; bottom:50rem; left:50%; z-index:10; transform:translateX(-50%); width:auto;}
+[data-mainVisual] .swiper-control{display:flex; align-items:stretch; position:absolute; bottom:30rem; right:50rem; z-index:10;}
+[data-mainVisual] button{--sizeWid:60rem; opacity:0.6; display:flex; justify-content:center; align-items:center; width:var(--sizeWid); height:var(--sizeWid); background-color:transparent; transition:opacity 0.3s ease;}
+[data-mainVisual] button[class*="swiper_"]{color:#fff;}
+[data-mainVisual] button[class*="swiper_"] span{font-size:0;}
+[data-mainVisual] button[class*="swiper_"] i{font-size:25rem;}
+[data-mainVisual] button:hover{opacity:1;}
+@media (max-width:1440px){
+	/* text */
+	[data-visual="text"]{box-sizing:border-box;}
+}
+@media (max-width:1024px){
+	/* text */
+	[data-visual="text"] em{font-size:clamp(50rem, 6.836vw, 70rem)}
+}
+@media (max-width:768px){
+	/* control */
+	[data-mainVisual] .swiper-control{right:10rem;}
+}
+@media (max-width:480px){
+	/* text */
+	[data-visual="text"] strong{font-size:16rem;}
+	[data-visual="text"] em{font-size:40rem;}
+	[data-visual="text"] span{font-size:18rem;}
+	/* control */
+	[data-mainVisual] .swiper-page{bottom:30rem; left:10rem; transform:translateX(0);}
+	[data-mainVisual] .swiper-control{bottom:15rem;}
+	[data-mainVisual] button{--sizeWid:50rem;}
+	[data-mainVisual] button[class*="swiper_"] i{font-size:20rem;}
+}
+
+/* 공통 */
+[data-main]{padding:var(--page-top) 0;}
+[data-main] .title{display:flex; flex-direction:column; gap:25rem;}
+[data-main] .title em{font-family:var(--font-eng); font-size:20rem; color:var(--color-point); font-weight:700;}
+[data-main] .title h2{font-size:55rem; font-weight:500; letter-spacing:-2rem;}
+[data-main] .title h2 i{display:inline-block; margin-left:7rem; margin-bottom:-3rem; width:12rem; height:12rem; line-height:1cap; border-radius:100%; background-color:var(--color-point);}

@@ -1,0 +1,102 @@
+<?
+//페이징 변수
+if (!$start) $start = 0;
+$scale = 9; // 리스트 수
+$page_scale	= 10; // 페이징 수
+
+//검색
+if($keyword){
+
+	if($search_key == ""){
+		$search_key = "title";
+	}
+	$WHERE .= " AND $search_key LIKE '%$keyword%'";
+}
+
+if($cate){
+	$WHERE .= " AND category = '{$cate}'";
+}
+
+//리스트
+$total_query = "SELECT * FROM $board_id WHERE 1=1 $WHERE ORDER BY notice DESC, reg_date DESC, no DESC";
+$total_result = mysqli_query($dbp, $total_query);
+$total = mysqli_num_rows($total_result);
+
+
+$query = "SELECT * FROM $board_id WHERE 1=1  $WHERE ORDER BY notice DESC, ref_group DESC, depth ASC, no DESC LIMIT $start, $scale";
+$result = mysqli_query($dbp, $query);
+?>
+
+<!-- 검색 및 버튼 -->
+<? include "search.html"; ?>
+<!-- 검색 및 버튼 -->
+
+<? if($total > 0) { ?>
+<p class="ko_board_count">총 <strong><?=$total?></strong>건</p>
+<!-- 목록 -->
+<!-- data-gallery="A" 추가 -->
+<ul class="ko_board_list" data-type="A" data-gallery="A">
+	<? $f_no = $total - $start; ?>
+	<? while($row = mysqli_fetch_array($result)){ ?>
+	<?
+			$reply_query_count = "SELECT * FROM board_comment WHERE ref_board_no = '$row[no]' AND board_id = '$board_id'";
+			$reply_count_result = mysqli_query($dbp, $reply_query_count);
+			$reply_count = mysqli_num_rows($reply_count_result);
+
+			if($reply_count > 0){
+				$reply_query = "SELECT * FROM board_comment  ref_board_no = '$row[no]' AND board_id = '$board_id ORDER BY reg_date DESC";
+				$reply_result = mysqli_query($dbp, $reply_query);
+			}
+	?>
+	<li>
+		<a href="<?=$PHP_SELF?>?board_id=<?=$board_id?>&amp;mode=view&amp;no=<?=$row[no]?>&amp;cate=<?=$cate?>">   
+			<!-- 썸네일이미지 -->
+			<!-- 썸네일이미지 마크업만 추가 해주시면 됩니다. -->
+			<span data-board="img">
+				<? if($row[file_1]){
+					$ext = end(explode(".", strtolower($row[file_1])));
+					if($ext == "jpg" || $ext == "png" || $ext == "jpeg" || $ext == "bmp"){ ?>
+						<img src="/upload/<?=$board_id ?>/thumb_<?=rawurlencode($row[file_1] ) ?>" alt="" onerror="this.onerror=null; this.src='/images/board/no_image.gif'"/>
+					<? } else { ?>
+						<img src="/images/board/no_image.gif" alt="이미지없음"/>
+					<?	} 
+				} else { ?>
+					<img src="/images/board/no_image.gif" alt="이미지없음"/>
+				<? } ?>
+			</span>              
+			<!-- 타이틀 --> 
+			<strong data-board="tit"><?=$row[title]?></strong>
+			<!-- 내용 -->
+			<p data-board="con"><?=strip_tags($row[comments]) ?></p>
+			<span class="board_info_con">
+				<i data-board="writer"><?=$row[name]?></i>
+				<i data-board="date"><?=str_replace("-", ".", reset(explode(" ", $row[reg_date])))?></i>
+				<? if($row[notice] == "Y") { ?>
+				<!-- 공지글일때 -->
+				<!-- 공지글은 항상 맨 위로 -->
+				<i data-board="notice">공지</i>
+				<? } ?>
+			</span>
+			<i data-board="arr"></i>
+		</a>
+	</li>
+	<? } ?>
+</ul>
+<!-- //목록 -->
+<? } else { ?>
+	<!-- 데이터없을때 -->  
+	<div class="ko_board_noData">등록된 글이 없습니다.</div>
+<? } ?>
+
+
+<div class="box-pagin-flex <? if($auth_write){?>col<? } ?>">
+	<!-- page -->
+	<? include "paging.html"; ?>
+	<!-- //page -->
+	<? if($auth_write){?>
+		<div class="btn">
+			<a href="<?=$PHP_SELF?>?mode=write&amp;board_id=<?=$board_id?>&cate=<?=$row[category]?>" class="button"><span>글쓰기</span></a>
+		</div>
+	<? } ?>
+</div>
+

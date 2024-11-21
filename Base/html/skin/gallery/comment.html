@@ -1,0 +1,171 @@
+<div class="comment_area">
+
+	<?
+
+		//해당게시물의 코멘트 갯수
+		$qry = " SELECT *  FROM board_comment where board_id='$board_id' and ref_board_no= $no";
+		$result = mysqli_query($dbp, $qry);
+		$reply_count = mysqli_num_rows($result);
+
+		//변수 설정
+		$ref_board_no = $no;
+	?>
+	<h4>댓글<span><?=$reply_count?></span></h4>
+
+	<!-- 댓글작성 -->
+	<? if($auth_comment){ ?>
+	<div class="write">
+		<form name="comment" method="get" action="<?=$PHP_SELF?>" class="comment_write">
+		<input type="hidden" name="mode" value="comment_proc" />
+		<input type="hidden" name="board_id" value="<?=$board_id?>" />
+		<input type="hidden" name="ref_board_no" value="<?=$ref_board_no?>" />
+		<input type="hidden" name="no" value="<?=$no?>" />
+			<div class="input">
+				<span>
+					<label for="comment_name">작성자</label>
+					<input type="text" name="comm_name" id="comment_name" value="<?=$_SESSION[member_name]?>" <?=$mem_option?>/>
+				</span>
+
+				<? if($board[is_membership] != "Y"){ ?>
+				<span>
+					<label for="comment_pw">비밀번호</label>
+					<input type="password" name="comm_password" id="comment_pw" value=""/>
+				</span>
+				<? } ?>
+				
+			</div>
+			<textarea name="comm_comments" id="comment" title="댓글입력하기" placeholder="내용과 무관한 글은 임의로 삭제 될 수 있습니다."/></textarea>
+			<div class="send">					
+				<? if($auth_comment) { ?>
+				<input type="submit" class="btn_submit" value="등록"  />
+				<? } else { ?>
+					<input type="button" class="btn_submit" value="등록"  onclick="alert('댓글 작성권한이 없습니다.');"/>
+				<? } ?>
+			</div>
+		
+		</form>
+	</div>
+	<? } ?>
+<!-- 삭제눌럿을때 비번확인 -->
+	<div class="list">
+		<ul>
+				<?
+				$comm_query = " SELECT *  FROM board_comment WHERE board_id='$board_id' AND ref_board_no = '$ref_board_no' ORDER BY ref_group ASC, ref_depth ASC, no DESC"; 
+				$comm_result = mysqli_query($dbp, $comm_query);
+				
+				while($comm_row = mysqli_fetch_array($comm_result)) {   
+					$depth = "";
+					$com_name = $comm_row['name'];
+
+					if($comm_row[ref_depth] > 1){
+						$depth = "padding-left:20px !important;";
+						$check_ = mysqli_fetch_array(mysqli_query($dbp, "SELECT * FROM board_comment WHERE no='$comm_row[ref_no]'"));
+						if($check_['name']) {
+							$com_name = $check_['name']. "님 글에 대한 ".$comm_row['name']."님의 댓글";
+						} else {
+							$com_name = "원문글이 삭제된 글에 대한 ".$comm_row['name']."님의 댓글";
+						}
+					}
+				?>
+				<li style="<?=$depth?>">
+					<span class="name"><?=$com_name?></span>
+					<div class="btn">
+						<span class="date"><?=$comm_row['reg_date']?></span>
+						<? if($auth_comment){ ?>
+							<? if($comm_row[ref_depth] == 1){ ?>
+							<a href="#" class="btn_reply" id="reply_<?=$comm_row[no]?>">댓글달기</a>
+							<? } ?>
+							<a href="#" class="btn_del" id="passwod_<?=$comm_row[no]?>">삭제</a>
+						<? } ?>
+					</div>
+					<!--<p><?=nl2br($comm_row[comments])?></p>-->
+					<p>
+						<? 
+							$match = Array();
+							preg_match_all('#\bhttps?://[^,\s()<>]+(?:\([\w\d]+\)|([^,[:punct:]\s]|/))#', $comm_row[comments], $match);
+							if($match[0]){
+								foreach($match[0] as $v){
+									$tmp = "<a href='$v' style='color:blue' target='_blank'>$v</a>";
+									$reg = preg_replace('#\bhttps?://[^,\s()<>]+(?:\([\w\d]+\)|([^,[:punct:]\s]|/))#', $tmp, $comm_row[comments]);
+								}
+								echo nl2br($reg);
+							}else{
+								echo nl2br($comm_row[comments]);
+							}
+						?>
+					</p>
+
+					<!-- 댓글에 삭제 눌럿을때 -->
+					<div class="comment_password passwod_<?=$comm_row[no]?>" style="display:none;">
+						<form action="<?=$PHP_SELF?>" method="get" name="del_form_<?=$comm_row[no]?>" class="comment_del_form">
+						<input type="hidden" name="comm_no" value="<?=$comm_row[no]?>" />
+						<input type="hidden" name="board_id" value="<?=$board_id?>" />
+						<input type="hidden" name="ref_board_no" value="<?=$ref_board_no?>" />
+						<input type="hidden" name="mode" value="comment_proc" />
+						<input type="hidden" name="comment_mode" value="delete" />
+						<? if($board[is_membership] != "Y"){ ?>
+							<p>작성시 설정한 비밀번호를 입력해주세요.</p>
+							<input type="password" name="comm_password"  title="비밀번호" value="<? if($_SESSION[is_admin]) echo $comm_row[password]; ?>"/>
+						<? } else { ?>
+							<p>삭제하시겠습니까?</p>
+						<? } ?>
+							<input type="submit" class="button" value="확인" />
+							<a href="#" class="button gray hide_all">취소</a>
+						</form>
+					</div>		
+					<!-- //댓글에 삭제 눌럿을때 -->
+
+					<!-- 댓글에 댓글 눌럿을때 -->
+					<div class="write reply_area reply_<?=$comm_row[no]?>" style="display:none;">
+						<form name="re_comment_form_<?=$comm_row[no]?>" method="get" action="<?=$PHP_SELF?>"  class="comment_apend_form">
+						<input type="hidden" name="comm_no" value="<?=$comm_row[no]?>" />
+						<input type="hidden" name="board_id" value="<?=$board_id?>" />
+						<input type="hidden" name="ref_group" value="<?=$comm_row[ref_group]?>" />
+						<input type="hidden" name="ref_no" value="<?=$comm_row[ref_no]?>" />
+						<input type="hidden" name="ref_board_no" value="<?=$ref_board_no?>" />
+						<input type="hidden" name="mode" value="comment_proc" />
+						<input type="hidden" name="comment_mode" value="append" />
+						<div class="input">
+							<span>
+								<label for="comm_name_<?=$comm_row[no]?>">작성자</label>
+								<input type="text" name="comm_name" id="comm_name_<?=$comm_row[no]?>"  value="<?=$_SESSION[member_name]?>" <?=$mem_option?>>
+							</span>
+							<? if($board[is_membership] != "Y"){ ?>
+							<span>
+								<label for="comm_pw_<?=$comm_row[no]?>">비밀번호</label>
+								<input type="password" name="comm_password" id="comm_pw_<?=$comm_row[no]?>" value="">
+							</span>
+							<? } ?>
+						</div>
+						<textarea name="comm_comments" id="re_comment_<?=$comm_row[no]?>" title="댓글입력하기" placeholder="내용과 무관한 글은 임의로 삭제 될 수 있습니다."></textarea>
+						<div class="send">					
+							<input type="submit" class="button" value="등록" />
+						</div>
+						</form>
+					</div>
+					<!-- //댓글에 댓글 눌럿을때 -->
+				</li>
+			<?}?>
+		</ul>
+	</div>
+</div>
+<!-- //삭제눌럿을때 비번확인 -->		
+<script>
+$(function(){
+	$('.btn_del').click(function(){
+		$("."+$(this).attr('id')).stop().toggle('show');
+		return false;
+	});
+
+	$('.btn_reply').click(function(){
+		$("."+$(this).attr('id')).stop().toggle('show');
+		return false;
+	});
+
+	$('.hide_all').click(function(){
+		//$("."+$(this).attr('id')).toggle('hide');
+		$(this).closest("div").stop().toggle('hide');
+		return false;
+	});
+});
+</script>
