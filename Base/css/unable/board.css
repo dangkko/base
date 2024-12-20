@@ -635,6 +635,9 @@ col[data-view="th"]{width:8% !important;}
 	.designSelect .selectoption li{padding:4rem 14rem;}
 	
 	ul.bbsList{border-top:0;}
+
+	.secret_area input[type="password"]{width:100%;}
+	.secret_area .button{flex:1 1 auto;}
 }
 
 @media screen and (max-width:460px){

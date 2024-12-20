@@ -24,22 +24,10 @@
 	--color-white:#fff;
 	--color-black:#000;
 	--font-base:16rem;
-
-	--font18:18rem;
-	--font20:20rem;
-	--font25:25rem;
 	
 	--font-eng:'Poppins', Sans-serif;
 	--font-combine:'Poppins', 'Pretendard', Sans-serif;
 	--trans-ani:0.3s ease 0s;
-}
-@media (max-width:1024px){
-	:root{
-		--font-base:clamp(14rem, 1.563vw, 16rem);
-		--font18:clamp(16rem, 1.758vw, 18rem);
-		--font20:clamp(18rem, 1.953vw, 20rem);
-		--font25:clamp(22rem, 2.441vw, 25rem);
-	}
 }
 
 /* 2) 폰트설정 */
@@ -77,12 +65,12 @@ body{font-size:var(--font-base, 16rem);}
 .lang-area .list a:hover{opacity:1;}
 
 /* 5) 준비중 */
-.ready-page{padding:80rem 0 50rem; text-align:center;}
+.ready-page{padding:120rem 0; text-align:center;}
 .ready-page strong{display:block; font-size:35rem;}
 .ready-page strong i{opacity:0.2; display:block; margin-bottom:10rem; font-size:45rem;}
 .ready-page p{margin-top:20rem; font-size:18rem; line-height:1.4;}
 @media (max-width:480px){
-	.ready-page{padding-top:20rem;}
+	.ready-page{padding:80rem 0;}
 	.ready-page	strong{font-size:30rem;}
 	.ready-page	p{font-size:16rem; word-break:keep-all;}
 	.ready-page	p br{display:none;}
@@ -129,7 +117,6 @@ body{font-size:var(--font-base, 16rem);}
 /* maga menu */
 .mega-menu{opacity:0; visibility:hidden; display:flex; align-items:stretch; position:fixed; top:0; left:0; z-index:9999; width:100%; height:100%; background-color:rgba(0,0,0,0.6); transition:0.3s ease; transition-property:opacity, visibility;}
 .mega-menu.active{opacity:1; visibility:visible;}
-.mega-menu .open{display:none;}
 .gnb-mob{overflow-y:auto; width:80%; background-color:#fff;}
 .gnb-mob .gnb{padding:30rem;}
 .gnb-mob .gnb > li{position:relative; border-bottom:1rem solid rgba(0,0,0,0.1);}
@@ -187,4 +174,4 @@ body{font-size:var(--font-base, 16rem);}
 }
 
 /* util */
-.util-area{display:flex; align-items:center;}
+.util-area{display:flex; align-items:center; gap:10rem;}

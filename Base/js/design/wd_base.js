@@ -48,8 +48,6 @@ function is_ie(){
 	  	$('body').append('<div id="update"><div>보고계신 사이트는 <b>마이크로소프트 엣지에 최적화 된</b> 사이트 입니다. Windows Internet Explorer에서 <b>업데이트</b>를 받으세요 <a href="https://www.microsoft.com/ko-kr/edge" target="_blank" title="새창">Microsoft Edge 업데이트하기</a><p>크롬, 네이버웨일, 오페라, 파이어폭스 기타 브라우저로도 확인이 가능합니다.</div></div>');
 	} else if ( agent.search( "edge/" ) > -1 ){
 		$('body').addClass('ie_edge');
-	} else {
-		$('body').addClass('ie_none');
 	}
 }
 function is_mob(){				

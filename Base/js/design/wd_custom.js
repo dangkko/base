@@ -2,18 +2,12 @@
  * custom js Document
 */ 
 
-$(function(){
-	scrollAni();	
-	btnMotion();	  	
-});
 
 $(window).on('load',function(){
+	responsive();
 	lnbSetControl();
 	gnbControl();
 	gnbMobControl();
-	tabControl();
-	scrollSize();
-	scrollPos();
 });
 
 // web mobile check
@@ -43,9 +37,8 @@ function responsive(){
 	function def(param){
 		if(param.attr("class") == "web"){
 			//모바일 메뉴열림 web에서 닫힘세팅
-			//$('.gnb > li > a').unbind('click');
-			$('.gnb-mob .gnb > li > a').removeClass('active');
 			$('.gnb-mob li.active button.open').click();
+			$('.gnb-mob .gnb li, .gnb-mob .gnb li a').removeClass('active');
 			$('.mega-menu__btn, .mega-menu__close').removeClass('active');
 			$('body, .mega-menu, .mega-menu__close').removeClass('active');
 		} else if (param.attr("class") == "mob"){  
@@ -131,7 +124,7 @@ function gnbMobControl(){
 		}
 		return false;
 	}
-
+	
 	/* !!pc+모바일 둘다 사용할때 
 	 * 단, 아코디언 형식으로 사용된다.
 	 * 아래 !!모바일 가동시 사용할경우 해당 구문은 주석 or 삭제한다.
@@ -162,7 +155,7 @@ function gnbMobControl(){
 	};
 	widthMatch.addListener(widthHandler);
 	widthHandler(widthMatch);
-	*/
+	*/	
 }
 
 //page title, lnb load
@@ -229,157 +222,4 @@ function lnbSetControl(){
 		//1차가 on이 없는경우 2차가 없음을 간주하고 lnb자체를 숨김처리함 불필요할때 삭제가능
 		$('.lnb').hide();
 	}
-}
-
-function scrollAni(){
-	jQuery.fn.motionA = function(){
-		var bottom_of_object = this.offset().top + this.outerHeight()/2;
-		var bottom_of_window = $(window).scrollTop() + $(window).height();
-		
-		if( bottom_of_window > bottom_of_object ){                
-			this.addClass("motion__in");	                    
-		}else{
-			this.removeClass('motion__in');
-		}		
-	}
-	
-	jQuery.fn.motionB = function(){
-		var bottom_of_object = this.offset().top;
-		var bottom_of_window = $(window).scrollTop() + $(window).height()/4;
-		
-		if( bottom_of_window > bottom_of_object ){                
-			this.addClass("motion__in");	                    
-		}else{
-			this.removeClass('motion__in');
-		}
-	}
-	
-	$('[data-motion]:not(.fast)').each( function(i){		
-		let $el = $(this);
-		$el.motionA();
-	}); 
-	
-	$('[data-motion].fast').each( function(i){		
-		let $el = $(this);
-		$el.motionB();		
-	});
-	
-	$(window).scroll(function(){
-		$('[data-motion]:not(.fast)').each( function(i){		
-			let $el = $(this);
-			$el.motionA();
-		});   
-		
-		$('[data-motion].fast').each( function(i){		
-			let $el = $(this);
-			$el.motionB();	
-		});   
-	});
-}
-
-function btnMotion(){
-	if(!($('.primary-button').length > 0)) return;
-	
-	let button = document.querySelector(".primary-button");
-	let item = document.querySelector(".primary-button .round");
-
-	button.addEventListener("mouseenter", function(event) {
-		this.classList += " animate";
-		let buttonX = event.offsetX;
-		let buttonY = event.offsetY;
-
-		if (buttonY < 24) {
-			item.style.top = 0 + "rem";
-		} else if (buttonY > 30) {
-			item.style.top = 60 + "rem";
-		}
-
-		item.style.left = buttonX + "rem";
-		item.style.width = "1rem";
-		item.style.height = "1rem";
-	});
-
-	button.addEventListener("mouseleave", function() {
-		this.classList.remove("animate");
-
-		let buttonX = event.offsetX;
-		let buttonY = event.offsetY;
-
-		if (buttonY < 24) {
-			item.style.top = 0 + "rem";
-		} else if (buttonY > 30) {
-			item.style.top = 60 + "rem";
-		}
-		item.style.left = buttonX + "rem";
-	});
-}
-
-function scrollSize(){
-	/* div.scroll_control
-	 *		div.inner or nav.inner
-	 *			ul
-	*/
-	let scrollWidth = 0
-	$('.scroll_control .inner li').each(function(index){
-		scrollWidth += Number($(this).outerWidth());			
-	});
-	let scrollSize = $('.scroll_control .inner').outerWidth();
-
-	if(scrollWidth > scrollSize){
-		$('.scroll_control').addClass('full'); 		
-	}else{
-		$('.scroll_control').removeClass('full');
-	}
-}	  
-function scrollPos(){
-	$('.scroll_control').each(function(i){
-		let thisName = $(this);
-		setTimeout(function(){
-			let tabLeft = thisName.find('ul > li > a.on').position();
-			if(typeof tabLeft !== 'undefined'){
-				thisName.children('.inner').animate( { scrollLeft : tabLeft.left }, 400 );		
-			}
-		}, 200);
-	});
-}
-$(window).resize(function(){
-	let widSize = $(window).outerWidth,
-		mainWid = $(window).innerWidth();		
-	if(widSize != mainWid){
-		scrollSize();
-	}
-});
-
-function tabControl(){
-	/* div.tab-area 
-	 *     ul.tab-control
-	 *       li a data-tab="이름"
-	 *   div.tab-conts
-	 *     div.tab-box id="이름"
-	 * */
-	$('.tab-control').each(function(){
-		const tabParent = $(this).parents('.tab-area'),
-			tabLi = $(this).children('li'),
-			tabBtn = tabLi.children('a'),
-			tabConts = tabParent.find('.tab-box'),
-			ContsHig = '';
-		
-		tabConts.css({'opacity':'0','visibility':'hidden', 'display':'none'});
-	
-		tabBtn.click(function(){
-			if($(this).parent().hasClass('active')) return;
-			let contTab = $(this).data('tab');
-			if(typeof contTab !== 'undefined'){
-				let tabHig = $(this).outerHeight(),
-					ContsHig = tabParent.find('#'+contTab).outerHeight() + tabHig;
-				tabLi.removeClass('active');
-				$(this).parent().addClass('active');				
-				$(this).parents('.tab-area').css('height',ContsHig);  
-				tabConts.removeClass('active').css({'opacity':'0','visibility':'hidden', 'display':'none'});
-				tabParent.find('#'+contTab).addClass('active').css({'opacity':'1','visibility':'visible', 'display':'block'});				
-			}
-			return false;
-		});
-		tabBtn.eq(0).click();
-	});
 }

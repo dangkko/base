@@ -5,21 +5,7 @@
  *
  */
 
-/* 공통 */
-[data-subarea]{padding:var(--page-top) 0;}
-[data-subarea] .title{display:flex; flex-direction:column; align-items:center; gap:35rem;}
-[data-subarea] .title em{font-family:var(--font-eng); font-size:20rem; font-weight:700; color:var(--color-point); text-transform:uppercase;}
-[data-subarea] .title h3{font-size:55rem; font-weight:700; letter-spacing:-1rem;}
-[data-subarea] .title-mid{font-size:35rem; font-weight:700; letter-spacing:-1rem;}
-[data-subarea] .title-mid strong{color:var(--color-point);}
-[data-subarea] .title-desc{margin-top:45rem; font-size:22rem; font-weight:300; line-height:1.5; letter-spacing:-1rem; text-align:center;}
-#content [data-subarea]:last-child{padding-bottom:calc(var(--page-top) + 40rem);}
-
-
-
-
-
-/* form active */
+/* form active - 디자인가이드 input radio, checkbox 디자인 관련입니다. 필요없는경우 삭제하시고 작업하시면되요.*/
 .cus_design{max-width:400rem;}
 .cus_design > ul > li{display:block; position:relative; margin:3rem 0px;}
 .cus_design input[type="text"]{width:100%; height:45rem;}

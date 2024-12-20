@@ -6,7 +6,7 @@
  * base CSS Document
  */
 
-html,body{font-size:6.25%;}
+html{font-size:6.25%;}
 html.safari.desktop{font-size:1px;}
 body,p,div,span,h1,h2,h3,h4,h5,h6,ul,ol,li,dl,dt,dd,table,th,td,form,fieldset,legend,input,textarea,button,select,figure,figcaption{margin:0; padding:0;}
 body,input,textarea,button,select{font-family:'Pretendard', '맑은 고딕', '돋움', Dotum, '굴림', Gulim, Sans-serif; color:var(--color-base, #333);}

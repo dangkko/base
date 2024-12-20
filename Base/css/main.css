@@ -5,7 +5,7 @@
  * 메인영역 삽입 추가하시면됩니다. 아래 커스텀진행하세요.
  *
  * 1) main visual
- *
+ * 
  */
  
 /* 1) main visual */
@@ -58,9 +58,12 @@
 	[data-mainVisual] button[class*="swiper_"] i{font-size:20rem;}
 }
 
-/* 공통 */
-[data-main]{padding:var(--page-top) 0;}
-[data-main] .title{display:flex; flex-direction:column; gap:25rem;}
-[data-main] .title em{font-family:var(--font-eng); font-size:20rem; color:var(--color-point); font-weight:700;}
-[data-main] .title h2{font-size:55rem; font-weight:500; letter-spacing:-2rem;}
-[data-main] .title h2 i{display:inline-block; margin-left:7rem; margin-bottom:-3rem; width:12rem; height:12rem; line-height:1cap; border-radius:100%; background-color:var(--color-point);}
+
+/* main - 메인 게시판 샘플 삭제하시면 됩니다. */
+.notice-sample{max-width:1600rem; margin:0 auto;}
+.notice-list{display:grid; grid-template-columns:repeat(4, 1fr); gap:30rem;}
+.notice-list .img{display:block; aspect-ratio:1/1;}
+.notice-list .img img{object-fit:cover; width:100%; height:100%;}
+.notice-list strong{display:-webkit-box; overflow:hidden; -webkit-line-clamp:1; -webkit-box-orient:vertical; text-overflow:ellipsis;}
+.notice-list p{display:-webkit-box; overflow:hidden; -webkit-line-clamp:2; -webkit-box-orient:vertical; text-overflow:ellipsis;}
+.notice-list .date{display:block;}

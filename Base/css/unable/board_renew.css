@@ -354,6 +354,8 @@ input.button_new{height:52rem; line-height:52rem;}
 	.bbsNew_container.v2 .bbsDate > ul > li > i{margin-right:5rem;}
 	.bbsNew_container.v2 .admPager_btn li a{color:#999; border-color:#d5d5d5;}	
 
+	.ko_board_list[data-type="A"] .board_info_con{margin-top:50rem;}
+
 	.bbsControls ul li a{padding:15rem 0;}
 	.bbsControls ul li a em{padding:0 13rem 0 0;margin-right: 14rem;}
 	.bbsControls{margin-top:26rem;}
