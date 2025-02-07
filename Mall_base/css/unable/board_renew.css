@@ -59,7 +59,8 @@
 .bbsSearch input[type=text]{width:33%; height:52rem; margin-right:7rem; padding:9rem 12rem; background:#fff; border:none; border:1rem solid transparent; transition:all 0.3s ease 0s; outline:none;}
 
 /* NEW ver.1.0.2 */
-.bbsNew_container.v2 .bbsTitle{padding:0 !important; font-weight:600 !important; font-size:38rem !important; text-align:left; letter-spacing:-0.04em;}
+.bbsNew_container.v2 .bbsTitle{display:flex; flex-wrap:wrap; align-items:center; gap:5rem; padding:0 !important; font-weight:600 !important; font-size:38rem !important; text-align:left; letter-spacing:-0.04em;}
+.bbsNew_container.v2 .bbsTitle .ko-basic-list__cate{vertical-align:middle; font-size:16rem;}
 .bbsNew_container.v2 .bbsDate{display:flex; align-items:center; margin:0; margin-top:23rem; padding:19rem 0; border-top:1rem solid #000;}
 .bbsNew_container.v2 .bbsDate > ul > li:first-child{padding-left:0;}
 .bbsNew_container.v2 .bbsDate > ul > li{padding: 0 17rem; color:#888; font-weight:400;}
@@ -253,6 +254,7 @@ input.button_new{height:52rem; line-height:52rem;}
 .ko-basic-list__num.notice{padding:2rem 0px; background:#222; border-radius:3rem; color:#fff;}
 .ko-basic-list__tit-wrap{display:flex; align-items:center;}
 .ko-basic-list__comment{margin-left:3rem; font-size:13rem; color:#aaa; white-space:nowrap; line-height:1;}
+.ko-basic-list__cate{margin-right:5rem; padding:2rem 10rem; border-radius:50em; border:2rem solid #dfdfdf; font-size:13rem; white-space:nowrap; line-height:1;}
 .ko-basic-list__tit-wrap.new::after{content:"NEW"; position:relative; top:-3rem; margin-left:8rem; font-weight:700; font-size:10rem; color:#e53333;}
 .reply{display:inline-block; position:relative; margin-right:7rem; padding:4rem 9rem; background:#fff; border:1rem solid #b3b3b3; font-size:14rem; color:#8d8d8d; line-height:1; border-radius:3rem;}
 
