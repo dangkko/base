@@ -379,10 +379,10 @@ input.button_new{height:52rem; line-height:52rem;}
 	/* NEW ver.1.0.3 */
 	.ko_board_list[data-type="A"]{gap:18rem; grid-template-columns:1fr;}
 	
-	.bbsSearch[data-type="A"] form{margin-bottom:0; background:none;}	
+	.bbsSearch[data-type="A"] form{width:100%; margin-bottom:0; background:none;}	
 	.bbsSearch[data-type="A"] .search_input{width:100%;}
 	.bbsSearch[data-type="A"] select{border-bottom-color:#b5b5b5;}
-	.bbsSearch[data-type="A"] input[type=text]{width:100%; margin-left:0; padding-left:1rem; border:0; border-bottom:1rem solid #b5b5b5; border-radius:0;}
+	.bbsSearch[data-type="A"] input[type=text]{width:100%; margin-left:0; padding-left:15rem; border:0; border-bottom:1rem solid #b5b5b5; border-radius:0;}
 	.bbsSearch[data-type="A"] input[type="submit"].button{top:auto; right:-1rem; bottom:2rem; margin-left:0; background-size:20rem;}
 	
 	.ko_board_list[data-type="A"] [data-board="arr"]{display:none;}

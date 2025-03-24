@@ -287,7 +287,7 @@ html[lang="zh"] .area_guide li{word-break:break-all;}
 	[data-pop-layer="layer"] .popBox{--popHig:100% !important; top:0px !important; left:0px !important; width:100% !important; height:100%  !important; min-width:inherit; min-height:inherit; transform:translate(0,0);}
 	[data-pop-layer="layer"] .popBox .popTitle{padding-right:80rem !important;}
 	[data-pop-layer="layer"] .popBox .btn_close{right:0px; box-shadow:none;}
-	.layerPop{top:100rem !important; left:50% !important; transform:translateX(-50%);}
+	.layerPop{top:100rem !important; left:50% !important; transform:translateX(-50%); width:80% !important;}
 		/* layer popup img only */
 	.area_popLayer--img .popBox{background:#fff;}
 	.area_popLayer--img .popBox .scrollbar-inner{overflow-y:auto; height:100%;}
@@ -343,6 +343,7 @@ html[lang="zh"] .area_guide li{word-break:break-all;}
 
 @media screen and (max-width:600px){
 	/* 7) layer pop */
+	.layerPop{width:90% !important;}
 	[data-pop-layer="layer"] .popBox .popConts img,
 	.layerPop img{max-width:100%; width:100%;}
 }
