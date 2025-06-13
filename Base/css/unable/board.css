@@ -348,7 +348,7 @@ input[type="text"] + .input-txt{margin-left: 2rem;}
 
 /* 비밀번호확인 */
 .secret_area{display:flex; flex-wrap:wrap; justify-content:center; gap:5rem; position:relative; max-width:410rem; margin:40rem auto; text-align:center;}
-.secret_area i{display:flex; justify-content:center; align-items:center; width:62rem; height:62rem; margin:0 auto 20rem; background:url(../../images/board/img_secret.gif) no-repeat 50% 50%; background-size:20rem 24rem; border:3rem solid #59626a; border-radius:100%; color:#59626a;}
+.secret_area i{display:flex; justify-content:center; align-items:center; width:62rem; height:62rem; margin:0 auto 20rem; border:3rem solid #59626a; border-radius:100%; color:#59626a; font-size:25rem;}
 .secret_area p{flex:0 1 100%; margin-bottom:10rem;}
 .secret_area .secret_area__form{display:flex; align-items:center; gap:4rem; margin-top:10rem;}
 .secret_area input[type="password"]{flex:auto; width:240rem; height:45rem;}
@@ -666,4 +666,30 @@ col[data-view="th"]{width:8% !important;}
 	
 	.photoList > li{float:none !important; width:100%;}	
 	.photoList > li .img{padding-top:60%;}
+}
+
+/* 인증서 게시판 - 클릭시 레이어팝업이미지  */
+.certi-list{display:grid; grid-template-columns:repeat(5, 1fr); gap:50rem 25rem;}
+.certi-list > li{text-align:center;}
+.certi-list > li a{display:block;}
+.certi-list > li .img{display:flex; justify-content:center; align-items:center; position:relative; padding:clamp(42rem, 3.23vw, 62rem) 0px; background:#efefef; text-align:center;}
+.certi-list > li .img span{display:block; width:171rem; aspect-ratio:171/236;}
+.certi-list > li .img span img{object-fit:scale-down; width:100%; height:100%;}
+.certi-list > li .img:after{content:"\e913"; opacity:0; display:flex; justify-content:center; align-items:center; position:absolute; top:50%; left:50%; width:70rem; height:70rem; background-color:var(--color-point, #333); border-radius:100%; font-family:'xeicon'; color:#fff; font-size:25rem; transform:translate(-50%, -50%) scale(0.5); transition:0.3s ease 0s;}
+.certi-list > li strong{display:block; margin-top:10rem; font-size:18rem; line-height:1.4; font-weight:600; word-break:keep-all;}
+@media (hover:hover){
+	.certi-list > li a:hover .img:after{opacity:1; transform:translate(-50%, -50%) scale(1);}
+}
+@media (max-width:1024px){
+	.certi-list{grid-template-columns:repeat(3, minmax(0, 1fr));}
+}
+@media (max-width:768px){
+	.certi-list > li .img{padding:40rem 10rem;}
+}
+@media (max-width:480px){
+	.certi-list{grid-template-columns:repeat(2, minmax(0, 1fr)); gap:40rem 15rem;}
+	.certi-list > li .img{padding:20rem 10rem;}
+	.certi-list > li .img span{width:110rem;}
+	.certi-list > li .img:after{width:50rem; height:50rem; font-size:22rem;}
+	.certi-list > li strong{font-size:16rem;}
 }

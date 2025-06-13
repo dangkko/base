@@ -569,7 +569,7 @@ html[lang="th"] [data-shop-list="default"] > li > a .price i:after{content:'ว�
 [data-shop-view="option"],
 [data-shop-view="number"],
 [data-shop-view="total"]{padding-top:20rem; border-top:1rem solid #eee;}
-[data-shop-view="price"]{margin-top:20rem;}
+[data-shop-view="price"]{display:flex; flex-wrap:wrap; margin-top:20rem; padding-bottom:20rem;}
 [data-shop-view="price"] .price i{font-weight:600;text-decoration: none;color: #111;font-size: clamp(21rem, 1.8750vw, 24rem);letter-spacing: -1rem;line-height: 1;}
 [data-shop-view="price"] .price i:after{display:inline-block;font-size: clamp(18rem, 1.5625vw, 20rem);position: relative;font-weight: 600;top: -1rem;}
 [data-shop-view="price"] .price .price_origin{margin-left:5rem;font-size: clamp(15rem, 1.3281vw, 17rem);color: #aaa;font-weight: 300;text-decoration: line-through;}
@@ -634,8 +634,8 @@ html[lang="en"] [data-shop-view="option"] .color li > a.sold:after{content:'sold
 html[lang="th"] [data-shop-view="price"] .price i:after{content:'วอน';}
 html[lang="th"] [data-shop-view="option"] .color li > a.sold:after{content:'สินค้าหมด';}
 
-[data-shop-view] dt{flex:none; width:25%; box-sizing:border-box; font-weight:500; color:#333; font-size:15rem;}
-[data-shop-view] dd{flex:auto; display:inline-flex; align-items:center; gap:5rem; width:75%; min-height:40rem; font-size:15rem;}
+[data-shop-view] dt{flex:none; display:flex; align-items:center; width:25%; box-sizing:border-box; font-weight:500; color:#333; font-size:15rem;}
+[data-shop-view] dd{flex:auto; display:flex; align-items:center; gap:5rem; width:75%; min-height:40rem; font-size:15rem;}
 [data-shop-view] dd select{width:100%;}
 
 [data-shop-view="conts"]{position:relative; margin-top:60rem;}

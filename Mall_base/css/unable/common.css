@@ -10,7 +10,7 @@
  * 3) 정렬
  * 4) button
  * 5) Form Control
- * 6) table
+ * 6) table - 수정 20250428
  * 7) layer pop
  * 8) 개인정보처리방침 등
  * 9) tooltip
@@ -136,11 +136,10 @@ table{width:100%;}
 .inputFull{width:100% !important;}
 
 /* 6) table */
-table.table{margin-top:15rem; border-top:1rem solid #111;}
-table.table thead th{background:#edf0fb; border-bottom:1rem dashed #e2e7f9;}
-table.table.line thead th{border:1rem dashed #c3cae6;}
+table.table{margin-top:15rem; border-top:2rem solid #111;}
+table.table thead th{background:#f5f7fe; border:1rem solid #dfe3f3;}
 table.table thead tr:last-child th{border-bottom-width:0;}
-table.table thead th[rowspan]{border-right:1rem dashed #c3cae6;}
+table.table thead:has( th[rowspan]) tr th{border-bottom-width:1rem;}
 table.table tbody th{background:#f5f5f5; border:1rem solid #e0e0e0; border-right-color:#f5f5f5;}
 table.table thead + tbody th{background:transparent; border-right-color:#e0e0e0;}
 table.table th,
@@ -172,12 +171,8 @@ table.table td a[class*="link_"]:hover{box-shadow:0 1rem 0px #265096;}
 table.table.hover tbody tr:hover th,
 table.table.hover tbody tr:hover td{background:#f7f7ee !important;}
 	/* table bgcolor */
-table.table.blue tbody th{background:#edf0fb !important;}
-table.table.gray{border-top-color:#d0d0d0;}
-table.table.gray thead th{background:#f5f5f5 !important;}
-table.table.gray.line thead th{border-color:#cecece}
-table.table.gray thead th[rowspan]{border-right-color:#cecece;}
-table.table.gray thead tr:last-child th{border-bottom-color:#e2e2e2;}
+table.table.blue tbody th{background:#edf0fb;}
+table.table.gray thead th{background:#f5f5f5; border-color:#dcdcdc;}
 	/* table img */
 table.table img{max-width:100%;}
 table.table div.conts{min-height:300rem;}
