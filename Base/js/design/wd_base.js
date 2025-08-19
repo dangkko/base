@@ -161,31 +161,21 @@ function designFile(){
 	if(is_mob()){
 		$('.designFile').attr('class','designFile mob');
 	}else{
-		var uploadFile = $('.designFile input[type="file"]');
-		uploadFile.on('change', function(){
-			if(window.FileReader){
-				if($(this)[0].files[0]){
-					var filename = $(this)[0].files[0].name;
-				} else {
-					var filename = "";
-				}
-			} else {
-				var filename = $(this).val().split('/').pop().split('\\').pop();
-			}
-			$(this).siblings('input[type="text"]').eq(0).val(filename);
-		});
-			
-		var widthMatch = matchMedia("all and (max-width: 768px)");
-		var widthHandler = function(matchList) {
-		    if (matchList.matches) {
-		    	$('.designFile').attr('class','designFile mob');
-		    } else {
-		    	$('.designFile').attr('class','designFile');
-		    }
-		};
-		widthMatch.addListener(widthHandler);
-		widthHandler(widthMatch);
+		$('.designFile').attr('class','designFile');
 	}
+	var uploadFile = $('.designFile input[type="file"]');
+	uploadFile.on('change', function(){
+		if(window.FileReader){
+			if($(this)[0].files[0]){
+				var filename = $(this)[0].files[0].name;
+			} else {
+				var filename = "";
+			}
+		} else {
+			var filename = $(this).val().split('/').pop().split('\\').pop();
+		}
+		$(this).siblings('input[type="text"]').eq(0).val(filename);
+	});
 }
 
 //top
@@ -293,14 +283,6 @@ function showPopup(el){
 	}, 100);
 	return false;
 }
-
-//sitemap - 삭제예정
-$(window).on('load',function(){
-	if($('.area_sitemap').length > 0){
-		var gnbSite = $('#header nav').html();
-		$('.area_sitemap').append(gnbSite);
-	}
-});
 
 //click open control
 /* div.open-control

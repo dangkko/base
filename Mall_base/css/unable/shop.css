@@ -1080,7 +1080,7 @@ html[lang="th"] .area_printOrder table.table td{font-family:'Segoe UI', "Microso
 
 	[data-shop-accordion="product"] i{width:60rem;}
 
-	[data-shop-icon="icon"] > i{display:inline-block; height:19rem; line-height:20rem; padding:0rem 2rem;}
+	[data-shop-icon="icon"] > i{height:19rem; line-height:20rem; padding:0rem 2rem;}
 }
 
 @media screen and (max-width:500px){

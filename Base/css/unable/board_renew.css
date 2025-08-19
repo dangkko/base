@@ -296,7 +296,8 @@ input.button_new{height:52rem; line-height:52rem;}
 	.bbsPager .inr_pager .pagerBtn.next{padding-right:20rem;}
 	
 	.bbsPager{padding:30px 0 40px;}
-	.bbsPager .inr_pager{display:flex; justify-content:space-between; align-items:center; flex-direction:row-reverse;}
+	.bbsPager .inr_pager{display:flex; justify-content:center; align-items:center; flex-direction:row-reverse;}
+	.bbsPager.admPager .inr_pager{justify-content:space-between;}
 	.bbsPager .inr_pager .pagerBtn::before{opacity:0.5; top: 19rem;}
 	.bbsPager .inr_pager > a > em{font-weight:600; font-size:12rem; color:#999;}	
 	.bbsPager .inr_pager .pager_list{width:130rem; padding:15rem 0;font-size:12rem;}

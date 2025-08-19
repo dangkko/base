@@ -96,6 +96,8 @@
 .list-join .button{margin:0;}
 .list-join input[type="text"].datepicker{font-size:var(--font-base, 14rem); text-align:left;}
 .list-join ~ h3{margin-top:80rem;}
+.join_area .btn_area.custom .button.gray{border-color:#92999e; color:#92999e;}
+.join_area .btn_area.custom .button.gray span{color:#92999e;}
 	/* 줄변경방지 */
 .list-join li > div .nowrap{display:flex; align-items:center; gap:0 5rem;}
 	/* checkbox radiobox  */
@@ -129,6 +131,10 @@
 	/* 스팸 */
 .list-join [data-member-form="spam"] .nowrap{align-items:stretch !important;}
 .list-join [data-member-form="spam"] .spam{display:flex; justify-content:center; align-items:center; padding:0 15rem; background:#fff; border:1rem solid #393939; font-weight:15rem; font-weight:700; color:#393939;}
+	/* 회원탈퇴 */
+.widthdrawal-box p{margin-bottom:10rem; word-break:keep-all;}
+.widthdrawal-box textarea{width:100%; height:100rem;}
+.widthdrawal-box .btn_area{margin-top:10rem; padding-bottom:0;}
 
 @media screen and (max-width:1024px){
 	.login_social .btn_login_naver:before{background-image:url(../../images/module/icon_naver@x3.png);}
@@ -173,6 +179,7 @@
 	.join_area textarea{height:120rem; padding:10rem; font-weight:300;}
 	.join_area .check{padding-top:8rem; font-size:14rem;}
 	.join_area .btn_area.custom{flex-direction:row;}
+	.join_area .btn_area.custom.join{flex-wrap:wrap;}	
 
 	/* 회원가입 정보입력 - 20231129 add */
 	.list-join{display:block;}

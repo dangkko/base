@@ -401,6 +401,10 @@ table.table .designNumber li input[type="text"]{width:auto;}
 .designFile input[type="file"]{overflow:hidden; position:absolute; width:1rem; height:1rem; padding:0; margin:-1rem; border:0; clip:rect(0,0,0,0);}
 .designFile input[type="text"]{width:100%; height:100%;}
 .designFile label.btn{display:block; position:relative; z-index:2; width:100%; height:var(--heightSize); line-height:var(--heightSize); box-sizing:border-box; padding:0 30rem; background-color:transparent; text-align:right; font-size:16px; color:#999; cursor:pointer;}
+.designFile input[type="text"]{position:absolute !important; top:0; left:0; background-color:transparent; border-width:0 !important;}
+.designFile em{position:absolute; left:30rem; top:50%; font-size:16rem; transform:translateY(-50%);}
+.designFile em ~ input[type="text"]{padding-left:115rem; padding-right:180rem;}
+/* mobile문제점이 해소되어 해당부분 불필요 주석처리 - khh
 .designFile:not(.mob) input[type="text"]{position:absolute !important; top:0; left:0; background-color:transparent; border-width:0 !important;}
 .designFile:not(.mob) em{position:absolute; left:30rem; top:50%; font-size:16rem; transform:translateY(-50%);}
 .designFile:not(.mob) em ~ input[type="text"]{padding-left:115rem; padding-right:180rem;}
@@ -411,6 +415,7 @@ table.table .designNumber li input[type="text"]{width:auto;}
 .designFile.mob .designCheck label{display:inline-block;}
 .designFile.mob .button.white{position:static; font-size:14rem;}
 .designFile.mob input[type="file"]{position:static; width:100%; height:auto; padding:inherit; margin:0; background:#eee; border:inherit; clip:inherit; font-size:14rem;}
+*/
 .designFile-multi{display:flex; align-items:center; height:60rem; padding:0 10rem; background:#eee; border-radius:5rem;}
 .designFile-multi input[type="file"]{font-size:16rem;}
 
@@ -507,7 +512,8 @@ col[data-view="th"]{width:8% !important;}
 	
 	.search_bbs .btn.reserve{float:none; clear:left;}
 	
-	.designFile.mob input[type="file"]{width:100%; font-size:14rem;}
+	.designFile label.btn{font-size:0;}
+	.designFile em ~ input[type="text"]{padding-right:20rem;}
 	.designFile-multi{height:40rem; padding:0 3rem;}
 	.designFile-multi input[type="file"]{font-size:14rem;}
 	
@@ -566,10 +572,7 @@ col[data-view="th"]{width:8% !important;}
 	.bbsView td.tel > span{display:inline-block;}
 	.bbsView td.mail > input[type="text"]{margin:2rem 0px;}
 	.bbsView td.mail > select{width:100% !important;}
-	.bbsView .designFile input[type="file"]{padding-right:110rem;}
-	.bbsView .designFile .button{position:absolute; top:0; right:0;}
 	.bbsView .spam input[type="text"]{width:auto !important;}
-	.designFile.mob input[type="file"]{padding-right:0;}
 	
 	.comment_area .write textarea{padding:10rem 15rem;}
 	.comment_area .write .input{padding:7rem 15rem;}
@@ -635,6 +638,11 @@ col[data-view="th"]{width:8% !important;}
 	.designSelect .selectoption li{padding:4rem 14rem;}
 	
 	ul.bbsList{border-top:0;}
+	
+	.designFile{--heightSize:50rem;}
+	.designFile em{left:10rem;}
+	.designFile em ~ input[type="text"]{padding:0 15rem 0 80rem;}
+	.designFile label.btn{padding:0 15rem;}
 
 	.secret_area input[type="password"]{width:100%;}
 	.secret_area .button{flex:1 1 auto;}
